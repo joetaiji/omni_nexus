@@ -1,0 +1,70 @@
+@import "../mixin";
+
+.tabs { 
+	>ul { display: flex; }
+	a, button { @include flex(.3rem, center, center); font-size: 1.8rem; text-align: center; padding: 1.5rem; position: relative; line-height: 1.2; border-radius: 1rem 1rem 0 0;
+		&:hover { text-decoration: none; transition: .2s;}		
+	}
+	li.active {		
+		a, button { font-weight: 700; 
+			/* &::after { content: ""; display: block; } */
+		}
+	}
+	/* &.num10 { flex-wrap: wrap;
+		> li {flex: 1 1 20%;}
+	} */
+}
+.depth4 {		
+	>ul{
+		>li { 
+			a, button { height: 4rem; font-size: 1.5rem; background-color: #7C7F91; color: #fff; @include hover; 	}
+			
+			&.active { 
+				a, button { background: var(--white); color: #111; }
+			}
+			~ li { margin-left: -1px; }
+		}
+	}
+}
+
+
+@include media($mobile) {
+	.tabs  { 
+		> ul { flex-direction:column; }
+		li { display: none; 
+			&.active {display: block;
+				a, button{ 
+					&::before { content: '\ea4e'; font-family: var(--icon); font-size: 2rem; @include pos(rt, 1rem, 50%); font-weight: 400; transition: .2s; }
+					&::after { display: none; }
+				}		
+			}
+			~li { margin: -1px 0 0 0; }
+		}
+		&.active {
+			li  { display: block; }
+			&.active {
+				a, button {
+					&::before { rotate: 180deg; }
+				}
+			}
+		}
+	}
+	.depth5 { border-bottom: 0;
+		li {
+			a, button { border-width: 1px; }
+		}
+		&.active li {
+			a, button { border-color: var(--gray-30); }
+		}
+	}
+}
+
+/* .tab_wrap { 
+	.depth4 { margin-top: 5rem; } 
+	.tab_cont { display: none;
+		&:first-of-type { display: block; } 
+	 }  
+ } 
+.anchor_tab { 
+	&.fixed { position: fixed; top:var(--headerHeight); width:100%;z-index: 1; }   
+ }     */ 

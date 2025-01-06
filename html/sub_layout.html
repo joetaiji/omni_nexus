@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="theme-color" content="#003675">
+	<link rel="apple-touch-icon" sizes="180x180" href="../img/layout/favicon_180px.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="../img/layout/favicon_192px.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../img/layout/favicon_32px.png">
+	<title>레이아웃</title>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="../css/pattern.css">
+	<!-- 
+	메인		: main.css	
+	일반콘텐츠	: contents.css
+	게시판		: board.css
+	-->
+	<link rel="stylesheet" href="../css/contents.css">
+
+	<!-- 공통 JS -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/swiper-bundle.min.js"></script>
+
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- 본문 바로가기 영역  -->
+		<div id="skip-nav">
+			<a href="#contents">본문 바로가기</a>
+		</div>
+		<!-- //본문 바로가기 영역  -->
+
+
+		<!-- 컨테이너 영역 -->
+		<main id="container">
+			<!-- 컨텐츠 영역 -->
+			<div id="snb" class="left-menu sub01">
+				<div class="snb-head">
+					<h1 class="logo"><img src="../img/layout/logo.svg" alt="planI"></h1>
+					<div class="member-area">
+						<div class="member">
+							<span class="photo"><img src="../img/layout/photo.png" alt=""></span>
+							<strong class="name">김소영<span class="role">PM</span></strong>
+							<div class="btn-area">
+								<button class="btn xsm mypage">마이페이지</button>
+								<button class="btn xsm logout">로그아웃</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //snb-head -->
+				<nav class="list">
+					<ul id="left_menu_top" class="head_menu_depth">
+						<li class="active">
+							<a href=""><i class="ri-home-3-fill"></i>대시보드</a>							
+						</li>
+						<li>
+							<a href=""><i class="ri-bar-chart-fill"></i><span>매출관리</span></a>
+							<ul>
+								<li><a href="">매출통계</a></li>
+								<li><a href="">입금관리</a></li>
+								<li><a href="">전체실적</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href=""><i class="ri-coin-fill"></i><span>지출관리</span></a>
+							<ul>
+								<li><a href="">정신건강의학과</a></li>
+								<li><a href="">내과</a></li>
+								<li><a href="">치과</a></li>
+								<li><a href="">영상의학과</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href=""><i class="ri-ball-pen-fill"></i><span>실적 관리(손익계산)</span></a>
+						</li>
+						<li>
+							<a href=""><i class="ri-service-fill"></i><span>거래처</span></a>
+						</li>
+						<li>
+							<a href=""><i class="ri-settings-2-fill"></i><span>환경설정</span></a>
+							<ul>
+								<li><a href="">정신건강의학과</a></li>
+								<li><a href="">내과</a></li>
+								<li><a href="">치과</a></li>
+								<li><a href="">영상의학과</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<button class="snb-close">
+					<i class="ri-angle-right"></i><span class="sr-only">메뉴닫기</span>
+				</button>
+			</div>
+			<!-- //snb : 서브메뉴-->
+			<div id="contents" class="contents">
+				
+				<div class="depth4 tabs">
+					<ul>
+						<li class="active"><a href="">탭메뉴1 <i class="ri-close-line"></i></a></li>
+						<li><a href="">탭메뉴2 <i class="ri-close-line"></i></a></li>
+						<li><a href="" target="_blank">새창링크 <i class="ri-close-line"></i></a></li>
+					</ul>
+				</div>
+				<!-- 페이지 콘텐츠 영역 -->
+				<div class="page-contents">
+					<h2 class="page-title">페이지 타이틀</h2>			
+					<button type="button" onclick="window.print();" class="print-btn"><img src="../img/layout/cont_ico_print.png" alt="프린트"></button>
+
+					
+				</div>
+				<!-- //페이지 콘텐츠 영역 -->
+			</div>
+			<!-- //contents -->
+			<!-- //컨텐츠 영역 -->
+		</main>
+		<!-- //컨테이너 영역 -->
+	</div>
+
+	<!-- 공통 JS -->
+	<script src="../js/func.js"></script>
+	<script src="../js/common.js"></script>
+
+	<!-- 서브 JS -->
+	<script src="../js/sub.js"></script>
+</body>
+
+</html>
