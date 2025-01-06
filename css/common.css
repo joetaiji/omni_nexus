@@ -3,7 +3,7 @@
 변수
 ======================================================================================= */
 :root {
-  --fontFamily: "Pretendard GOV", sans-serif;
+  --fontFamily: "pretendard", sans-serif;
   --icon: "remixicon", sans-serif;
   --fontSize: 1.7rem;
   --letterSpace: -.025em;

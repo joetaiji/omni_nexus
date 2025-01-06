@@ -147,6 +147,7 @@ $snbW: 26rem;
 	.name { color: var(--white); font-weight: 600;
 		.role { color: rgba(#fff, .5);  margin-left: .6rem;}
 	}
+	.btn-area { height: 3.4rem; display: flex; gap:.4rem; flex-wrap:nowrap;}
 	.btn{
 		&.mypage { background: transparent; border: 1px solid rgba(#fff, .2); color: #fff;}
 		&.logout { background: var(--primary); color: #fff; }
@@ -161,10 +162,10 @@ $snbW: 26rem;
 			>li { position: relative;
 				&::before, &::after { content: ''; display: block; width: 3.2rem; height: 3.2rem; position: absolute; right: -3.2rem; }
 				&::before { bottom: 100%; background: radial-gradient(circle at 0 0, #000 69%, #F6F7FB 71%); }
-				&::after { top: 6.15rem; background: radial-gradient(circle at 0 100%, #000 69%, #F6F7FB 71%);}
+				&::after { top: 6.4rem; background: radial-gradient(circle at 0 100%, #000 69%, #F6F7FB 71%);}
 				~ li > a::before { content: ''; display: block; position: absolute; top: 0; width: calc(100% - 3.2rem); }
-				>a { display: flex; gap: 1.7rem; padding: 1.8rem 3rem; font-size: 1.7rem;  letter-spacing: -1px; position: relative; color: rgb(#fff,.7); transition: 0.2s;
-					i { color:rgba(#fff, .3); }
+				>a { display: flex; gap: .4rem; padding: 1.8rem 3rem; font-size: 1.7rem;  letter-spacing: -1px; position: relative; color: rgb(#fff,.7); transition: 0.2s;
+					i { color:rgba(#fff, .3); width: 2.8rem; height: 2.8rem;}
 					&:hover { color: var(--white);}
 				}				
 				&.active { 
@@ -212,11 +213,20 @@ $snbW: 26rem;
 			.logo,
 			.member-area {display: none; }
 		}
-		.list .head_menu_depth > li.active { 
-			> ul { display: none;}
-			> a { border-radius: 1rem 0 0 1rem;}
-			&::before,
-			&::after { width: 1.2rem; height: 1.2rem;}
+		.list .head_menu_depth > li { 
+			> a { padding-left: 2.2rem;
+				span, 
+				&::after { display: none;}
+			}
+			&.active { 
+				> ul { display: none;}
+				> a { border-radius: 1rem 0 0 1rem; }
+				
+				&::before,
+				&::after { width: 1.2rem; height: 1.2rem;}
+				&::before { background: radial-gradient(circle at 0 0, #000 65%, #F6F7FB 71%);}
+				&::after { background: radial-gradient(circle at 0 100%, #000 65%, #F6F7FB 71%);}
+			}
 		}
 		.snb-close:after { transform: rotateY(180deg)}
 	}
@@ -225,7 +235,7 @@ $snbW: 26rem;
 content 공통
 ======================================================================================= */
 
-.contents { flex: 1; background: #F6F7FB;  padding: 3rem; border-radius: 2rem; 
+.contents { flex: 1; min-height: 100vh; background: #F6F7FB;  padding: 3rem; border-radius: 2rem; 
 	.page-title-wrap { position: relative; border-bottom: 1px solid var(--gray-30);  margin-bottom: 4rem; }	
 	.heading-l { font-size: 4rem; color: #222; padding-right: 4rem;}
 	.heading-l-drop { display: none;
@@ -239,85 +249,31 @@ content 공통
 			}
 		}
 	}
+	.mdi-area { display: flex; justify-content: space-between;}
+	.tabs { display: flex; align-items: center; gap: 1rem;
+		.mdi-all-close { display: flex;
+			height: 24px;
+			padding: 4px 6px;
+			justify-content: center;
+			align-items: center;
+			gap: 2px;border-radius: 4px;
+			color: var(--gray-90, #111);
+			font-size: 1.4rem;
+			text-align: center;
+			border: 1px solid var(--gray-20, #CCC);
+			background: var(--white, #FFF);}
+		ul:empty + .mdi-all-close { margin-bottom: 1rem;}
+	}
+
 	.print-btn { width: 4rem; height: 4rem; @include pos(rt, 4rem, 4rem); border-radius: 1.4rem; background: var(--white); border: 1px solid #ddd; @include hover;}
-	.page-contents { color: var(--fontColor); background: var(--white); padding: 4rem; border-radius: 0 2rem 2rem 2rem; position: relative;}
+	.page-contents { color: var(--fontColor); background: var(--white); padding: 4rem; border-radius: 0 2rem 0 0; position: relative;}
 	.article { scroll-margin-top: 15rem; min-height: 20rem;}
 }
 
 /* =======================================================================================
 footer
 ======================================================================================= */
-.footer { background-color: var(--gray-5); 
-	>.inner { @include flex(4rem); flex-direction: column; padding: 4rem 0;  }
-	.foot-quick { background: var(--white); border-top: 1px solid var(--gray-30); border-bottom: 1px solid var(--gray-30);		
-		.inner { @include flex; border-left: 1px solid var(--gray-30);
-			
-			.link { width:25%; border-right: 1px solid var(--gray-30); height: 5.4rem; padding: 0 2.4rem;  @include flex(null, center, space-between); 
-				&::after{
-					content: ""; display: block; width: 2rem; height: 2rem; background: url(#{$url}/layout/foot_ico_plus.svg) no-repeat center/contain;
-				}
-				@include hover;
-			}
-		}
-	}	
-	.pop-foot-links {
-		@include grid(0.8rem 1.6rem, repeat(4, 1fr));
-		>li { 
-			a { display: block; @include bullet(.5rem, .5rem, #ccc, 2.1rem, 50%); padding: 1.2rem 0.8rem 1.2rem 2rem; border-radius: 0.8rem; @include hover; 
-				&::before { left: 0.5rem; }
-			}
-		}
-	}
-	.foot-viewer { margin-left: auto; @include flex(1.5rem, center);
-		ul { @include flex(.4rem);}
-		a { background: url(#{$url}/layout/foot_viewer_icon.png) 0 0 / auto 3rem no-repeat; display: block; width: 3rem; height: 3rem;}
-		.pdf { background-position: -3rem 0;}
-		.ppt { background-position: -6rem 0;}
-	}
-	.f-logo { @include flex(null, center, space-between);
-		.f-cert { @include flex(1rem, center); font-size: 1.5rem; line-height: 1.2;
-			a { @include flex(1rem, center);  }
-		}
-	}
-	.f-cnt { @include flex(2.4rem);
-		.f-info { flex: 1; @include flex(2.4rem, $fd: column); }
-		.info-cs { @include flex(1.6rem, $fd: column); 
-			li { @include flex(1rem); }
-		}
-		.f-cs { width: 30rem; @include flex(4rem, $fd:column);
-			dl { @include flex(1.6rem, $fd:column);}
-			dt { font-weight: 700; font-size: 1.5rem; }
-			dd { @include flex(.8rem, center); line-height: 1;}
-			.key { font-weight: 400;}
-			.value { font-weight: 700;}
-		}
-		.f-link { @include flex(2.4rem, $jc: flex-end, $fd:column); 
-			.link-go { @include flex(.8rem, flex-start, $fd:column); font-weight: 700; flex: 1;
-				a { display: inline-flex;}
-			}
-			.link-sns { @include flex(.8rem);
-				a {display: block; width: 4rem; height: 4rem; background:#fff no-repeat center/auto 100%; border-radius: 50%; @include hover;}
-				.instagram { background-image: url(#{$url}/layout/foot_ico_sns_instagram.png);}
-				.youtube { background-image: url(#{$url}/layout/foot_ico_sns_youtube.png);}
-				.twitter { background-image: url(#{$url}/layout/foot_ico_sns_twitter.png);}
-				.facebook { background-image: url(#{$url}/layout/foot_ico_sns_facebook.png);}
-				.blog { background-image: url(#{$url}/layout/foot_ico_sns_blog.png);}
-			}
-		}
-	} 
-	.f-btm { @include flex(2.4rem, $fd: column); padding-top: 0.8rem; border-top: 1px solid var(--gray-30);
-		&-text { @include flex(null, center, space-between);
-			.f-menu { display: flex;
-				a { @include flex(null, center, $fd:inline); height: 4rem; padding:0 1rem; border-radius: 0.6rem; @include hover;}
-			}
-			.point {font-weight: 700; color: var(--primary-70);}
-			.f-copy { font-size: 1.5rem; color: var(--gray-70);}
-		}
-		&-ban { @include flex(.8rem); background: var(--white); padding: 0.8rem 1.6rem; 
-			&::before { content: ""; display: block; width: 7.2rem; height: 2.4rem; margin-right: .8rem; background: url(#{$url}/layout/btm_ban_ico_flag.svg) no-repeat center/contain;}
-		}
-	}
-}
+.footer { text-align: center; padding: 2rem; color: #aaa; font-size: 1.4rem; letter-spacing: normal; border-radius: 0 0 2rem 2rem; background: var(--white);}
 
 /* =======================================================================================
 반응형
@@ -325,83 +281,10 @@ footer
 @include media($web) {
 }
 @include media($pad) {
-	#header {
-		.head-etc { display: none; }
-		.header-in{
-			.head-body {				
-				> .inner { padding: 0.6rem 0;}
-				.logo { 
-					.logo-im { height: 4rem;}
-					.logo-slogan { display: none; }
-				}
-				
-				.my-drop { display: none; }
-				.btn-navi.navi-row { flex-direction: column; padding-left: .4rem; padding-right: .4rem;}
-				.btn-navi.all { display: flex; }
-			}
-			.head-gnb {
-				display: none;
-			}
-		}
-		.m-gnb-wrap { display: block; 
-			&.active { right: 0; 
-				&::after { opacity: 1; visibility: visible; }
-			}
-		}
-	}
-	.main-urgent-wrap {padding: 1.2rem;}
-	#container { padding:4rem 0;
-		.in-between {
-			.left-menu { display: none;}
-		}		
-	}
-	.breadcrumb li { display: none;
-		&:nth-child(-n+2),
-		&:last-child { display: inline-flex;}
-		&:nth-child(2) { 
-			&::after { content: "…";}
-			span{ display: none; }
-		}	
-	}
+	
 }
 
 @include media($mobile) {
-	.pop-total-serch-wrap {
-		.searcheading-l { font-size: 2.4rem;}
-		.search-text { padding-top: 3.2rem; height: auto; overflow-y: visible;
-			.sch-info-list { flex-direction: column;
-				.li { padding: 0; width: 100%;}
-				.li2 { padding-top: 3.2rem; margin-top: 3.2rem; border-left: 0; border-top: 1px solid var(--border);}
-			}
-		}
-	}	
-	.popup-wrap { padding-right: 0; 
-		.popup {
-			&-in {padding: 2rem 0;}
-			&-body { padding-right: 1.6rem;}
-			&-close { right: 1.6rem; width: 2.8rem; height: 2.8rem;}
-		}
-	}
-	#footer {
-		.foot-quick {
-			> .inner { flex-direction: column; max-width: 100%;
-				.link { width: 100%; min-height: 4.8rem; 
-					~ .link { border-top: 1px solid var(--gray-30); }
-				}
-			}
-			.pop-foot-links { grid-template-columns: 1fr 1fr; gap: 0;}
-			.foot-viewer { border: 1px solid var(--gray-30); border-left: 0; border-bottom: 0; width: 100%; height:5.4rem; padding:0 2.4rem; }
-		}
-		.f-logo { flex-direction: column;}
-		.f-cert { display: none; }
-		.f-cnt { flex-direction: column; 
-			.info-cs li { letter-spacing: -1px;}
-		}
-		.f-btm {
-			.f-btm-text { flex-direction: column; align-items: flex-start;}
-			.f-menu { flex-wrap: wrap;}
-		}
-	}
 	
 }
 

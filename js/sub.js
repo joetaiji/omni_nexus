@@ -14,24 +14,41 @@ $(function () {
 	tabs(".total-search-cont .tabs");
 	listOpen('.ico-sch1', '.sch-etc', true)
 
-	//썸네일 포커스
-	$('.thumb .swiper-slide').each(function (index) {
-		$(this).attr('tabindex', 0);
-		$(this).on('keydown', function (e) {
-			if (e.key === 'Enter' || e.key === '') {
-				e.preventDefault();
-				swiperThumb.slideTo(index);
-				swiperGallery.slideTo(index);
+	//mdi
+	$('.depth4>ul>li .ri-close-line').on('click', function(e){
+		$(this).parents('li').remove();
+		e.preventDefault();
+	});
+	$('.depth4 .mdi-all-close').on('click', function(e){
+		$(this).parents('.depth4').find('ul').empty();
+		e.preventDefault();
+	});
+	const btnNext = ".swiper-button-next",
+		  btnPrev = ".swiper-button-prev"
+
+	new Swiper(".mdi-area .swiper", { 
+		//lazy: true,
+		slidesPerView: 1,
+		centeredSlides: true,			
+		autoplay: true,
+		loop: true,
+		navigation: {
+			nextEl: btnNext,
+			prevEl: btnPrev,
+		},		
+		breakpoints: {
+			1024: {
+				slidesPerView: 3,
+				//spaceBetween: 20
+			},
+			1280: {
+				slidesPerView: 5,
+				//spaceBetween: 20
 			}
-		})
+		}
 	})
 
-	//카테고리를 depth4로 사용한 경우의 접근성 타이틀 재설정
-	const depth4Text = $('.depth4:not(#depth4_menu_div) li.active a').text();
-	if(depth4Text) {
-		const docTitle = $('title').text().replace('목록 <', '목록 < ' + depth4Text + ' <');
-		$('title').text(docTitle);
-	}
+	
 
 
 
@@ -46,21 +63,4 @@ $(function () {
 	}) */
 })
 
-
-//교육신청 iframe 타이틀
-window.addEventListener('message', function(e) {
-	if (e.data.booleanData == 'T'){
-		document.title = e.data.titleData;
-	}
-})
-//교육신청 iframe 높이
-function eduIframeHeight(){
-	window.addEventListener('message', function(e) {
-		document.getElementById('edu_iframe').height = e.data.scrollHeight;
-	})
-}
-$(function(){
-	eduIframeHeight();
-	$('#edu_iframe').contents().find('body').addClass('gongju');
-})
 

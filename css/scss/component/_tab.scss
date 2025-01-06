@@ -2,7 +2,7 @@
 
 .tabs { 
 	>ul { display: flex; }
-	a, button { @include flex(.3rem, center, center); font-size: 1.8rem; text-align: center; padding: 1.5rem; position: relative; line-height: 1.2; border-radius: 1rem 1rem 0 0;
+	a, button { @include flex(1rem, center, center); font-size: 1.8rem; text-align: center; padding: 1rem 2rem; position: relative; line-height: 1.2; border-radius: 1.2rem 1.2rem 0 0;
 		&:hover { text-decoration: none; transition: .2s;}		
 	}
 	li.active {		
@@ -17,7 +17,7 @@
 .depth4 {		
 	>ul{
 		>li { 
-			a, button { height: 4rem; font-size: 1.5rem; background-color: #7C7F91; color: #fff; @include hover; 	}
+			a, button { height: 4rem; font-size: 1.5rem; background-color: #7C7F91; color: #fff; }
 			
 			&.active { 
 				a, button { background: var(--white); color: #111; }
