@@ -251,26 +251,17 @@ content 공통
 
 .contents { flex: 1; background: #F6F7FB;  padding: 3rem; border-radius: 2rem; 
 	.page-title-wrap { position: relative; border-bottom: 1px solid var(--gray-30);  margin-bottom: 4rem; }	
-	.heading-l { font-size: 4rem; color: #222; padding-right: 4rem;}
-	.heading-l-drop { display: none;
-		.drop-btn { @include flex(.8rem, center);
-			&::after { content: ''; display: inline-flex; width: 3.2rem; height: 3.2rem; background: url(#{$url}/layout/ico_h_tit_drop_arr.svg) 0 0 /contain no-repeat; transition: 0.25s;}			
-		}
-		&.active { 
-			.drop-btn::after { transform: rotate(180deg);}
-			.drop-menu { left:auto; translate:0; width: 100%;
-				&::before {display: none;}
-			}
-		}
-	}
+	.page-title { height: 4rem; font-size: 2.4rem; color: #111; margin-bottom: 2rem;}
+	
 	.mdi-area { display: flex; justify-content: space-between; padding-right: 17rem;
 		.swiper-slide {width: auto;}
 		.tab-control{
 			.swiper-button { position: static; transform: none; width: 2.4rem;}
 		}
 	}
-	.tabs { display: flex; align-items: center; gap: 1rem;
+	.tabs { display: flex; align-items: center; gap: 1rem; padding-right: 3rem;
 		>ul {
+			li:only-child .ri-close-line { display: none;}
 			.ri-close-line { border-radius: 50%; width: 1.6rem; height: 1.6rem; display: flex; align-items: center; justify-content: center;
 				&:hover { background: var(--gray-40); transition: .2s;}
 			}
@@ -279,7 +270,6 @@ content 공통
 		.tab-control {
 			.btn { padding: .4rem; }
 		}
-		ul:empty + .mdi-all-close { margin-bottom: 1rem;}
 	}
 	.user-group { display: flex; align-items: center; position: absolute; right: 0; top: -3.2rem;
 		.user-icon { background: white; border-radius: 22px; box-shadow: rgba(15, 15, 15, 0.1) 0px 2px 4px; outline: rgba(255, 255, 255, 0.3) solid 0.5px; width: 22px; height: 22px; font-size: 1.1rem; margin-left: -3px; @include flex(null, center, center); position: relative;

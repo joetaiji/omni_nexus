@@ -729,37 +729,11 @@ content 공통
   border-bottom: 1px solid var(--gray-30);
   margin-bottom: 4rem;
 }
-.contents .heading-l {
-  font-size: 4rem;
-  color: #222;
-  padding-right: 4rem;
-}
-.contents .heading-l-drop {
-  display: none;
-}
-.contents .heading-l-drop .drop-btn {
-  display: flex;
-  gap: 0.8rem;
-  align-items: center;
-}
-.contents .heading-l-drop .drop-btn::after {
-  content: "";
-  display: inline-flex;
-  width: 3.2rem;
-  height: 3.2rem;
-  background: url(../img/layout/ico_h_tit_drop_arr.svg) 0 0/contain no-repeat;
-  transition: 0.25s;
-}
-.contents .heading-l-drop.active .drop-btn::after {
-  transform: rotate(180deg);
-}
-.contents .heading-l-drop.active .drop-menu {
-  left: auto;
-  translate: 0;
-  width: 100%;
-}
-.contents .heading-l-drop.active .drop-menu::before {
-  display: none;
+.contents .page-title {
+  height: 4rem;
+  font-size: 2.4rem;
+  color: #111;
+  margin-bottom: 2rem;
 }
 .contents .mdi-area {
   display: flex;
@@ -778,6 +752,10 @@ content 공통
   display: flex;
   align-items: center;
   gap: 1rem;
+  padding-right: 3rem;
+}
+.contents .tabs > ul li:only-child .ri-close-line {
+  display: none;
 }
 .contents .tabs > ul .ri-close-line {
   border-radius: 50%;
@@ -796,9 +774,6 @@ content 공통
 }
 .contents .tabs .tab-control .btn {
   padding: 0.4rem;
-}
-.contents .tabs ul:empty + .mdi-all-close {
-  margin-bottom: 1rem;
 }
 .contents .user-group {
   display: flex;

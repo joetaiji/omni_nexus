@@ -145,49 +145,65 @@
 					</div>	
 					<button type="button" onclick="window.print();" class="print-btn"><i class="ri-printer-line"></i><span class="sr-only">프린트</span></button>
 					<div class="sch-input">
-						<input type="text" class="form-control xlg" name="allKeyWord" placeholder="검색어 입력" value="병원" title="검색어 입력">
-						<button type="submit" class="btn btn-ico ico-sch">
+						<input type="text" class="input-text" name="allKeyWord" placeholder="검색어 입력" value="" title="검색어 입력">
+						<button type="submit" class="btn sch-btn">
 							<i class="ri-search-2-line"></i><span class="sr-only">검색</span>
 						</button>
 					</div>
-					<div class="filter">
-						<button class="filter-open"><i class="ri-skip-down-line"></i></button>
+					<div class="filter">						
 						<div class="filter-cont">
 							<div class="col3">
-								<div class="class">
-									<div class="class-title">
+								<div class="filter-item project">
+									<div class="item-title">
 										<strong>프로젝트 분류</strong>
 									</div>
-									<div class="class-cont">
-										<div class="item">
-											<button>분류 전체</button>
+									<div class="item-cont">
+										<div class="item-selected">
+											<label class="item"><input type="checkbox" checked>홈페이지 구축</label>
+										</div>
+									</div>
+									<button class="item-add">
+										<i class="ri-add-circle-fill"></i>
+									</button>
+									<div class="item-layer">
+										<div class="item-title">
+											<strong>프로젝트 분류</strong>
+										</div>										
+										<div class="item-group">
+											<label class="item"><input type="checkbox" checked>홈페이지 구축</label>
+											<label class="item"><input type="checkbox">유지보수</label>
+											<label class="item"><input type="checkbox">디자인</label>
+											<label class="item"><input type="checkbox">클라우드 이관</label>
+											<label class="item"><input type="checkbox">홍보/이벤트</label>
+											<label class="item"><input type="checkbox">컨설팅</label>
+											<label class="item"><input type="checkbox">내부거래</label>
 										</div>
 									</div>
 								</div>
-								<div class="class">
+								<div class="filter-item dept">
 									<strong>부서</strong>
 									<button>EX사업부</button>
 								</div>
-								<div class="class">
+								<div class="filter-item corp">
 									<strong>매출법인</strong>
 									<button>플랜아이</button>
 								</div>
-								<div class="class">
+								<div class="filter-item term">
 									<strong>계약 기간</strong>
 									<button>2024-01-23 ~ 2024-01-23</button>
 								</div>
-								<div class="class">
+								<div class="filter-item">
 									<strong>진행상태</strong>
-									<button>진행</button>
+									<button class="state">진행</button>
 								</div>
-								<div class="class">
+								<div class="filter-item amount">
 									<strong>사업 금액</strong>
 									<button>금액 전체</button>
 								</div>
 							</div>
 						</div>
 						<!-- <button class="btn"><i class="ri-restart-line"></i> 초기화</button> -->
-						<button class="filter-close"><i class="ri-skip-up-line"></i></button>
+						<button class="filter-open"><i class="ri-skip-down-line"></i></button>
 					</div>
 					<button type="button" id="btnAdd" class="btn sm"><i class="ri-add-line"></i>프로젝트 등록</button>
 					<div class="table">

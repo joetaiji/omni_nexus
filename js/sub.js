@@ -19,9 +19,9 @@ $(function () {
 		$(this).parents('li').remove();
 		e.preventDefault();
 	});
-	$('.depth4 .mdi-all-close').on('click', function(e){
-		$(this).parents('.depth4').find('ul').empty();
-		e.preventDefault();
+	$('.tab-control .mdi-all-close').on('click', function(e){
+		$('.depth4').find('li:not(.active)').remove();
+		mdiTab.update();
 	});
 	
 
@@ -42,9 +42,11 @@ $(function () {
 		} */
 	}) 
 
-	//필터
+	//상세검색열기
 	listOpen('.filter-open', '.filter', true)
-	listOpen('.filter-close', '.filter', true)
+
+	//필터
+	listOpen('.item-add', '.filter-item', false)
 
 	
 
