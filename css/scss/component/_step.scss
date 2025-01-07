@@ -3,7 +3,7 @@
 /* step */
 .step-list { @include flex(3.6rem); margin-top: 4rem; width: 100%;
     >li { flex:1; text-align: center; position: relative;
-        .item { width: 100%; height: 100%; min-height: 13rem; padding: 4.4rem 1rem 2.8rem; margin: auto; @include flex(2rem, center, center, column);  background: var(--white); border: 1px solid var(--border); 
+        .item { width: 100%; height: 100%; min-height: 13rem; padding: 4.4rem 1rem 2.8rem; margin: auto; @include flex(2rem, center, center, column);  background: var(--white); border: 1px solid var(--gray-20); 
             &:has(.text) { justify-content: flex-start;}
 
         }        
@@ -16,9 +16,9 @@
         &:nth-child(9) .num { background: #000;}  
         .title {display: block; width: 100%;  color: var(--gray-90); font-size: 1.7rem;
             &:has(+.text),
-            &:has(~.obj) { border-bottom: 1px dashed var(--border); padding-bottom: 1.6rem; }
+            &:has(~.obj) { border-bottom: 1px dashed var(--gray-20); padding-bottom: 1.6rem; }
         }
-        .text:has(+.obj) { display: block; width: 100%; border-bottom: 1px dashed var(--border); padding-bottom: 2rem; }
+        .text:has(+.obj) { display: block; width: 100%; border-bottom: 1px dashed var(--gray-20); padding-bottom: 2rem; }
         .obj { position: relative; z-index: 0; color: var(--gray-90); font-weight: 700; margin-top: auto;
             &::before { content: ''; display: block; background: var(--primary-5);height: 1.5rem; width: 100%; @include pos(lb, 50%, 0); z-index: -1;}
         }    
@@ -28,7 +28,7 @@
     &.type1 {
         .item { border-radius: 1rem;}
         .num { @include circle(4rem); }        
-        >li::after { @include circle(3rem); min-width:3rem; border: 1px solid var(--border); background: var(--white); transform:translateX(10%); } 
+        >li::after { @include circle(3rem); min-width:3rem; border: 1px solid var(--gray-20); background: var(--white); transform:translateX(10%); } 
     }
     &.type2 {
         .num { color: #fff; border-radius: 1.5rem; padding: 0.4rem 1rem; text-transform: uppercase; }

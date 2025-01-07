@@ -7,7 +7,7 @@ $box-var : .4rem;
         .icon { background: var(--white);}
     }
     &.bg-white { background-color: var(--white); }
-    &.border { border: 1px solid var(--border);}       
+    &.border { border: 1px solid var(--gray-20);}       
     &.round { border-radius: 1.2rem; }
     &.narrow { padding: 1.6rem 2rem; 
         &.round { border-radius: 0.8rem;}
@@ -33,7 +33,7 @@ $box-var : .4rem;
     }
 }
 
-.helper-box { padding: 1.6rem 2rem; background: var(--gray-5); border: 1px solid var(--border); border-radius: 0.6rem; font-size: 1.5rem; position: relative; margin-top: 1.6rem;
+.helper-box { padding: 1.6rem 2rem; background: var(--gray-5); border: 1px solid var(--gray-20); border-radius: 0.6rem; font-size: 1.5rem; position: relative; margin-top: 1.6rem;
     .ic-warning { position:absolute; left:0; top:0; width: 1.8rem; height: 1.8rem;
         &::after { font-weight: 400; font-size: 1.5rem;}
     }

@@ -143,10 +143,10 @@
 }
 .board-list table {
   border-top: 1px solid var(--gray-90);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--gray-20);
 }
 .board-list table td, .board-list table th {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--gray-20);
   padding: 1.5rem 1rem;
   word-break: break-all;
   text-align: center;
@@ -209,7 +209,7 @@
   border-top: 2px solid var(--gray-90);
 }
 .board-list .li {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--gray-20);
   min-height: 15rem;
 }
 .board-list .li .item {
@@ -357,7 +357,7 @@
 }
 
 .gallery-list {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--gray-20);
 }
 .gallery-list .thumb {
   display: block;
@@ -466,7 +466,7 @@
 .board-view > .title {
   font-size: 2rem;
   font-weight: 600;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--gray-20);
   padding: 2.5rem;
   text-align: center;
 }
@@ -495,7 +495,7 @@
 .board-view .info {
   padding: 1.5rem;
   background: var(--gray-5);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--gray-20);
   display: inline-flex;
   gap: 1rem;
   justify-content: center;
@@ -523,18 +523,18 @@
 }
 .board-view .view-cont {
   padding: 5rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--gray-20);
 }
 
 .prevnext {
   margin-top: 4rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--gray-20);
 }
 .prevnext li {
   display: flex;
   gap: 3rem;
   padding: 2rem 0;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--gray-20);
 }
 .prevnext span {
   display: flex;
@@ -582,8 +582,8 @@
   padding: 2rem 0;
 }
 .reply-area .reply-title .reply-info {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--gray-20);
+  border-bottom: 1px solid var(--gray-20);
   padding: 1.5rem 0;
   text-align: center;
   display: flex;
@@ -635,11 +635,11 @@
   width: 100%;
 }
 .gallery-slide .gallery {
-  background: var(--gray-10);
+  background: var(--gray-20);
   padding: 4rem;
 }
 .gallery-slide .gallery .swiper-slide {
-  background: var(--gray-10);
+  background: var(--gray-20);
 }
 .gallery-slide .gallery .item {
   display: flex;
@@ -825,7 +825,7 @@
     display: none;
   }
   .board-list > table > tbody > tr {
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--gray-20);
     padding: 1rem;
     display: flex;
     gap: 1rem;

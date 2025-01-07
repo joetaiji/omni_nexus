@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="theme-color" content="#003675">
+	<link rel="apple-touch-icon" sizes="180x180" href="../img/layout/favicon_180px.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="../img/layout/favicon_192px.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../img/layout/favicon_32px.png">
+	<title>프로젝트</title>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="../css/pattern.css">
+	<!-- 
+	메인		: main.css	
+	일반콘텐츠	: contents.css
+	게시판		: board.css
+	-->
+	<link rel="stylesheet" href="../css/contents.css">
+
+	<!-- 공통 JS -->
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/swiper-bundle.min.js"></script>
+
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- 본문 바로가기 영역  -->
+		<div id="skip-nav">
+			<a href="#contents">본문 바로가기</a>
+		</div>
+		<!-- //본문 바로가기 영역  -->
+
+
+		<!-- 컨테이너 영역 -->
+		<main id="container">
+			<!-- 컨텐츠 영역 -->
+			<div id="snb" class="left-menu sub01">
+				<div class="snb-head">
+					<h1 class="logo"><img src="../img/layout/logo.svg" alt="planI"></h1>
+					<div class="member-area">
+						<div class="member">
+							<span class="photo"><img src="../img/layout/photo.png" alt=""></span>
+							<strong class="name">김소영<span class="role">PM</span></strong>
+							<div class="btn-area">
+								<button class="btn sm mypage">마이페이지</button>
+								<button class="btn sm logout">로그아웃</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //snb-head -->
+				<nav class="list">
+					<ul id="left_menu_top" class="head_menu_depth">
+						<li>
+							<a href=""><i class="ri-home-3-fill"></i><span>대시보드</span></a>							
+						</li>
+						<li>
+							<a href=""><i class="ri-stack-fill"></i><span>프로젝트</span></a>							
+						</li>
+						<li class="active">
+							<a href=""><i class="ri-bar-chart-fill"></i><span>매출관리</span></a>
+							<ul>
+								<li class="active"><a href="">매출 통계</a></li>
+								<li><a href="">현금 흐름</a></li>
+								<li><a href="">전체 실적(계약)</a></li>
+							</ul>
+						</li> 
+						<li>
+							<a href=""><i class="ri-coin-fill"></i><span>지출관리</span></a>
+							<ul>
+								<li><a href="">지출 통계</a></li>
+								<li><a href="">직접비(외주비)</a></li>
+								<li><a href="">경비 관리</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href=""><i class="ri-ball-pen-fill"></i><span>실적 관리(손익계산)</span></a>
+						</li>
+						<li>
+							<a href=""><i class="ri-service-fill"></i><span>거래처</span></a>
+						</li>
+						<li>
+							<a href=""><i class="ri-settings-2-fill"></i><span>환경설정</span></a>
+							<ul>
+								<li><a href="">조직도</a></li>
+								<li><a href="">직원정보</a></li>
+								<li><a href="">직무정보</a></li>
+								<li><a href="">목표 관리</a></li>
+								<li><a href="">내부 노임단가</a></li>
+								<li><a href="">SW노임단가</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<button class="snb-close">
+					<i class="ri-angle-right"></i><span class="sr-only">메뉴닫기</span>
+				</button>
+			</div>
+			<!-- //snb : 서브메뉴-->
+			<div id="contents" class="contents">
+				<div class="mdi-area">
+					<div class="depth4 tabs swiper">
+						<ul class="swiper-wrapper">
+							<li class="swiper-slide item active"><a href="">매출관리 > 매출통계<i class="ri-close-line"></i></a></li>
+							<li class="swiper-slide item"><a href="">프로젝트<i class="ri-close-line"></i></a></li>
+							<li class="swiper-slide item"><a href="">실적관리(손익계산)<i class="ri-close-line"></i></a></li>
+							<li class="swiper-slide item"><a href="">거래처<i class="ri-close-line"></i></a></li>
+							<li class="swiper-slide item"><a href=""><span>환경설정 > </span>내부노임단가 <i class="ri-close-line"></i></a></li>
+							<li class="swiper-slide item"><a href=""><span>환경설정 > </span>SW노임단가<i class="ri-close-line"></i></a></li>
+							<li class="swiper-slide item"><a href=""><span>지출관리 > </span>지출 통계<i class="ri-close-line"></i></a></li>							
+							<li class="swiper-slide item"><a href=""><span>지출관리 > </span>경비 관리<i class="ri-close-line"></i></a></li>	
+							<li class="swiper-slide item"><a href=""><span>환경설정 > </span>조직도<i class="ri-close-line"></i></a></li>
+						</ul>
+					</div>
+					<div class="tab-control">
+						<button class="swiper-button swiper-button-prev btn xsm"><i class="ri-arrow-left-s-line"></i></button>
+						<button class="swiper-button swiper-button-next btn xsm"><i class="ri-arrow-right-s-line"></i></button>
+						<button class="btn xsm mdi-all-close"><i class="ri-close-line"></i> 전체닫기</button>
+					</div>
+					
+				</div>
+				<!-- //mdi-area -->
+
+				<!-- 페이지 콘텐츠 영역 -->
+				<div class="page-contents">
+					<h2 class="page-title">페이지 타이틀</h2>		
+					<div class="user-group">						
+						<div class="user-icon">							
+							<img src="../img/layout/photo.png">
+						</div>
+						<div class="user-icon">허</div>
+						<div class="user-icon">							
+							<img src="../img/layout/photo.png">
+						</div>
+						<div class="user-icon">김</div>
+						<div class="user-icon">조 </div>
+						<div class="user-sum">+24명</div>
+					</div>	
+					<button type="button" onclick="window.print();" class="print-btn"><i class="ri-printer-line"></i><span class="sr-only">프린트</span></button>
+					<div class="sch-input">
+						<input type="text" class="form-control xlg" name="allKeyWord" placeholder="검색어 입력" value="병원" title="검색어 입력">
+						<button type="submit" class="btn btn-ico ico-sch">
+							<i class="ri-search-2-line"></i><span class="sr-only">검색</span>
+						</button>
+					</div>
+					<div class="filter">
+						<button class="filter-open"><i class="ri-skip-down-line"></i></button>
+						<div class="filter-cont">
+							<div class="col3">
+								<div class="class">
+									<div class="class-title">
+										<strong>프로젝트 분류</strong>
+									</div>
+									<div class="class-cont">
+										<div class="item">
+											<button>분류 전체</button>
+										</div>
+									</div>
+								</div>
+								<div class="class">
+									<strong>부서</strong>
+									<button>EX사업부</button>
+								</div>
+								<div class="class">
+									<strong>매출법인</strong>
+									<button>플랜아이</button>
+								</div>
+								<div class="class">
+									<strong>계약 기간</strong>
+									<button>2024-01-23 ~ 2024-01-23</button>
+								</div>
+								<div class="class">
+									<strong>진행상태</strong>
+									<button>진행</button>
+								</div>
+								<div class="class">
+									<strong>사업 금액</strong>
+									<button>금액 전체</button>
+								</div>
+							</div>
+						</div>
+						<!-- <button class="btn"><i class="ri-restart-line"></i> 초기화</button> -->
+						<button class="filter-close"><i class="ri-skip-up-line"></i></button>
+					</div>
+					<button type="button" id="btnAdd" class="btn sm"><i class="ri-add-line"></i>프로젝트 등록</button>
+					<div class="table">
+						<table>
+							<caption>사이트관리 목록 - 번호, 프로젝트명, 업체명, 부서, 담당자, 사업금액, 착수일, 완료일 등 기능 관리 목록</caption>
+							<colgroup>
+								
+							</colgroup>
+							<thead>
+								<tr>									
+									<th scope="col">매출법인</th>
+									<th scope="col">구분</th>
+									<th scope="col">사업명</th>
+									<th scope="col">부서</th>
+									<th scope="col">발주처</th>
+									<th scope="col">담당자</th>
+									<th scope="col">계약금액</th>
+									<th scope="col">매출</th>
+									<th scope="col">미수</th>
+									<th scope="col">계약일</th>
+									<th scope="col">종료일</th>
+									<th scope="col">상태</th>
+								</tr>
+							</thead>
+							<tbody>
+								
+									
+										
+								<tr>
+									<td>플랜아이</td>									
+									<td>홈페이지 구축</td>
+									<td class="subject">
+										<a href="/mgr/projectManageMgr/newForm?pmSeq=787&amp;deptCode=EX&amp;menuId=MENU00314&amp;listPageNum=&amp;schType=0&amp;schText=&amp;schStartDate=&amp;schEndDate=&amp;inCorporateCode=">
+											양성자가속기 장비이력관리시스템 고도화 및 유지보수 위탁용역
+										</a>
+									</td>
+									<td>한국원자력연구원</td>
+									<td>EX</td>
+									<td>이상민</td>
+									<td class="txt-right">55,000,000</td>
+									<td class="txt-right">0</td>
+									<td class="txt-right">0</td>
+									<td>2024-08-30</td>
+									<td>2024-12-31</td>
+									<td><span class="state">진행</span></td>
+								</tr>
+							
+								<tr>
+									<td>플랜아이</td>									
+									<td>홈페이지 구축</td>
+									<td class="subject">
+										<a href="/mgr/projectManageMgr/newForm?pmSeq=786&amp;deptCode=EX&amp;menuId=MENU00314&amp;listPageNum=&amp;schType=0&amp;schText=&amp;schStartDate=&amp;schEndDate=&amp;inCorporateCode=">
+											(NIGT) 웹 기반 글로벌 R&amp;D 전략지도 정보시스템 구축
+										</a>
+									</td>
+									<td>한국과학기술연구원부설국가녹색기술연구소</td>
+									<td>EX</td>
+									<td>홍은정</td>
+									<td class="txt-right">94,000,000</td>
+									<td class="txt-right">0</td>
+									<td class="txt-right">0</td>
+									<td>2024-09-03</td>
+									<td>2025-03-02</td>
+									<td><span class="state end">완료</span></td>
+								</tr>
+							
+								<tr>
+									<td>플랜아이</td>									
+									<td>홈페이지 구축</td>
+									<td class="subject">
+										<a href="/mgr/projectManageMgr/newForm?pmSeq=785&amp;deptCode=MX&amp;menuId=MENU00314&amp;listPageNum=&amp;schType=0&amp;schText=&amp;schStartDate=&amp;schEndDate=&amp;inCorporateCode=">
+											2024년 국가물관리위원회 홈페이지 유지관리
+										</a>
+									</td>
+									<td>환경부</td>
+									<td>MX</td>
+									<td>김정서</td>
+									<td class="txt-right">44,000,000</td>
+									<td class="txt-right">0</td>
+									<td class="txt-right">0</td>
+									<td>2024-09-03</td>
+									<td>2025-09-02</td>
+									<td></td>
+								</tr>
+							
+								<tr>
+									<td>플랜아이</td>									
+									<td>홈페이지 구축</td>
+									<td class="subject">
+										<a href="/mgr/projectManageMgr/newForm?pmSeq=784&amp;deptCode=DX&amp;menuId=MENU00314&amp;listPageNum=&amp;schType=0&amp;schText=&amp;schStartDate=&amp;schEndDate=&amp;inCorporateCode=">
+											클라우드컴퓨팅서비스 이용
+										</a>
+									</td>
+									<td>한국화학연구원 부설안전성평가연구소</td>
+									<td>DX</td>
+									<td>원미정</td>
+									<td class="txt-right">19,525,134</td>
+									<td class="txt-right">0</td>
+									<td class="txt-right">0</td>
+									<td>2024-09-04</td>
+									<td>2024-09-13</td>
+									<td></td>
+								</tr>
+							
+								<tr>
+									<td>플랜아이</td>									
+									<td>홈페이지 구축</td>
+									<td class="subject">
+										<a href="/mgr/projectManageMgr/newForm?pmSeq=783&amp;deptCode=DX&amp;menuId=MENU00314&amp;listPageNum=&amp;schType=0&amp;schText=&amp;schStartDate=&amp;schEndDate=&amp;inCorporateCode=">
+											DEPS(대전공동활용연구장비플랫폼) 기능개선 용역
+										</a>
+									</td>
+									<td>(재)대전테크노파크</td>
+									<td>DX</td>
+									<td>원미정</td>
+									<td class="txt-right">30,000,000</td>
+									<td class="txt-right">0</td>
+									<td class="txt-right">0</td>
+									<td>2024-09-06</td>
+									<td>2024-12-04</td>
+									<td></td>
+								</tr>
+							
+								<tr>
+									<td>플랜아이</td>									
+									<td>홈페이지 구축</td>
+									<td class="subject">
+										<a href="/mgr/projectManageMgr/newForm?pmSeq=782&amp;deptCode=MX&amp;menuId=MENU00314&amp;listPageNum=&amp;schType=0&amp;schText=&amp;schStartDate=&amp;schEndDate=&amp;inCorporateCode=">
+											브레인즈컴퍼니 메타태그 관리기능 구현
+										</a>
+									</td>
+									<td>브레인즈컴퍼니 주식회사</td>
+									<td>MX</td>
+									<td>신상훈</td>
+									<td class="txt-right">3,000,000</td>
+									<td class="txt-right">0</td>
+									<td class="txt-right">0</td>
+									<td>2024-08-13</td>
+									<td>2024-09-30</td>
+									<td></td>
+								</tr>
+							
+								<tr>
+									<td>플랜아이</td>									
+									<td>홈페이지 구축</td>
+									<td class="subject">
+										<a href="/mgr/projectManageMgr/newForm?pmSeq=781&amp;deptCode=MX&amp;menuId=MENU00314&amp;listPageNum=&amp;schType=0&amp;schText=&amp;schStartDate=&amp;schEndDate=&amp;inCorporateCode=">
+											2024년 창업중심대학 Marketing Boost 프로그램 홈페이지 제작에 관한 용역
+										</a>
+									</td>
+									<td>(주)아스텍</td>
+									<td>MX</td>
+									<td>신아영</td>
+									<td class="txt-right">6,500,000</td>
+									<td class="txt-right">0</td>
+									<td class="txt-right">0</td>
+									<td>2024-08-16</td>
+									<td>2024-09-20</td>
+									<td></td>
+								</tr>
+							
+								<tr>
+									<td>플랜아이</td>									
+									<td>홈페이지 구축</td>
+									<td class="subject">
+										<a href="/mgr/projectManageMgr/newForm?pmSeq=780&amp;deptCode=MX&amp;menuId=MENU00314&amp;listPageNum=&amp;schType=0&amp;schText=&amp;schStartDate=&amp;schEndDate=&amp;inCorporateCode=">
+											2024년 정보아카이브 유지보수 및 고도화
+										</a>
+									</td>
+									<td>한국원자력연구원</td>
+									<td>MX</td>
+									<td>신상훈</td>
+									<td class="txt-right">16,500,000</td>
+									<td class="txt-right">0</td>
+									<td class="txt-right">0</td>
+									<td>2024-08-27</td>
+									<td>2024-12-31</td>
+									<td></td>
+								</tr>
+							
+								<tr>
+									<td>플랜아이</td>									
+									<td>홈페이지 구축</td>
+									<td class="subject">
+										<a href="/mgr/projectManageMgr/newForm?pmSeq=779&amp;deptCode=MX&amp;menuId=MENU00314&amp;listPageNum=&amp;schType=0&amp;schText=&amp;schStartDate=&amp;schEndDate=&amp;inCorporateCode=">
+											감염병기술전략센터 홈페이지 추가 기능 개발용역
+										</a>
+									</td>
+									<td>한국화학연구원</td>
+									<td>MX</td>
+									<td>허제문</td>
+									<td class="txt-right">6,000,000</td>
+									<td class="txt-right">0</td>
+									<td class="txt-right">0</td>
+									<td>2024-08-27</td>
+									<td>2024-09-25</td>
+									<td></td>
+								</tr>
+							
+								<tr>
+									<td>플랜아이</td>									
+									<td>홈페이지 구축</td>
+									<td class="subject">
+										<a href="/mgr/projectManageMgr/newForm?pmSeq=778&amp;deptCode=MX&amp;menuId=MENU00314&amp;listPageNum=&amp;schType=0&amp;schText=&amp;schStartDate=&amp;schEndDate=&amp;inCorporateCode=">
+											기관 영문 홈페이지 구축
+										</a>
+									</td>
+									<td>가축위생방역지원본부</td>
+									<td>MX</td>
+									<td>김정서</td>
+									<td class="txt-right">10,000,000</td>
+									<td class="txt-right">0</td>
+									<td class="txt-right">0</td>
+									<td>2024-08-28</td>
+									<td>2024-11-25</td>
+									<td></td>
+								</tr>
+								
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+				<!-- //페이지 콘텐츠 영역 -->
+				<div class="footer">
+					2024©PLANI. ALL Rights Reserved.
+				</div>
+			</div>
+			<!-- //contents -->
+			<!-- //컨텐츠 영역 -->
+
+		</main>
+		<!-- //컨테이너 영역 -->
+	</div>
+
+	<!-- 공통 JS -->
+	<script src="../js/func.js"></script>
+	<script src="../js/common.js"></script>
+
+	<!-- 서브 JS -->
+	<script src="../js/sub.js"></script>
+</body>
+
+</html>

@@ -7,7 +7,7 @@
 	&-body { padding: 4rem 3rem; 
 		strong { color: var(--gray-90);}
 	}
-	&-item ~ &-item { border-top: 1px dashed var(--border); padding-top: 2rem; margin-top: 2rem; }
+	&-item ~ &-item { border-top: 1px dashed var(--gray-20); padding-top: 2rem; margin-top: 2rem; }
 			
 	$bgs: ("-1": #102c74, "-2": #1b7eb4, "-3": #1d4ca8);
 	@each $name, $bg in $bgs {
@@ -27,7 +27,7 @@
 		color: var(--gray7); @include flex(1rem); margin-top: auto;
 
 		li { @include flex(.5rem, center); 
-			~ li{ @include bullet(.5rem, .5rem, var(--border), 50%, 50%); }
+			~ li{ @include bullet(.5rem, .5rem, var(--gray-20), 50%, 50%); }
 		}
 	}
 	.thumb { overflow: hidden; background: #000; height: 18rem; 

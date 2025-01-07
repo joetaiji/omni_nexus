@@ -34,7 +34,7 @@
 		}
 	}
 	.satisfaction-survey {
-		background: var(--gray-10); padding: 3rem 4rem; font-size: 1.6rem;
+		background: var(--gray-20); padding: 3rem 4rem; font-size: 1.6rem;
 
 		.survey-radio { @include flex(2rem); flex-wrap: wrap; }
 		.title {

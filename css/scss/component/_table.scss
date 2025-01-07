@@ -2,16 +2,16 @@
 
 /* table */
 .table {
-	table { border-top: 2px solid var(--gray-90); border-bottom: 1.1px solid var(--gray-30); margin-top: 0.8rem;
+	table { margin-top: 0.8rem;
 		td,th {
-			border-top: 1px solid var(--gray-30); padding: 1.5rem 1rem; word-break: keep-all; text-align: center; line-height: 1.5;
+			border-top: 1px solid #eee; padding: 1.5rem 1rem; word-break: keep-all; text-align: center; font-size: 1.5rem; line-height: 1.5;
 			&.txt_left { padding-left: 2rem; text-align: left;}
 		}
 		tr:first-of-type {
 			th, td { border-top: 0; }
 		}
 		thead {
-			th { border-bottom: 1px solid var(--gray-40); background: var(--gray-5); padding: 1.5rem 1rem; }
+			th { background: #F6F7FB; padding: 1.5rem 1rem; }
 		}
 		td { background: var(--white); }
 		tfoot { border-top: 1px solid var(--gray-40); }

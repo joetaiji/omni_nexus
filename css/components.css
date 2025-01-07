@@ -237,7 +237,7 @@
 }
 .list-order.lg > li {
   padding: 3rem 3rem 3rem 12rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--gray-20);
   min-height: 12rem;
 }
 .list-order.lg i {
@@ -273,7 +273,7 @@
   border-top: 2px solid var(--gray-90);
 }
 .list-thumb > li {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--gray-20);
   padding: 4rem 2rem;
 }
 .list-thumb .item {
@@ -285,7 +285,7 @@
   min-width: 25.8rem;
 }
 .list-thumb .item-thumb img {
-  border: 1px solid var(--border);
+  border: 1px solid var(--gray-20);
 }
 .list-thumb .item-cont .title {
   font-size: 1.9rem;
@@ -307,7 +307,7 @@
   display: flex;
   border-radius: 0.8rem;
   overflow: hidden;
-  border: 1px solid var(--border);
+  border: 1px solid var(--gray-20);
 }
 .list-procedure .item-head {
   background: var(--primary-5);
@@ -362,15 +362,14 @@
 }
 /* table */
 .table table {
-  border-top: 2px solid var(--gray-90);
-  border-bottom: 1.1px solid var(--gray-30);
   margin-top: 0.8rem;
 }
 .table table td, .table table th {
-  border-top: 1px solid var(--gray-30);
+  border-top: 1px solid #eee;
   padding: 1.5rem 1rem;
   word-break: keep-all;
   text-align: center;
+  font-size: 1.5rem;
   line-height: 1.5;
 }
 .table table td.txt_left, .table table th.txt_left {
@@ -381,8 +380,7 @@
   border-top: 0;
 }
 .table table thead th {
-  border-bottom: 1px solid var(--gray-40);
-  background: var(--gray-5);
+  background: #F6F7FB;
   padding: 1.5rem 1rem;
 }
 .table table td {
@@ -610,7 +608,7 @@
   translate: 0 -50%;
 }
 .cont-info .satisfaction-survey {
-  background: var(--gray-10);
+  background: var(--gray-20);
   padding: 3rem 4rem;
   font-size: 1.6rem;
 }
@@ -887,7 +885,7 @@ form
   border-color: var(--primary);
 }
 .custom-input input:disabled + label::before {
-  background: var(--gray-10);
+  background: var(--gray-20);
 }
 
 .file {
@@ -1224,7 +1222,7 @@ form
   background-color: var(--white);
 }
 .box.border {
-  border: 1px solid var(--border);
+  border: 1px solid var(--gray-20);
 }
 .box.round {
   border-radius: 1.2rem;
@@ -1288,7 +1286,7 @@ form
 .helper-box {
   padding: 1.6rem 2rem;
   background: var(--gray-5);
-  border: 1px solid var(--border);
+  border: 1px solid var(--gray-20);
   border-radius: 0.6rem;
   font-size: 1.5rem;
   position: relative;
@@ -1655,7 +1653,7 @@ form
 }
 .btn:hover {
   border-color: var(--gray-60);
-  background-color: var(--gray-10);
+  background-color: var(--gray-20);
   text-decoration: none;
 }
 .btn-txt {
@@ -1803,7 +1801,7 @@ form
   color: var(--gray-90);
 }
 .card-item ~ .card-item {
-  border-top: 1px dashed var(--border);
+  border-top: 1px dashed var(--gray-20);
   padding-top: 2rem;
   margin-top: 2rem;
 }
@@ -1835,7 +1833,7 @@ form
 	color: var(--gray7); @include flex(1rem); margin-top: auto;
 
 	li { @include flex(.5rem, center); 
-		~ li{ @include bullet(.5rem, .5rem, var(--border), 50%, 50%); }
+		~ li{ @include bullet(.5rem, .5rem, var(--gray-20), 50%, 50%); }
 	}
 }
 .thumb { overflow: hidden; background: #000; height: 18rem; 
@@ -1863,11 +1861,11 @@ a:hover { text-decoration: none; background: var(--gray-5);
   }
 }
 .col {
-  display: grid !important;
+  display: grid;
 }
 
 .col1 {
-  display: grid !important;
+  display: grid;
   grid-template-columns: repeat(1, 1fr) !important;
 }
 
@@ -1880,7 +1878,7 @@ a:hover { text-decoration: none; background: var(--gray-5);
 }
 
 .col2 {
-  display: grid !important;
+  display: grid;
   grid-template-columns: repeat(2, 1fr) !important;
 }
 
@@ -1893,7 +1891,7 @@ a:hover { text-decoration: none; background: var(--gray-5);
 }
 
 .col3 {
-  display: grid !important;
+  display: grid;
   grid-template-columns: repeat(3, 1fr) !important;
 }
 
@@ -1906,7 +1904,7 @@ a:hover { text-decoration: none; background: var(--gray-5);
 }
 
 .col4 {
-  display: grid !important;
+  display: grid;
   grid-template-columns: repeat(4, 1fr) !important;
 }
 
@@ -1919,7 +1917,7 @@ a:hover { text-decoration: none; background: var(--gray-5);
 }
 
 .col5 {
-  display: grid !important;
+  display: grid;
   grid-template-columns: repeat(5, 1fr) !important;
 }
 
@@ -1936,7 +1934,7 @@ a:hover { text-decoration: none; background: var(--gray-5);
     grid-template-columns: repeat(2, 1fr) !important;
   }
   .m-col {
-    display: grid !important;
+    display: grid;
     grid-template-columns: 1fr !important;
   }
   .m-col .colspan2 {
@@ -1991,7 +1989,7 @@ a:hover { text-decoration: none; background: var(--gray-5);
   align-items: center;
   justify-content: center;
   background: var(--white);
-  border: 1px solid var(--border);
+  border: 1px solid var(--gray-20);
 }
 .step-list > li .item:has(.text) {
   justify-content: flex-start;
@@ -2033,13 +2031,13 @@ a:hover { text-decoration: none; background: var(--gray-5);
   font-size: 1.7rem;
 }
 .step-list > li .title:has(+ .text), .step-list > li .title:has(~ .obj) {
-  border-bottom: 1px dashed var(--border);
+  border-bottom: 1px dashed var(--gray-20);
   padding-bottom: 1.6rem;
 }
 .step-list > li .text:has(+ .obj) {
   display: block;
   width: 100%;
-  border-bottom: 1px dashed var(--border);
+  border-bottom: 1px dashed var(--gray-20);
   padding-bottom: 2rem;
 }
 .step-list > li .obj {
@@ -2099,7 +2097,7 @@ a:hover { text-decoration: none; background: var(--gray-5);
   align-items: center;
   justify-content: center;
   min-width: 3rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--gray-20);
   background: var(--white);
   transform: translateX(10%);
 }
@@ -2216,7 +2214,7 @@ a:hover { text-decoration: none; background: var(--gray-5);
 }
 
 .dialog-title {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--gray-20);
   padding: 2rem 3rem;
   font-size: 2.2rem;
   font-weight: 700;
@@ -2647,7 +2645,7 @@ swiper slider
   flex: 1 1 20%;
   padding: 1.6rem;
   min-height: 14rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--gray-20);
   margin: -1px 0 0 -1px;
   font-size: 1.5rem;
 }

@@ -42,6 +42,10 @@ $(function () {
 		} */
 	}) 
 
+	//필터
+	listOpen('.filter-open', '.filter', true)
+	listOpen('.filter-close', '.filter', true)
+
 	
 
 

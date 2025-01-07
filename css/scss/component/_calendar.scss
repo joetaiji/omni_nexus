@@ -23,7 +23,7 @@
 		li { text-align: center;padding: 1.5rem; flex: 1; color: var(--gray-90); }
 	}
 	.bbody { display: flex; flex-wrap: wrap; margin: 0 -1px; 
-		.daybox{ flex:1 1 20%; padding: 1.6rem; min-height: 14rem; border: 1px solid var(--border); margin: -1px 0 0 -1px; font-size: 1.5rem;
+		.daybox{ flex:1 1 20%; padding: 1.6rem; min-height: 14rem; border: 1px solid var(--gray-20); margin: -1px 0 0 -1px; font-size: 1.5rem;
 			.day-num { color: var(--gray-90); }		
 			.day-list {
 				li { @include flex(1rem, flex-start); margin-top: 1rem;}	

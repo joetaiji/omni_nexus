@@ -143,7 +143,7 @@ popup-wrap
   margin-left: auto;
 }
 .pop-total-serch-wrap .search-text .sch-info-list .li2 {
-  border-left: 1px solid var(--border);
+  border-left: 1px solid var(--gray-20);
 }
 .pop-total-serch-wrap .search-text .sch-info-list .li2 .btn-ico.sm {
   width: 2rem;
@@ -633,7 +633,7 @@ snb
   transition: 0.2s;
 }
 .left-menu.active {
-  width: 6.4rem;
+  flex-basis: 6.4rem;
   overflow: visible;
   transition-delay: 0.2s;
 }

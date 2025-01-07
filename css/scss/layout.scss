@@ -36,7 +36,7 @@ popup-wrap
 					.btn-ico {margin-left: auto;}
 				}
 			}
-			.li2 { border-left: 1px solid var(--border);
+			.li2 { border-left: 1px solid var(--gray-20);
 				.btn-ico.sm { width: 2rem; height: 2rem; padding: 0;}
 				.btn-txt.ico-del { font-size: 1.7rem; padding-left: 0;padding-right: 0; margin-top: auto;}
 			}
@@ -208,7 +208,7 @@ $snbW: 26rem;
 		padding: 1rem; display: flex; justify-content: center; align-items: center; border-radius: 8px 0px 0px 8px; background: rgba(255, 255, 255, 0.20); 
 		&::after { content: ''; display: block; width: 1rem; height: 1.9rem; background: url(#{$url}/layout/snb_close.png) no-repeat center/contain; transition: 0.2s;}
 	}
-	&.active {width: 6.4rem; overflow: visible; transition-delay: .2s;
+	&.active {flex-basis: 6.4rem; overflow: visible; transition-delay: .2s;
 		.snb-head { height: 16rem;
 			.logo,
 			.member-area {display: none; }
