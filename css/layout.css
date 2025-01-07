@@ -772,6 +772,7 @@ content 공통
 .contents .mdi-area .tab-control .swiper-button {
   position: static;
   transform: none;
+  width: 2.4rem;
 }
 .contents .tabs {
   display: flex;
@@ -804,7 +805,7 @@ content 공통
   align-items: center;
   position: absolute;
   right: 0;
-  top: -3rem;
+  top: -3.2rem;
 }
 .contents .user-group .user-icon {
   background: white;
