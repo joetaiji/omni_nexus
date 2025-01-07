@@ -453,7 +453,7 @@ snb
 }
 
 .left-menu {
-  width: 26rem;
+  flex: 0 0 26rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -764,6 +764,7 @@ content 공통
 .contents .mdi-area {
   display: flex;
   justify-content: space-between;
+  padding-right: 17rem;
 }
 .contents .mdi-area .swiper-slide {
   width: auto;
@@ -801,9 +802,9 @@ content 공통
 .contents .user-group {
   display: flex;
   align-items: center;
-  position: relative;
-  margin-left: 3rem;
-  padding-right: 6px;
+  position: absolute;
+  right: 0;
+  top: -3rem;
 }
 .contents .user-group .user-icon {
   background: white;

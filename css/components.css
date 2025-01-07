@@ -987,7 +987,7 @@ form
 }
 .tabs > ul {
   display: flex;
-  max-width: 90rem;
+  max-width: 80rem;
 }
 .tabs > ul a, .tabs > ul button {
   display: flex;
