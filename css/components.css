@@ -975,10 +975,21 @@ form
   	> li {flex: 1 1 20%;}
   } */
 }
+.tabs::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(246, 247, 251, 0) 0%, rgba(246, 247, 251, 0.5) 100%);
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
 .tabs > ul {
   display: flex;
+  max-width: 90rem;
 }
-.tabs a, .tabs button {
+.tabs > ul a, .tabs > ul button {
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -990,13 +1001,21 @@ form
   line-height: 1.2;
   border-radius: 1.2rem 1.2rem 0 0;
 }
-.tabs a:hover, .tabs button:hover {
-  text-decoration: none;
-  transition: 0.2s;
-}
 .tabs li.active a, .tabs li.active button {
   font-weight: 700;
-  /* &::after { content: ""; display: block; } */
+}
+.tabs li.active a span, .tabs li.active button span {
+  display: block;
+}
+
+.tab-control {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  margin-left: 1rem;
+}
+.tab-control button {
+  border-color: var(--gray-20);
 }
 
 .depth4 > ul > li a, .depth4 > ul > li button {
@@ -1004,6 +1023,11 @@ form
   font-size: 1.5rem;
   background-color: #7C7F91;
   color: #fff;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+.depth4 > ul > li a:hover, .depth4 > ul > li button:hover {
+  background-color: color-mix(in srgb, #7C7F91, #000 15%);
 }
 .depth4 > ul > li.active a, .depth4 > ul > li.active button {
   background: var(--white);
@@ -1623,7 +1647,6 @@ form
   justify-content: center;
   border-radius: 0.8rem;
   padding: 0.8rem 2rem;
-  line-height: inherit;
   height: 4.8rem; /* min-width:12rem; */
   transition: 0.25s;
   background: var(--white);
@@ -1664,10 +1687,10 @@ form
   margin-left: 0;
 }
 .btn.xsm {
-  height: 3.4rem;
-  font-size: 1.5rem;
-  padding: 0.4rem 0.8rem;
-  gap: 1rem;
+  height: 2.4rem;
+  font-size: 1.4rem;
+  padding: 0.4rem 0.6rem;
+  gap: 0.2rem;
   border-radius: 0.4rem;
 }
 .btn.xsm::before, .btn.xsm::after {
@@ -1675,10 +1698,11 @@ form
   height: 1.6rem;
 }
 .btn.sm {
-  height: 4rem;
+  height: 3.4rem;
   font-size: 1.5rem;
-  padding-left: 1.6rem;
-  padding-right: 1.6rem;
+  padding: 0.4rem 0.8rem;
+  gap: 1rem;
+  border-radius: 0.4rem;
 }
 .btn.sm::before, .btn.sm::after {
   width: 1.6rem;

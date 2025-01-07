@@ -23,30 +23,24 @@ $(function () {
 		$(this).parents('.depth4').find('ul').empty();
 		e.preventDefault();
 	});
-	const btnNext = ".swiper-button-next",
-		  btnPrev = ".swiper-button-prev"
+	
 
-	new Swiper(".mdi-area .swiper", { 
-		//lazy: true,
-		slidesPerView: 1,
-		centeredSlides: true,			
-		autoplay: true,
-		loop: true,
+	var mdiTab = new Swiper(".mdi-area .swiper", { 
+		slidesPerView: 'auto',
+		loop: this.SwiperLength > 1,
 		navigation: {
-			nextEl: btnNext,
-			prevEl: btnPrev,
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
 		},		
-		breakpoints: {
+		/* breakpoints: {
 			1024: {
-				slidesPerView: 3,
-				//spaceBetween: 20
+				slidesPerView: 3
 			},
 			1280: {
-				slidesPerView: 5,
-				//spaceBetween: 20
+				slidesPerView: 5
 			}
-		}
-	})
+		} */
+	}) 
 
 	
 
