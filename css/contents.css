@@ -254,8 +254,6 @@
 }
 .filter .filter-cont {
   display: none;
-}
-.filter .filter-cont .col4 {
   border-right: 1px solid #ddd;
 }
 .filter .filter-cont .filter-item {
