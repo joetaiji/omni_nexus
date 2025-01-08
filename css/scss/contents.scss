@@ -20,22 +20,30 @@ $contents : $url;
 }
 
 //아이템 레이어
+%check {
+    input{ position: absolute; opacity: 0;}
+    &:has(input:checked){ 
+        &::before { content: '\eb7a'; font-family: 'remixicon';}
+    }
+}
 .filter {
 	.item { display: inline-flex; align-items: center; border-radius: 2rem; border: 1px solid #ccc; padding: .6rem 1.6rem; cursor: pointer; line-height: normal; color: #555; background: #fff; gap: .6rem; font-size: 1.6rem;
-		input{ position: absolute; opacity: 0;}
+		@extend %check;
 	}
-	.item:has(input:checked){ border: 2px solid #00062C;
-		&::before { content: '\eb7a'; font-family: 'remixicon';}
-	}
+    .item-selected {display: flex; flex-wrap:wrap; gap: .5rem; 
+        .item { padding: 1rem; border-style: dashed;
+			&:has(.user-icon)::before{ display: none;}
+		}
+        .state { @extend %check; }
+        .ri-close-line { border-radius: 50%; width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; font-size: 1.6rem;
+			&:hover { background: #eee; transition: .2s;}
+		}
+    }
 }
 .filter-item {position: relative; text-align: left !important;
 	.item-title { position: relative; padding: 1rem;}
 	.item-cont { padding: 1rem 1rem 2rem; display: flex; gap:1rem; align-items: center;
-		.item-selected { display: flex; flex-wrap:wrap; gap: .5rem; 
-			.item { padding: 1rem; gap:.3rem; border: 1px dashed #ccc;}
-			.item:has(input:checked){ font-size: 1.6rem; border: 2px solid #00062C;}
-			+ .input-text {flex:0; width: 10rem;}
-		}
+        .item-selected + .input-text { flex:0; width:10rem;}
 		.input-text { flex:1; height: 3.5rem; border:0; 
 			&::placeholder { font-size: 1.4rem;}
 		}
@@ -43,7 +51,7 @@ $contents : $url;
 			&:focus { border-color: #04B87F; background: #EFF9F6;}
 		}
 	}
-	.item-layer { display: none; position: absolute; top:-1px; left: -1px; min-width: 37rem; background: #fff;border-radius: 1.2rem; border: 2px solid #00062C; padding: 1.4rem 2rem;
+	.item-layer { display: none; position: absolute; top:-1px; left: -1px; min-width: 36.6rem; background: #fff;border-radius: 1.2rem; border: 2px solid #00062C; padding: 1.5rem 2rem;
 		.tooltip { font-size: 2rem; color: #099367; position: absolute; right: 0; top: 1rem;
 			span { display: none; white-space: nowrap;
 				&::before { content: ''; display: block; width: .6rem; height: .6rem; background: #fff; border:solid #099367; border-width: 1px 1px 0 0; transform:translateY(-50%) rotate(45deg); position: absolute;top:50%; left: calc(100% - 0.2rem);}
@@ -52,6 +60,7 @@ $contents : $url;
 				span { display: block; position: absolute; top: 50%; right: calc(100% + .4rem); transform:translateY(-50%); font-size: 1.4rem; color: #555; padding: 0.5rem 1rem; background: #fff; border: 1px solid #099367;}
 			}
 		}
+		.item-selected .item { border: 1.5px solid #00062C;}
 		.item-group { font-size: 1.5rem; max-height: 14.5rem; overflow-y:auto; padding:2rem 1rem; display: flex; gap: .6rem; flex-wrap: wrap; border-top: 1px solid #ddd; @include scrollbar(#ccc, #fff, .4rem, .4rem); }
 	}
 	&.active { 
@@ -77,7 +86,7 @@ $contents : $url;
 
 .filter { display:grid; width: 100%; margin-bottom: 5rem; position: relative;
 
-	.filter-open {display: flex; align-items: center; justify-content: center; width: 4rem; height: 4rem; border-radius: 50%; border: 1px solid #ddd; background: #fff;  transform:translate(-50%, -50%); transition: 0.2s; position: absolute; left: 50%; top: 100%;}
+	.filter-open {display: flex; align-items: center; justify-content: center; width: 4rem; height: 4rem; border-radius: 50%; border: 1px solid #ddd; background: #fff;  transform:translate(-50%, -50%); transition: 0.2s; position: absolute; left: 50%; top: 100%; font-weight:700; color: #000;}
 
 	.filter-cont { display: none; border-right: 1px solid #ddd;
 		.filter-item { border: 1px solid #ddd; padding: 1.4rem 2rem; cursor:pointer; transition: 0.2s; position: relative; margin: -0.5px;
@@ -92,6 +101,17 @@ $contents : $url;
 	}
 	.filter-foot {padding: 1.6rem 2rem; border: 1px solid #ddd; border-radius: 0 0 1.2rem 1.2rem; border-top: 0; @include flex(null, center, space-between); display: none; 
 		.filter-reset { display: flex; gap:.4rem; padding: 1rem 2rem; border-radius: 2rem; border: 1px solid #eee;}
+		.filter-save { display: flex; align-items: center; gap: 1.4rem;
+			input{ opacity: 0; position: absolute;
+				&:checked + label::before {color: #fff; background: #213362; border-color: transparent;}
+			}
+			label{ display: flex; align-items: center; gap: 0.6rem; cursor: pointer;
+				&::before { content: '\eb7a'; font-family: 'remixicon'; border: 1px solid #ccc; width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 1.6rem; }
+			}
+			.result { background: #00062C; color: #fff; font-size: 1.5rem; padding: 0.8rem 1.2rem; border-radius: 0.6rem;
+				strong { color: #04B87F;}
+			}
+		}
 	}	
 
 	&.active,
@@ -133,120 +153,4 @@ $contents : $url;
 /* =======================================================================================
 08. 병원소개 
 ======================================================================================= */
-
-
-/* =======================================================================================
-반응형
-======================================================================================= */
-@include media($pad) {	
-    .box:has(.step-list) { padding:3.5rem 6rem;}
-    .online-apply {flex-direction: column;}
-    .charter { padding: 1.6rem;}      
-    .nurse .core-list {flex-direction: column; padding-top: 0;
-        &::before { display: none;}
-        > li {padding-top: 2rem; padding-bottom: 2rem; }
-        br { display: none;}
-    }
-    .nurse-org.organization .committee { margin-left: 0; margin-right: 0;}
-}
-
-@include media($mobile) {	    
-    .box:has(.step-list) { padding:3.5rem 2rem;}
-
-    //01.진료안내 
-    .medical-team {        
-        .item-basic { padding: 2rem; gap: 3rem;}
-        .mt-person { margin-top: 5rem; margin-bottom: 1rem;}     
-        .item .btn { right: 2rem; top: 2rem;}
-        .mt-career { padding: 2rem 3rem;
-            .list-dot{ display: block;}
-        }
-    }
-    .mdcco_clsf,
-    .mdcco_se,
-    .mdcco_cd { width: calc(100% + 2rem); background: var(--gray-5); margin:-1rem -1rem 0; padding: 1rem !important; justify-content: center;}
-
-    .mdcco_clsf { background: var(--gray-70); color: var(--white); }
-    .mdcco_se { background: var(--gray-20); }
-
-    //02.진료분야
-    .medical-field .mf-cont { margin: -4rem 1rem 6rem; padding: 2rem;}
-    .medical-field .mf-cause { flex-direction: column; padding: 2rem;}
-    .prognasis { padding: 2rem;} 
-
-    //04. 교육신청
-    .festival-invite .photo { float:none; text-align: center; margin-left: 0;}        
-    .hospital-view.leaflet img {height: auto; }
-    .event-location {
-        > li{padding-left: 0;}
-        .transport-icon { position: static; display: flex; margin:0 auto 1rem;}
-    }
-    //07. 정보공개
-    .infoorg-pop-title,
-    .infoorg-pop .scbox,
-    .infoorg-pop .info-org { padding-left: 2rem; padding-right: 2rem;}
-    .infolist_pop {width: 100%;
-        .infolist_box1 { padding-left: 1rem; padding-right: 1rem;}
-    }
-    .relevant-laws {
-        .box { height: 100%;}
-    }
-    #mergerFrame { height: 4500px!important;}
-
-    //08. 병원소개
-    .greeting { 
-        .g-wrap { padding: 2.8rem 2.8rem 12rem; position: relative;}
-        .g-cont {
-            .photo { display: block; width:20rem; height:auto; right: 2rem;}
-            .sign { gap:.8rem; flex-direction: column; align-items: flex-start; margin-top: 2rem;
-                .name { padding-left: 0;
-                    &::before { display: none;}
-                }
-            }            
-        }
-        &-foot { padding: 2.8rem; @include flex(null, center, center);}
-    }      
-    .directorlist { grid-template-columns: 1fr 1fr;}
-    .history > ul > li { gap: 2rem;}
-    .history-title { left:0; width: 100%; padding: 2.4rem 3.6rem;}
-    
-    .mission-vision .goals-list { display: grid; grid-template-columns: 1fr 1fr; gap:2rem 0; 
-        li:nth-child(3) { background: rgba(34, 64, 102, 0.9);}
-        li:nth-child(4) { background: rgba(29, 86, 188, 0.9);}
-    }
-    .mission-vision .value-list { flex-direction: column;}    
-    .mission-vision .ideal-person .list li { line-height: 1.2; }
-    .organization {
-        span { padding:1rem;}
-        .committee { margin-left: 0; margin-right: 0;}
-        .committee-item:nth-child(2)::after { top:2.4rem;}
-        .committee-list { flex-direction: column;}
-        .depart { display: grid; grid-template-columns: 1fr 1fr;
-            &::before { width: 52%; }
-            &-body { height: calc(100% - 6.55rem);}
-        }
-    }
-    .depart-img-area { 
-        figure { float:none; margin: 0 0 2rem 0; text-align: center;}       
-    }
-    .ambassador .item{ flex-direction: column;}
-    
-    .map-info-btn {margin-left: inherit;}   
-    .charter-list .text { padding: 1rem;} 
-
-    //09.이용안내
-    .banner-list {
-        li {flex-direction: column;
-            strong { text-align: center; }
-            .btn { margin-left: inherit;}
-        }
-    }
-    .sitemap-wrap { grid-template-columns: 1fr;}
-    .cont-qna-box .btn-all {right: 2rem;top: 2rem;}
-    .cont-qna-box.accordion details .aco-cont {padding-left: 1rem;padding-right: 1rem;}
-    .search-list-top { flex-direction: column; gap:1rem;}
-    .total-search-list {
-        .info-btm { flex-direction: column;}
-    }
-}
 

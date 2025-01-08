@@ -160,7 +160,7 @@
 								</div>
 								<div class="item-cont">
 									<div class="item-selected">
-										<label class="item"><input type="checkbox">홈페이지 구축<i class="ri-close-line"></i></label>
+										<label class="item"><input type="checkbox" checked>홈페이지 구축<i class="ri-close-line"></i></label>
 									</div>	
 								</div>
 								<button class="item-add">
@@ -392,8 +392,8 @@
 							<button class="filter-reset"><i class="ri-restart-line"></i> 초기화</button>
 							<div class="filter-save">
 								<input type="checkbox" id="filterSave"><label for="filterSave">해당 조건 다음에도 설정</label>
-								<button><strong>136</strong>개의 조건 검색 결과</button>
-							</div>
+								<div class="result"><strong>136</strong>개의 조건 검색 결과</div>
+							</div> 
 						</div>					
 						<button class="filter-open"><i class="ri-skip-down-line"></i></button>
 					</div>
@@ -422,9 +422,18 @@
 								</div>김소영<i class="ri-close-line"></i></label>
 							</div>
 							<div class="item-selected">
+								<label class="item"><input type="checkbox" checked><div class="user-icon">김</div>김승범<i class="ri-close-line"></i></label>
+							</div>
+							<div class="item-selected">
+								<label class="item"><input type="checkbox" checked><div class="user-icon">조</div>조정연<i class="ri-close-line"></i></label>
+							</div>
+							<div class="item-selected">
 								<label class="item"><input type="checkbox" checked><div class="user-icon">						
 									<img src="../img/layout/photo.png">
-								</div>김승범<i class="ri-close-line"></i></label>
+								</div>김소영<i class="ri-close-line"></i></label>
+							</div>
+							<div class="item-selected">
+								<label class="item"><input type="checkbox" checked><div class="user-icon">김</div>김승범<i class="ri-close-line"></i></label>
 							</div>
 							<div class="item-selected">
 								<label class="item"><input type="checkbox" checked><div class="user-icon">조</div>조정연<i class="ri-close-line"></i></label>
@@ -439,8 +448,8 @@
 						<div class="filter-foot">
 							<button class="filter-reset"><i class="ri-restart-line"></i> 초기화</button>
 							<div class="filter-save">
-								<input type="checkbox" id="filterSave"><label for="filterSave">해당 조건 다음에도 설정</label>
-								<button><strong>136</strong>개의 조건 검색 결과</button>
+								<input type="checkbox" id="filterSave1"><label for="filterSave1">해당 조건 다음에도 설정</label>
+								<div class="result"><strong>136</strong>개의 조건 검색 결과</div>
 							</div>
 						</div>
 						<button class="filter-open"><i class="ri-skip-down-line"></i></button>
@@ -755,13 +764,30 @@
 					<div class="popup-wrap" data-type="full" id="project-create">
 						<div class="popup-in">
 							<div class="popup">
-							<div class="popup-head">
-								<h1 class="pop-tit">프로젝트 등록</h1>
-							</div>
-							<div class="popup-body">					
-								
-							</div>
-							<button type="button" class="popup-close"><span class="sr-only">레이어 닫기</span></button>
+								<div class="popup-head">
+									<h1 class="pop-tit">프로젝트 등록</h1>
+								</div>
+								<div class="popup-body">					
+									<div class="table">
+										<table>
+											<colgroup></colgroup>
+											<tbody>	
+												<tr>
+													<th scope="row">매출법인</th>
+													<td></td>
+												</tr>
+												<tr>
+													<th scope="row">부서</th>
+													<td></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="popup-util">
+									<button type="button" onclick="window.print();" class="popup-print"><i class="ri-printer-line"></i><span class="sr-only">프린트</span></button>
+									<button type="button" class="popup-close"><i class="ri-close-line"></i><span class="sr-only">레이어 닫기</span></button>
+								</div>
 							</div>
 						</div>
 					</div>

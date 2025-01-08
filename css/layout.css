@@ -12,14 +12,16 @@ popup-wrap
   z-index: 10;
   padding: 1rem;
   overflow-y: auto;
-  background: var(--gray-5);
+  background: rgba(0, 0, 0, 0.3);
 }
 .popup-wrap .popup-in {
-  padding: 8rem 0;
+  background: #fff;
+  border-radius: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+  width: 120rem;
   height: 100%;
 }
 .popup-wrap .popup {
@@ -31,6 +33,7 @@ popup-wrap
 }
 .popup-wrap .popup-head {
   margin-bottom: 4rem;
+  padding: 4rem;
 }
 .popup-wrap .popup-head .pop-tit {
   font-size: 2.5rem;
@@ -49,13 +52,26 @@ popup-wrap
 .popup-wrap .popup-body::-webkit-scrollbar-thumb {
   background-color: var(--gray-60);
 }
-.popup-wrap .popup-close {
+.popup-wrap .popup-util {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 4.8rem;
-  height: 4.8rem;
-  background: url(../img/layout/ico_close_48.svg) no-repeat 0 0/contain;
+  top: 4rem;
+  right: 4rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.popup-wrap .popup-util .popup-print {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f8fa;
+  font-size: 2.2rem;
+}
+.popup-wrap .popup-util .popup-close {
+  font-size: 4rem;
 }
 
 .pop-total-serch-wrap {
@@ -720,12 +736,13 @@ content 공통
 ======================================================================================= */
 .user-icon {
   background: white;
-  border-radius: 22px;
+  border-radius: 2.2rem;
   box-shadow: rgba(15, 15, 15, 0.1) 0px 2px 4px;
   outline: rgba(0, 0, 0, 0.3) solid 0.5px;
-  width: 22px;
-  height: 22px;
+  width: 2.2rem;
+  height: 2.2rem;
   font-size: 1.1rem;
+  line-height: normal;
   display: flex;
   align-items: center;
   justify-content: center;
