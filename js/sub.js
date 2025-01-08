@@ -5,7 +5,7 @@ $(function () {
 	accordion(".accordion");
 	dialogPop() //alert
 	fileLoad(".file-input");
-	layerPopup('#deptSearch')		//부서명 찾기
+	layerPopup('.btn-project-create')		//부서명 찾기
 
 	//snb close
 	listOpen('#snb .snb-close', '#snb', true)
@@ -23,6 +23,8 @@ $(function () {
 		$('.depth4').find('li:not(.active)').remove();
 		mdiTab.update();
 	});
+
+	$('.sortable tbody').sortable();
 	
 
 	var mdiTab = new Swiper(".mdi-area .swiper", { 
@@ -47,6 +49,23 @@ $(function () {
 
 	//필터
 	listOpen('.item-add', '.filter-item', false)
+	$('.filter .ri-close-line').on('click', function(e){
+		$(this).parents('.item-selected').remove();
+		e.preventDefault();
+	});
+
+	//리스트
+	$('.sort').on('click', function(){
+		if($(this).hasClass('desc')){
+			$(this).removeClass('desc').addClass('asc');
+		} else if($(this).hasClass('asc')){
+			$(this).removeClass('asc');
+		} else {
+			$(this).toggleClass('desc');
+		}			
+	});	
+	listOpen('.btn-draggable', '.row-btn-control', false)
+	listOpen('.btn-empty', '.filter-item', false)
 
 	
 

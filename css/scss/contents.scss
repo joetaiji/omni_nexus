@@ -3,14 +3,61 @@
 /* =======================================================================================
 공통
 ======================================================================================= */
-$contents : $url + "/contents";
-.box { 
-    &.border-top { color: var(--gray-80); 
-        + .list-dot { margin-top: -1rem;}
-    }    
-    &:has(.step-list) { padding: 5rem 10rem; }
+$contents : $url;
+
+//인풋
+.input-text { border: 1px solid #ddd; background: #fff; border-radius: 0.4rem; padding:.6rem; 
+	&::placeholder { color: #ccc;}
+}
+.btn-empty { font-size: 1.3rem; color: #999;}
+
+//진행상태
+.state { display: flex; gap:.4rem; align-items: center;justify-content: center; padding: .7rem 1.8rem; border-radius: 2rem;  
+	&.before { background: #EEE; color: #777;}
+	&.ing { background: #ECF5FF; color: #2B7BFF;}
+	&.hold { background: #FFF1F1; color: #F55;}
+	&.end { background: #EFF9F6; color: #04B87F;}
 }
 
+//아이템 레이어
+.filter {
+	.item { display: inline-flex; align-items: center; border-radius: 2rem; border: 1px solid #ccc; padding: .6rem 1.6rem; cursor: pointer; line-height: normal; color: #555; background: #fff; gap: .6rem; font-size: 1.6rem;
+		input{ position: absolute; opacity: 0;}
+	}
+	.item:has(input:checked){ border: 2px solid #00062C;
+		&::before { content: '\eb7a'; font-family: 'remixicon';}
+	}
+}
+.filter-item {position: relative; text-align: left !important;
+	.item-title { position: relative; padding: 1rem;}
+	.item-cont { padding: 1rem 1rem 2rem; display: flex; gap:1rem; align-items: center;
+		.item-selected { display: flex; flex-wrap:wrap; gap: .5rem; 
+			.item { padding: 1rem; gap:.3rem; border: 1px dashed #ccc;}
+			.item:has(input:checked){ font-size: 1.6rem; border: 2px solid #00062C;}
+			+ .input-text {flex:0; width: 10rem;}
+		}
+		.input-text { flex:1; height: 3.5rem; border:0; 
+			&::placeholder { font-size: 1.4rem;}
+		}
+		.input-date { border: 1px solid #eee; border-radius: 0.8rem;height: 4rem; width: 12.5rem; transition: 0.2s;
+			&:focus { border-color: #04B87F; background: #EFF9F6;}
+		}
+	}
+	.item-layer { display: none; position: absolute; top:-1px; left: -1px; min-width: 37rem; background: #fff;border-radius: 1.2rem; border: 2px solid #00062C; padding: 1.4rem 2rem;
+		.tooltip { font-size: 2rem; color: #099367; position: absolute; right: 0; top: 1rem;
+			span { display: none; white-space: nowrap;
+				&::before { content: ''; display: block; width: .6rem; height: .6rem; background: #fff; border:solid #099367; border-width: 1px 1px 0 0; transform:translateY(-50%) rotate(45deg); position: absolute;top:50%; left: calc(100% - 0.2rem);}
+			}
+			&:hover { 
+				span { display: block; position: absolute; top: 50%; right: calc(100% + .4rem); transform:translateY(-50%); font-size: 1.4rem; color: #555; padding: 0.5rem 1rem; background: #fff; border: 1px solid #099367;}
+			}
+		}
+		.item-group { font-size: 1.5rem; max-height: 14.5rem; overflow-y:auto; padding:2rem 1rem; display: flex; gap: .6rem; flex-wrap: wrap; border-top: 1px solid #ddd; @include scrollbar(#ccc, #fff, .4rem, .4rem); }
+	}
+	&.active { 
+		.item-layer { display: block; z-index: 2;}
+	}	
+}
 
 /* =======================================================================================
 01.대시보드 
@@ -24,40 +71,51 @@ $contents : $url + "/contents";
 
 .sch-input { position: relative;
 	.input-text { width: 100%; height: 5.2rem; background: #F8F8FA; border: 1px solid #ddd; border-radius: 1.2rem; padding: 0 7.2rem 0 2.4rem; }
-	.sch-btn { @include pos(rt, 1rem, 50%); border: 0; font-size: 4rem;}
+	.sch-btn { background: transparent; @include pos(rt, 1rem, 50%); border: 0; font-size: 2.4rem;}
+	&:has(+.filter.active) .input-text { border-bottom-left-radius: 0; border-bottom-right-radius: 0; border-bottom: 0;}
 }
 
-.filter { display:grid; gap: 1rem; width: 100%; 
-	.filter-open {display: flex; align-items: center; justify-content: center; width: 4rem; height: 4rem; border-radius: 50%; border: 1px solid #ddd; background: #fff; margin: 0 auto; transition: 0.2s;}
+.filter { display:grid; width: 100%; margin-bottom: 5rem; position: relative;
+
+	.filter-open {display: flex; align-items: center; justify-content: center; width: 4rem; height: 4rem; border-radius: 50%; border: 1px solid #ddd; background: #fff;  transform:translate(-50%, -50%); transition: 0.2s; position: absolute; left: 50%; top: 100%;}
+
 	.filter-cont { display: none;
-		.filter-item { border: 1px solid #ddd; padding: 1.4rem 2rem; cursor:pointer; transition: 0.2s; position: relative;
+		.col4 { border-right: 1px solid #ddd;}
+		.filter-item { border: 1px solid #ddd; padding: 1.4rem 2rem; cursor:pointer; transition: 0.2s; position: relative; margin: -0.5px;
+			
             .item-add { display: none; position: absolute;right: 2rem; top: 2rem; color:#099367; font-size: 2.8rem;}
-            &:hover { border: 1px solid #04B87F;
+            &:hover { border: 1px solid #04B87F; z-index: 1;
                 background:  #EFF9F6;
                 box-shadow: 3px 3px 10px 0px rgba(4, 184, 127, 0.10);
                 .item-add {display: block;}
             }
-            .item-group { overflow-y:auto; padding:2rem 1rem; display: flex; gap: .6rem; flex-wrap: wrap;}
-            .item-layer { display: none; position: absolute; top:-1px; left: -1px; width: calc(100% + 2px); background: #fff;border-radius: 1.2rem; border: 2px solid #00062C; padding: 1.4rem 2rem;}
-            &.active { 
-                .item-layer { display: block; z-index: 1;}
-            }
-            .item { border-radius: 2rem; border: 1px solid #ccc; padding: .7rem 1.6rem;
-                input{ position: absolute; opacity: 0;}
-            }
-            .item:has(input:checked){ border: 2px solid #00062C;
-                &::before { content: '\eb7a'; font-family: 'remixicon';}
-            }
-        }
+        }		
 	}
-	&.active { 
-		.filter-open { transform:rotateX(180deg);}
-		.filter-cont { display: block;}
+	.filter-foot {padding: 1.6rem 2rem; border: 1px solid #ddd; border-radius: 0 0 1.2rem 1.2rem; border-top: 0; @include flex(null, center, space-between); display: none; 
+		.filter-reset { display: flex; gap:.4rem; padding: 1rem 2rem; border-radius: 2rem; border: 1px solid #eee;}
+	}	
+
+	&.active,
+	&.setting { 
+		.filter-open { transform:  translate(-50%, -50%) rotate(180deg);}
+		.filter-cont { display: grid;}
+		.filter-foot { display: flex;}
+	}
+	&.setting {
+		&.active {
+			.set-item-list { height: 8rem; overflow:hidden; }
+		}
+	}
+	.set-item-list { display: flex; gap: 2rem .8rem; flex-wrap: wrap; width: 100%;
+		border: 1px solid #ddd;
+		border-radius: 1.2rem 1.2rem 0 0;
+		padding: 2rem 3rem;
 	}
 }
-.state { display: flex; gap:.4rem; align-items: center;justify-content: center; padding: .7rem 1.8rem; border-radius: 2rem;  background: #ECF5FF; color: #2B7BFF;
-	&.end { background: #EFF9F6; color: #04B87F;}
+.popup {
+	
 }
+
 /* =======================================================================================
 03.정신건강사업
 ======================================================================================= */

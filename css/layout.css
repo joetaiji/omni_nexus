@@ -718,6 +718,26 @@ snb
 /* =======================================================================================
 content 공통
 ======================================================================================= */
+.user-icon {
+  background: white;
+  border-radius: 22px;
+  box-shadow: rgba(15, 15, 15, 0.1) 0px 2px 4px;
+  outline: rgba(0, 0, 0, 0.3) solid 0.5px;
+  width: 22px;
+  height: 22px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.user-icon img {
+  object-fit: cover;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+}
+
 .contents {
   flex: 1;
   background: #F6F7FB;
@@ -783,24 +803,7 @@ content 공통
   top: -3.2rem;
 }
 .contents .user-group .user-icon {
-  background: white;
-  border-radius: 22px;
-  box-shadow: rgba(15, 15, 15, 0.1) 0px 2px 4px;
-  outline: rgba(255, 255, 255, 0.3) solid 0.5px;
-  width: 22px;
-  height: 22px;
-  font-size: 1.1rem;
   margin-left: -3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-.contents .user-group .user-icon img {
-  object-fit: cover;
-  border-radius: 100%;
-  width: 100%;
-  height: 100%;
 }
 .contents .user-group .user-sum {
   font-size: 1.6rem;
