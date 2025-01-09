@@ -5,11 +5,11 @@ popup-wrap
 ======================================================================================= */
 .popup-wrap { display: none; position: fixed; left: 0; top: 0; right:0; bottom:0; z-index: 10;  padding: 1rem; overflow-y: auto; background: rgba(0,0,0,.3);	
 	.popup-in { background: #fff; border-radius: 2rem; @include flex(null, center, $fd:column); margin:0 auto; width: 120rem; height: 100%; }
-	.popup { @include flex($fd:column); height: 100%; padding: 0; position: relative;
-		&-head { margin-bottom: 4rem; padding: 4rem;
+	.popup { @include flex($fd:column); width: 100%; height: 100%; padding: 4rem; position: relative;
+		&-head { margin-bottom: 4rem; 
 			.pop-tit { font-size: 2.5rem; }
 		}
-		&-body { flex:1; max-height: 100%; overflow-y: auto; @include scrollbar(var(--gray-60), var(--gray-30), $size: .6rem)}
+		&-body { flex:1; max-height: 100%; overflow-y: auto; @include scrollbar(var(--gray-60), var(--gray-30), $size: .6rem); border:1px solid #ddd; padding: 4rem; border-radius: 2rem;}
 		&-util { position: absolute; top: 4rem;right: 4rem;  @include flex(1rem, center);
 			.popup-print {width: 4rem; height: 4rem;border-radius: 50%;@include flex(null, center, center); background: #f8f8fa; font-size: 2.2rem;}
 			.popup-close { font-size: 4rem; }
@@ -71,7 +71,7 @@ html {
 }
 
 #wrap { padding: 2rem; background: #01072D; }
-.popup,
+
 .inner { width: var(--inner); max-width: calc(100% - 2rem); margin: 0 auto; }
 
 .drop-wrap { position: relative;
@@ -253,27 +253,44 @@ content 공통
 	img { object-fit: cover; border-radius: 100%; width: 100%; height: 100%; }
 }
 .contents { flex: 1; background: #F6F7FB;  padding: 3rem; border-radius: 2rem; 
-	.page-title-wrap { position: relative; border-bottom: 1px solid var(--gray-30);  margin-bottom: 4rem; }	
-	.page-title { height: 4rem; font-size: 2.4rem; color: #111; margin-bottom: 2rem;}
-	
+
 	.mdi-area { display: flex; justify-content: space-between; padding-right: 17rem;
 		.swiper-slide {width: auto;}
-		.tab-control{
+		.tab-control { display: flex; gap: .4rem; align-items: center; margin-left: 1rem;
 			.swiper-button { position: static; transform: none; width: 2.4rem;}
+			button {border-color: var(--gray-20);}
+			.btn { padding: .4rem; }
 		}
 	}
-	.tabs { display: flex; align-items: center; gap: 1rem; padding-right: 3rem;
-		>ul {
+	.mdi-tabs { display: flex; align-items: center; gap: 1rem; padding-right: 3rem;
+		&::after { content: ''; display: block; width: 3rem; height:100%; background: linear-gradient(90deg, rgba(246, 247, 251, 0) 0%, rgba(246, 247, 251, 1) 100%); position: absolute; right: 0; z-index: 1;}
+		>ul { display: flex; max-width: 80rem; 
+			>li {
+				&.active { 
+					a, button { background: var(--white); color: #111; }
+				}
+			}
 			li:only-child .ri-close-line { display: none;}
 			.ri-close-line { border-radius: 50%; width: 1.6rem; height: 1.6rem; display: flex; align-items: center; justify-content: center;
 				&:hover { background: var(--gray-40); transition: .2s;}
 			}
+			a, button { @include flex(1rem, center, center); font-size: 1.8rem; text-align: center; padding: 1rem 2rem; position: relative; line-height: 1.2; border-radius: 1.2rem 1.2rem 0 0;	height: 4rem; font-size: 1.5rem; background-color: #7C7F91; color: #fff; white-space: nowrap; transition: 0.2s;
+				&:hover { background-color: color-mix(in srgb, #7C7F91, #000 15%);}
+			}
+				
 			span { display: none;}
 		}
-		.tab-control {
-			.btn { padding: .4rem; }
-		}
+		li.active {		
+			a, button { font-weight: 700; 
+				span { display: block;}
+			}
+		}		
 	}
+
+	.page-title-wrap { position: relative; border-bottom: 1px solid var(--gray-30);  margin-bottom: 4rem; }	
+	.page-title { height: 4rem; font-size: 2.4rem; color: #111; margin-bottom: 2rem;}
+	
+	
 	.user-group { display: flex; align-items: center; position: absolute; right: 0; top: -3.2rem;		
 		.user-icon { margin-left: -3px;}
 		.user-sum { font-size: 1.6rem; color:var(--gray-70); margin-left: 12px; white-space: nowrap;}

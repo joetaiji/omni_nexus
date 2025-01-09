@@ -7,6 +7,9 @@
 	"settings": {
 		"css.hover.references": false,
 		"less.hover.references": false,
-		"scss.hover.references": false
+		"scss.hover.references": false,
+		"multiDiffEditor.experimental.enabled": false,
+		"accessibility.verbosity.diffEditorActive": false,
+		"html.hover.references": false
 	}
 }

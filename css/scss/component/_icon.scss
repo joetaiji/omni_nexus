@@ -3,10 +3,17 @@
 /* ==========================================================================================
 //icons
 ============================================================================================*/
+/* [class*=ic-]::before,
 [class*=ic-]::after { content: ''; display: inline-flex; align-items: center; font-family: var(--icon); }
+.ic-before::after,
+[class*=ic-]::before {display: none;}
+.ic-before::before {display: inline-flex; margin-right: 0.3rem; }*/
+
+[class*=ic-]::before { content: ''; display: inline-flex; align-items: center; font-family: var(--icon); margin-right: 0.5rem;} 
 
 //rimixicon
 $iconGlyph: (
+	"pen": "\efde",
 	"prev": "\ea60", 	
 	"arr-long": "\ea6c", 	
 	"arr": "\ea6e", 	
@@ -32,14 +39,14 @@ $iconGlyph: (
 	"map": "\ef06", 
 	"warning": "\eca1",
 	"info": "\ee59",
-	"cal": "\eb21",
+	"cal": "\eb27",
 	"lock": "\eecd",
 	"new": "N",
 	"star": "*"
 	
 );
 @each $name, $glyph in $iconGlyph {
-	.ic-#{$name}::after { content: $glyph; }
+	.ic-#{$name}::before { content: $glyph; }
 }
 
 

@@ -41,7 +41,7 @@
 
 		<!-- 컨테이너 영역 -->
 		<main id="container">
-			<!-- 컨텐츠 영역 -->
+
 			<div id="snb" class="left-menu sub01">
 				<div class="snb-head">
 					<h1 class="logo"><img src="../img/layout/logo.svg" alt="planI"></h1>
@@ -105,19 +105,20 @@
 				</button>
 			</div>
 			<!-- //snb : 서브메뉴-->
+
 			<div id="contents" class="contents">
 				<div class="mdi-area">
-					<div class="depth4 tabs swiper">
+					<div class="mdi-tabs swiper">
 						<ul class="swiper-wrapper">
-							<li class="swiper-slide item active"><a href="">매출관리 > 매출통계<i class="ri-close-line"></i></a></li>
-							<li class="swiper-slide item"><a href="">프로젝트<i class="ri-close-line"></i></a></li>
-							<li class="swiper-slide item"><a href="">실적관리(손익계산)<i class="ri-close-line"></i></a></li>
-							<li class="swiper-slide item"><a href="">거래처<i class="ri-close-line"></i></a></li>
-							<li class="swiper-slide item"><a href=""><span>환경설정 > </span>내부노임단가 <i class="ri-close-line"></i></a></li>
-							<li class="swiper-slide item"><a href=""><span>환경설정 > </span>SW노임단가<i class="ri-close-line"></i></a></li>
-							<li class="swiper-slide item"><a href=""><span>지출관리 > </span>지출 통계<i class="ri-close-line"></i></a></li>							
-							<li class="swiper-slide item"><a href=""><span>지출관리 > </span>경비 관리<i class="ri-close-line"></i></a></li>	
-							<li class="swiper-slide item"><a href=""><span>환경설정 > </span>조직도<i class="ri-close-line"></i></a></li>
+							<li class="swiper-slide active"><a href="">매출관리 > 매출통계<i class="ri-close-line"></i></a></li>
+							<li class="swiper-slide"><a href="">프로젝트<i class="ri-close-line"></i></a></li>
+							<li class="swiper-slide"><a href="">실적관리(손익계산)<i class="ri-close-line"></i></a></li>
+							<li class="swiper-slide"><a href="">거래처<i class="ri-close-line"></i></a></li>
+							<li class="swiper-slide"><a href=""><span>환경설정 > </span>내부노임단가 <i class="ri-close-line"></i></a></li>
+							<li class="swiper-slide"><a href=""><span>환경설정 > </span>SW노임단가<i class="ri-close-line"></i></a></li>
+							<li class="swiper-slide"><a href=""><span>지출관리 > </span>지출 통계<i class="ri-close-line"></i></a></li>							
+							<li class="swiper-slide"><a href=""><span>지출관리 > </span>경비 관리<i class="ri-close-line"></i></a></li>	
+							<li class="swiper-slide"><a href=""><span>환경설정 > </span>조직도<i class="ri-close-line"></i></a></li>
 						</ul>
 					</div>
 					<div class="tab-control">
@@ -133,20 +134,20 @@
 				<div class="page-contents">
 					<h2 class="page-title">프로젝트</h2>		
 					<div class="user-group">						
-						<div class="user-icon">							
+						<span class="user-icon">							
 							<img src="../img/layout/photo.png">
-						</div>
-						<div class="user-icon">허</div>
-						<div class="user-icon">							
+						</span>
+						<span class="user-icon">허</span>
+						<span class="user-icon">							
 							<img src="../img/layout/photo.png">
-						</div>
-						<div class="user-icon">김</div>
-						<div class="user-icon">조 </div>
-						<div class="user-sum">+24명</div>
+						</span>
+						<span class="user-icon">김</span>
+						<span class="user-icon">조 </span>
+						<span class="user-sum">+24명</span>
 					</div>	
 					<button type="button" onclick="window.print();" class="print-btn"><i class="ri-printer-line"></i><span class="sr-only">프린트</span></button>
 					<div class="sch-input">
-						<input type="text" class="input-text" name="allKeyWord" placeholder="검색어 입력" value="" title="검색어 입력">
+						<input type="text" class="form-control" name="allKeyWord" placeholder="검색어 입력" value="" title="검색어 입력">
 						<button type="submit" class="btn sch-btn">
 							<i class="ri-search-2-line"></i><span class="sr-only">검색</span>
 						</button>
@@ -154,81 +155,29 @@
 					<!-- 필터 처음 설정 -->
 					<div class="filter">						
 						<div class="filter-cont col4">
-							<div class="filter-item project">
+							<div class="filter-item" data-layer="project">
 								<div class="item-title">
 									<strong>프로젝트 분류</strong>
 								</div>
 								<div class="item-cont">
-									<div class="item-selected">
-										<label class="item"><input type="checkbox" checked>홈페이지 구축<i class="ri-close-line"></i></label>
-									</div>	
+									<label class="item selected"><input type="checkbox" checked>홈페이지 구축</label>
 								</div>
 								<button class="item-add">
 									<i class="ri-add-circle-fill"></i><span class="sr-only">추가</span>
-								</button>
-								<div class="item-layer">
-									<div class="item-title">
-										<strong>프로젝트 분류</strong>
-										<button class="tooltip">
-											<i class="ri-information-fill"></i>
-											<span>원하는 분류 태그가 없으면 직접 입력</span>
-										</button>
-									</div>
-									<div class="item-cont">
-										<div class="item-selected">
-											<label class="item"><input type="checkbox" checked>홈페이지 구축<i class="ri-close-line"></i></label>
-										</div>
-										<input type="text" class="input-text form-control" placeholder="직접입력">
-									</div>										
-									<div class="item-group">
-										<span class="item">홈페이지 구축</span>
-										<span class="item">유지보수</span>
-										<span class="item">디자인</span>
-										<span class="item">클라우드 이관</span>
-										<span class="item">홍보/이벤트</span>
-										<span class="item">컨설팅</span>
-										<span class="item">내부거래</span>
-									</div>
-								</div>
+								</button>								
 							</div>
-							<div class="filter-item dept">
+							<div class="filter-item" data-layer="dept">
 								<div class="item-title">
 									<strong>부서</strong>
 								</div>
 								<div class="item-cont">
-									<div class="item-selected">
-										<label class="item"><input type="checkbox" checked>EX사업부<i class="ri-close-line"></i></label>
-									</div>
+									<label class="item selected"><input type="checkbox" checked>EX사업부</label>
 								</div>
 								<button class="item-add">
 									<i class="ri-add-circle-fill"></i><span class="sr-only">추가</span>
 								</button>
-								<div class="item-layer">
-									<div class="item-title">
-										<strong>부서</strong>
-										<button class="tooltip">
-											<i class="ri-information-fill"></i>
-											<span>원하는 분류 태그가 없으면 직접 입력</span>
-										</button>
-									</div>
-									<div class="item-cont">
-										<div class="item-selected">
-											<label class="item"><input type="checkbox" checked>EX 사업부<i class="ri-close-line"></i></label>
-										</div>
-										<input type="text" class="input-text form-control" placeholder="직접입력">
-									</div>										
-									<div class="item-group">
-										<span class="item">EX 사업부</span>
-										<span class="item">MX 사업부</span>
-										<span class="item">AX 연구소</span>
-										<span class="item">PX 인사부</span>
-										<span class="item">PX 재무회계부</span>
-										<span class="item">CX 영업부</span>
-										<span class="item">지최일만</span>
-									</div>
-								</div>
 							</div>		
-							<div class="filter-item corp">
+							<div class="filter-item" data-layer="corp">
 								<div class="item-title">
 									<strong>매출법인</strong>
 								</div>
@@ -237,155 +186,58 @@
 								</div>
 								<button class="item-add">
 									<i class="ri-add-circle-fill"></i><span class="sr-only">추가</span>
-								</button>
-								<div class="item-layer">
-									<div class="item-title">
-										<strong>매출법인</strong>
-										<button class="tooltip">
-											<i class="ri-information-fill"></i>
-											<span>원하는 분류 태그가 없으면 직접 입력</span>
-										</button>
-									</div>
-									<div class="item-cont">
-										<input type="text" class="input-text form-control" placeholder="직접입력">
-									</div>										
-									<div class="item-group">
-										<span class="item">플랜아이</span>
-										<span class="item">플랜파트너스</span>
-										<span class="item">아누타</span>
-										<span class="item">와이브릿지</span>
-									</div>
-								</div>
+								</button>								
 							</div>
-							<div class="filter-item manage">
+							<div class="filter-item" data-layer="manager">
 								<div class="item-title">
 									<strong>담당자</strong>
 								</div>
 								<div class="item-cont">
-									<div class="item-selected">
-										<label class="item"><input type="checkbox" checked><div class="user-icon">							
+									<label class="item selected"><input type="checkbox" checked><span class="user-icon">							
 											<img src="../img/layout/photo.png">
-										</div>김소영<i class="ri-close-line"></i></label>
-									</div>									
+									</span>김소영</label>
 								</div>
 								<button class="item-add">
 									<i class="ri-add-circle-fill"></i><span class="sr-only">추가</span>
 								</button>
-								<div class="item-layer">
-									<div class="item-title">
-										<strong>담당자</strong>
-										<button class="tooltip">
-											<i class="ri-information-fill"></i>
-											<span>원하는 분류 태그가 없으면 직접 입력</span>
-										</button>
-									</div>
-									<div class="item-cont">
-										<div class="item-selected">
-											<label class="item"><input type="checkbox" checked><div class="user-icon">						
-												<img src="../img/layout/photo.png">
-											</div>김소영<i class="ri-close-line"></i></label>
-										</div>
-										<input type="text" class="input-text form-control" placeholder="직접입력">
-									</div>										
-									<div class="item-group">
-										<span class="item"><div class="user-icon">						
-											<img src="../img/layout/photo.png">
-										</div>김소영</span>
-										<span class="item"><div class="user-icon">조</div>조정연</span>
-										<span class="item"><div class="user-icon">김</div>김승범</span>
-										<span class="item"><div class="user-icon">류</div>류혜정</span>
-										<span class="item"><div class="user-icon">						
-											<img src="../img/layout/photo.png">
-										</div>김소영</span>
-										<span class="item"><div class="user-icon">조</div>조정연</span>
-										<span class="item"><div class="user-icon">김</div>김승범</span>
-										<span class="item"><div class="user-icon">류</div>류혜정</span>
-									</div>
-								</div>
+								
 							</div>
 							
-							<div class="filter-item term">
+							<div class="filter-item" data-layer="term">
 								<div class="item-title">
 									<strong>계약 기간</strong>
 								</div>
 								<div class="item-cont">
-									<div class="item-selected">
-										<label class="item"><input type="checkbox" checked>2024-01-23 ~ 2024-01-23<i class="ri-close-line"></i></label>
-									</div>
+									<label class="item selected"><input type="checkbox" checked>2024-01-23 ~ 2024-01-23</label>
 								</div>
 								<button class="item-add">
 									<i class="ri-add-circle-fill"></i><span class="sr-only">추가</span>
 								</button>
-								<div class="item-layer">
-									<div class="item-title">
-										<strong>계약 기간</strong>
-									</div>
-									<div class="item-cont">
-										<div class="item-selected">
-											<input type="date" class="input-date" value="2025-01-08"> <input type="date" class="input-date" value="2025-01-23">
-										</div>
-									</div>										
-									<div class="item-group">
-										캘린더
-									</div>
-								</div>
+								
 							</div>
-							<div class="filter-item status">
+							<div class="filter-item" data-layer="status">
 								<div class="item-title">
 									<strong>진행상태</strong>
 								</div>
 								<div class="item-cont">
-									<div class="item-selected">
-										<label class="state ing"><input type="checkbox" checked>진행<i class="ri-close-line"></i></label>
-									</div>
+									<label class="state ing item selected"><input type="checkbox" checked>진행</label>
 								</div>
 								<button class="item-add">
 									<i class="ri-add-circle-fill"></i><span class="sr-only">추가</span>
 								</button>
-								<div class="item-layer">
-									<div class="item-title">
-										<strong>진행상태</strong>
-										<button class="tooltip">
-											<i class="ri-information-fill"></i>
-											<span>원하는 분류 태그가 없으면 직접 입력</span>
-										</button>
-									</div>
-									<div class="item-cont">
-										<div class="item-selected">
-											<label class="state ing"><input type="checkbox" checked>진행<i class="ri-close-line"></i></label>
-										</div>
-										<input type="text" class="input-text form-control" placeholder="직접입력">
-									</div>										
-									<div class="item-group">
-										<button class="state before">착수전</button>
-										<button class="state ing">진행</button>
-										<button class="state hold">보류</button>
-										<button class="state end">완료</button>
-									</div>
-								</div>
+								
 							</div>							
-							<div class="filter-item amount colspan2">
+							<div class="filter-item colspan2" data-layer="amount">
 								<div class="item-title">
 									<strong>사업 금액</strong>
 								</div>
 								<div class="item-cont">
-									<div class="item-selected">
-										<label class="item"><input type="checkbox" checked>1,000,000원 ~ 8,000,000,000원<i class="ri-close-line"></i></label>
-									</div>
+									<label class="item selected"><input type="checkbox" checked>1,000,000원 ~ 8,000,000,000원</label>
 								</div>
 								<button class="item-add">
 									<i class="ri-add-circle-fill"></i><span class="sr-only">추가</span>
 								</button>
-								<div class="item-layer">
-									<div class="item-title">
-										<strong>사업 금액</strong>
-									</div>
-									<div class="item-cont">
-										<div class="item-selected">
-											<input type="number" class="input-date" value="1000000" step="10000"> ~ <input type="number" class="input-date" value="8000000000" step="10000">
-										</div>
-									</div>										
-								</div>
+								
 							</div>					
 						</div>	
 						<div class="filter-foot">
@@ -401,49 +253,23 @@
 					<!-- 필터 설정 후 -->
 					<div class="filter setting">
 						<div class="set-item-list">
-							<div class="item-selected">
-								<label class="item"><input type="checkbox">홈페이지 구축<i class="ri-close-line"></i></label>
-							</div>
-							<div class="item-selected">
-								<label class="item"><input type="checkbox">디자인<i class="ri-close-line"></i></label>
-							</div>
-							<div class="item-selected">
-								<label class="item"><input type="checkbox">유지보수<i class="ri-close-line"></i></label>
-							</div>
-							<div class="item-selected">
-								<label class="item"><input type="checkbox" checked>EX사업부<i class="ri-close-line"></i></label>
-							</div>
-							<div class="item-selected">
-								<label class="item"><input type="checkbox" checked>MX사업부<i class="ri-close-line"></i></label>
-							</div>
-							<div class="item-selected">
-								<label class="item"><input type="checkbox" checked><div class="user-icon">						
-									<img src="../img/layout/photo.png">
-								</div>김소영<i class="ri-close-line"></i></label>
-							</div>
-							<div class="item-selected">
-								<label class="item"><input type="checkbox" checked><div class="user-icon">김</div>김승범<i class="ri-close-line"></i></label>
-							</div>
-							<div class="item-selected">
-								<label class="item"><input type="checkbox" checked><div class="user-icon">조</div>조정연<i class="ri-close-line"></i></label>
-							</div>
-							<div class="item-selected">
-								<label class="item"><input type="checkbox" checked><div class="user-icon">						
-									<img src="../img/layout/photo.png">
-								</div>김소영<i class="ri-close-line"></i></label>
-							</div>
-							<div class="item-selected">
-								<label class="item"><input type="checkbox" checked><div class="user-icon">김</div>김승범<i class="ri-close-line"></i></label>
-							</div>
-							<div class="item-selected">
-								<label class="item"><input type="checkbox" checked><div class="user-icon">조</div>조정연<i class="ri-close-line"></i></label>
-							</div>
-							<div class="item-selected">
-								<label class="state ing"><input type="checkbox" checked>진행<i class="ri-close-line"></i></label>
-							</div>
-							<div class="item-selected">
-								<label class="item"><input type="checkbox" checked>1,000,000원 ~ 8,000,000,000원<i class="ri-close-line"></i></label>
-							</div>
+							<label class="item selected"><input type="checkbox">홈페이지 구축</label>
+							<label class="item selected"><input type="checkbox">디자인</label>
+							<label class="item selected"><input type="checkbox">유지보수</label>
+							<label class="item selected"><input type="checkbox" checked>EX사업부</label>
+							<label class="item selected"><input type="checkbox" checked>MX사업부</label>
+							<label class="item selected"><input type="checkbox" checked><span class="user-icon">						
+								<img src="../img/layout/photo.png">
+							</span>김소영</label>
+							<label class="item selected"><input type="checkbox" checked><span class="user-icon">김</span>김승범</label>
+							<label class="item selected"><input type="checkbox" checked><span class="user-icon">조</span>조정연</label>
+							<label class="item selected"><input type="checkbox" checked><span class="user-icon">						
+								<img src="../img/layout/photo.png">
+							</span>김소영</label>
+							<label class="item selected"><input type="checkbox" checked><span class="user-icon">김</span>김승범</label>
+							<label class="item selected"><input type="checkbox" checked><span class="user-icon">조</span>조정연</label>
+							<label class="state ing item selected"><input type="checkbox" checked>진행</label>
+							<label class="item selected"><input type="checkbox" checked>1,000,000원 ~ 8,000,000,000원</label>
 						</div>
 						<div class="filter-foot">
 							<button class="filter-reset"><i class="ri-restart-line"></i> 초기화</button>
@@ -456,7 +282,7 @@
 					</div>
 
 					<button type="button" data-id="project-create" class="btn sm btn-project-create"><i class="ri-add-line"></i>프로젝트 등록</button>
-					<div class="table sortable">
+					<div class="table draggable">
 						<table>
 							<caption>사이트관리 목록 - 번호, 프로젝트명, 업체명, 부서, 담당자, 사업금액, 착수일, 완료일 등 기능 관리 목록</caption>
 							<colgroup>
@@ -473,12 +299,12 @@
 									</th>
 									<th scope="col">
 										<span>사업명<button class="sort"><i class="ri-arrow-up-s-fill"></i><i class="ri-arrow-down-s-fill"></i></button></span>
+									</th>									
+									<th scope="col">
+										<span>발주처<button class="sort"><i class="ri-arrow-up-s-fill"></i><i class="ri-arrow-down-s-fill"></i></button></span>
 									</th>
 									<th scope="col">
 										<span>부서<button class="sort"><i class="ri-arrow-up-s-fill"></i><i class="ri-arrow-down-s-fill"></i></button></span>
-									</th>
-									<th scope="col">
-										<span>발주처<button class="sort"><i class="ri-arrow-up-s-fill"></i><i class="ri-arrow-down-s-fill"></i></button></span>
 									</th>
 									<th scope="col">
 										<span>담당자<button class="sort"><i class="ri-arrow-up-s-fill"></i><i class="ri-arrow-down-s-fill"></i></button></span>
@@ -507,12 +333,12 @@
 								<tr>
 									<td class="row-btn-control">
 										<div class="user-group">
-											<div class="user-icon">이</div>
-											<div class="user-icon">		
+											<span class="user-icon">이</span>
+											<span class="user-icon">		
 												<img src="../img/layout/photo.png">
-											</div>
-											<div class="user-icon">최</div>
-											<div class="user-sum">+6명</div>
+											</span>
+											<span class="user-icon">최</span>
+											<span class="user-sum">+6명</span>
 										</div>
 										<div class="btn-modify">
 											<button><i class="ri-delete-bin-line"></i></button>
@@ -533,19 +359,19 @@
 									<td class="txt-right">55,000,000</td>
 									<td class="txt-right">0</td>
 									<td class="txt-right">0</td>
-									<td><i class="ri-calendar-line"></i>2024-08-30</td>
-									<td><i class="ri-calendar-line"></i>2024-12-31</td>
+									<td><span class="ic-cal">2024-08-30</span></td>
+									<td><span class="ic-cal">2024-12-31</span></td>
 									<td><span class="state ing">진행</span></td>
 								</tr>
 							
 								<tr>
 									<td class="row-btn-control">
 										<div class="user-group">						
-											<div class="user-icon">		
+											<span class="user-icon">		
 												<img src="../img/layout/photo.png">
-											</div>
-											<div class="user-icon">허</div>
-											<div class="user-icon">조 </div>
+											</span>
+											<span class="user-icon">허</span>
+											<span class="user-icon">조 </span>
 										</div>
 										<div class="btn-modify">
 											<button><i class="ri-delete-bin-line"></i></button>
@@ -566,20 +392,20 @@
 									<td class="txt-right">94,000,000</td>
 									<td class="txt-right">0</td>
 									<td class="txt-right">0</td>
-									<td><i class="ri-calendar-line"></i>2024-09-03</td>
-									<td><i class="ri-calendar-line"></i>2025-03-02</td>
+									<td><span class="ic-cal">2024-09-03</span></td>
+									<td><span class="ic-cal">2025-03-02</span></td>
 									<td><span class="state end">완료</span></td>
 								</tr>
 							
 								<tr>
 									<td class="row-btn-control">
 										<div class="user-group">	
-											<div class="user-icon">김</div>
-											<div class="user-icon">박</div>
-											<div class="user-icon">		
+											<span class="user-icon">김</span>
+											<span class="user-icon">박</span>
+											<span class="user-icon">		
 												<img src="../img/layout/photo.png">
-											</div>
-											<div class="user-sum">+24명</div>
+											</span>
+											<span class="user-sum">+24명</span>
 										</div>
 										<div class="btn-modify">
 											<button><i class="ri-delete-bin-line"></i></button>
@@ -600,8 +426,8 @@
 									<td class="txt-right">44,000,000</td>
 									<td class="txt-right">0</td>
 									<td class="txt-right">0</td>
-									<td><i class="ri-calendar-line"></i>2024-09-03</td>
-									<td><i class="ri-calendar-line"></i>2025-09-02</td>
+									<td><span class="ic-cal">2024-09-03</span></td>
+									<td><span class="ic-cal">2025-09-02</span></td>
 									<td></td>
 								</tr>
 								<tr>
@@ -613,144 +439,35 @@
 										</div>
 										<span class="btn-draggable"><i class="ri-draggable"></i></span>
 									</td>
-									<td class="filter-item">
+									<td data-layer="corp">
 										<button class="btn-empty">비어있음</button>
-										<div class="item-layer">
-											<div class="item-title">
-												<strong>매출법인</strong>
-												<button class="tooltip">
-													<i class="ri-information-fill"></i>
-													<span>원하는 분류 태그가 없으면 직접 입력</span>
-												</button>
-											</div>
-											<div class="item-cont">
-												<div class="item-selected">
-													<label class="item"><input type="checkbox" checked="">플랜아이<i class="ri-close-line"></i></label>
-												</div>
-											</div>										
-											<div class="item-group">
-												<span class="item">플랜아이</span>
-												<span class="item">플랜파트너스</span>
-												<span class="item">아누타</span>
-												<span class="item">와이브릿지</span>
-											</div>
-										</div>
 									</td>									
-									<td class="filter-item">
+									<td data-layer="project">
 										<button class="btn-empty">비어있음</button>
-										<div class="item-layer">
-											<div class="item-title">
-												<strong>프로젝트 분류</strong>
-												<button class="tooltip">
-													<i class="ri-information-fill"></i>
-													<span>원하는 분류 태그가 없으면 직접 입력</span>
-												</button>
-											</div>
-											<div class="item-cont">
-												<div class="item-selected">
-													<label class="item"><input type="checkbox" checked>홈페이지 구축<i class="ri-close-line"></i></label>
-												</div>
-											</div>										
-											<div class="item-group">
-												<span class="item">홈페이지 구축</span>
-												<span class="item">유지보수</span>
-												<span class="item">디자인</span>
-												<span class="item">클라우드 이관</span>
-												<span class="item">홍보/이벤트</span>
-												<span class="item">컨설팅</span>
-												<span class="item">내부거래</span>
-											</div>
-										</div>
 									</td>
 									<td class="subject">
 										<button class="btn-empty">비어있음</button>
 									</td>
 									<td><button class="btn-empty">비어있음</button></td>
-									<td><button class="btn-empty">비어있음</button></td>
-									<td class="filter-item">
+									<td><button class="btn-empty" data-layer="dept">비어있음</button></td>
+									<td data-layer="manager">
 										<button class="btn-empty">비어있음</button>
-										<div class="item-layer">
-											<div class="item-title">
-												<strong>담당자</strong>
-												<button class="tooltip">
-													<i class="ri-information-fill"></i>
-													<span>원하는 분류 태그가 없으면 직접 입력</span>
-												</button>
-											</div>
-											<div class="item-cont">
-												<div class="item-selected">
-													<label class="item"><input type="checkbox" checked><div class="user-icon">						
-														<img src="../img/layout/photo.png">
-													</div>김소영<i class="ri-close-line"></i></label>
-												</div>
-											</div>										
-											<div class="item-group">
-												<span class="item"><div class="user-icon">						
-													<img src="../img/layout/photo.png">
-												</div>김소영</span>
-												<span class="item"><div class="user-icon">조</div>조정연</span>
-												<span class="item"><div class="user-icon">김</div>김승범</span>
-												<span class="item"><div class="user-icon">류</div>류혜정</span>
-												<span class="item"><div class="user-icon">						
-													<img src="../img/layout/photo.png">
-												</div>김소영</span>
-												<span class="item"><div class="user-icon">조</div>조정연</span>
-												<span class="item"><div class="user-icon">김</div>김승범</span>
-												<span class="item"><div class="user-icon">류</div>류혜정</span>
-											</div>
-										</div>
 									</td>
-									<td class="filter-item">
+									<td data-layer="amount">
 										<button class="btn-empty">비어있음</button>
-										<div class="item-layer">
-											<div class="item-title">
-												<strong>사업 금액</strong>
-											</div>
-											<div class="item-cont">
-												<div class="item-selected">
-													<input type="number" class="input-date" value="1000000" step="10000"> ~ <input type="number" class="input-date" value="8000000000" step="10000">
-												</div>
-											</div>										
-										</div>
 									</td>
 									
-									<td class="txt-right">
+									<td>
 										<button class="btn-empty">비어있음</button>
 									</td>
-									<td class="txt-right">
+									<td>
 										<button class="btn-empty">비어있음</button>
 									</td>
-									<td class="filter-item">
-										<button class="btn-empty"><i class="ri-calendar-line"></i>비어있음</button>
-										<div class="item-layer">
-											<div class="item-title">
-												<strong>계약일</strong>
-											</div>
-											<div class="item-cont">
-												<div class="item-selected">
-													<input type="date" class="input-date" value="2025-01-08">
-												</div>
-											</div>										
-											<div class="item-group">
-												캘린더
-											</div>
-										</div>
+									<td data-layer="date">
+										<button class="btn-empty"><span class="ic-cal">비어있음</span></button>
 									</td>
-									<td class="filter-item">
-										<button class="btn-empty"><i class="ri-calendar-line"></i>비어있음</button>
-										<div class="item-layer">
-											<div class="item-title">
-												<strong>종료일</strong>
-											</div>
-											<div class="item-cont">
-												<div class="item-selected">
-													<input type="date" class="input-date" value="2025-01-08">
-												</div>
-											</div>										
-											<div class="item-group">
-												캘린더
-											</div>
-										</div>
+									<td data-layer="date">
+										<button class="btn-empty"><span class="ic-cal">비어있음</span></button>
 									</td>
 									<td><button class="btn sm btn-save">저장</button></td>
 								</tr>
@@ -760,39 +477,6 @@
 					</div>
 					<button class="btn-row-add"><i class="ri-add-line"></i>새로 만들기</button>
 
-					
-					<div class="popup-wrap" data-type="full" id="project-create">
-						<div class="popup-in">
-							<div class="popup">
-								<div class="popup-head">
-									<h1 class="pop-tit">프로젝트 등록</h1>
-								</div>
-								<div class="popup-body">					
-									<div class="table">
-										<table>
-											<colgroup></colgroup>
-											<tbody>	
-												<tr>
-													<th scope="row">매출법인</th>
-													<td></td>
-												</tr>
-												<tr>
-													<th scope="row">부서</th>
-													<td></td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-								<div class="popup-util">
-									<button type="button" onclick="window.print();" class="popup-print"><i class="ri-printer-line"></i><span class="sr-only">프린트</span></button>
-									<button type="button" class="popup-close"><i class="ri-close-line"></i><span class="sr-only">레이어 닫기</span></button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- //레이어 : 본부 및 소속기관 -->
-
 				</div>
 				<!-- //페이지 콘텐츠 영역 -->
 
@@ -801,10 +485,518 @@
 				</div>
 			</div>
 			<!-- //contents -->
-			<!-- //컨텐츠 영역 -->
 
 		</main>
 		<!-- //컨테이너 영역 -->
+
+		<!-- 팝업 콘텐츠 영역-->
+		<div class="popup-wrap" data-type="full" id="project-create">
+			<div class="popup-in">
+				<div class="popup">
+					<div class="popup-head">
+						<h2 class="pop-tit">프로젝트 등록</h2>
+					</div>
+					<nav class="popup-tab tabs">
+						<ul class="depth4">
+							<li class="active"><a href="" data-id="popTabCont1">매출관리</a></li>
+							<li><a href="" data-id="popTabCont2">직접비</a></li>
+							<li><a href="" data-id="popTabCont3">인건비</a></li>
+							<li><a href="" data-id="popTabCont4">프로젝트 결산서</a>
+								<ul class="depth5">
+									<li class="active"><a href="" data-id="popTabCont4-1">결산서</a></li>
+									<li><a href="" data-id="popTabCont4-2">원가표</a></li>
+									<li><a href="" data-id="popTabCont4-3">노트</a></li>
+								</ul>
+							</li>
+							<li><a href="" data-id="popTabCont5">사업정보</a></li>
+						</ul>
+					</nav>
+					<div class="popup-body">	
+
+						<div class="popup-tab-cont active" id="popTabCont1">
+							<h3 class="heading-m">매출관리</h3>	
+							<div class="table horizontal">
+								<table>
+									<colgroup>
+										<col class="w12">
+										<col>
+									</colgroup>
+									<tbody>	
+										<tr>
+											<th scope="row">사업금액</th>
+											<td>11,000,000 원</td>
+										</tr>
+										<tr>
+											<th scope="row">매출액</th>
+											<td>
+												10,000,000 원 <small>VAT 1,000,000</small>
+												<span class="invalid-feedback">금액이 일치하지 않습니다.</span>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">실적</th>
+											<td>
+												<ul class="sales">
+													<li>
+														<div class="sales-group">
+															<label class="sales-label">예정</label>
+															<span class="form-control-unit sales-input bg1">
+																<input type="text" class="form-control" value="5,500,000"> <small class="unit">원</small>
+															</span>
+														</div>
+														<div class="sales-date">1 2024.03.24</div>
+														<div class="sales-date">2 2024.06.30</div>
+													</li>
+													<li>
+														<div class="sales-group">
+															<label class="sales-label">미수</label>
+															<span class="form-control-unit sales-input bg2">
+																<input type="text" value="5,500,000" class="form-control warning"> <small class="unit">원</small>
+															</span>
+														</div>
+														<div class="sales-date">계산서 발행 2024.03.24</div>
+													</li>
+													<li>
+														<div class="sales-group">
+															<label class="sales-label">임금</label>
+															<span class="form-control-unit sales-input bg3">
+																<input type="text" class="form-control" value="0"> <small class="unit">원</small>
+															</span>
+														</div>
+													</li>
+													<li>
+														<div class="sales-group">
+															<label class="sales-label">IFRS</label>
+															<span class="form-control-unit sales-input bg4">
+																<input type="text" class="form-control" value="4,000,000"> <small class="unit">원</small>
+															</span>
+															자동계산(당해년도)
+														
+															<span class="form-control-unit sales-input bg4">
+																<input type="text" class="form-control" value="6,000,000"> <small class="unit">원</small>
+															</span>
+															자동계산(차년도)
+														</div>
+														
+													</li>
+												</ul>												
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">매출 정보</th>
+											<td>
+												<div class="table s-table">
+													<table>
+														<colgroup>
+															<col span="12">
+														</colgroup>
+														<thead>
+															<tr>
+																<th scope="col" colspan="12">2023년</th>
+															</tr>
+															<tr>
+																<th scope="col">1월</th>
+																<th scope="col">2월</th>
+																<th scope="col">3월</th>
+																<th scope="col">4월</th>
+																<th scope="col">5월</th>
+																<th scope="col">6월</th>
+																<th scope="col">7월</th>
+																<th scope="col">8월</th>
+																<th scope="col">9월</th>
+																<th scope="col">10월</th>
+																<th scope="col">11월</th>
+																<th scope="col">12월</th>
+															</tr>
+														</thead>
+														<tbody>	
+															<tr>
+																<td data-layer="sales">
+																	<button class="btn-empty sales-add-btn"><i class="ri-add-line"></i></button>
+																</td>
+																<td data-layer="sales">
+																	<button class="btn-empty sales-add-btn"><i class="ri-add-line"></i></button>
+																</td>
+																<td data-layer="sales">
+																	<button class="btn-empty sales-add-btn"><i class="ri-add-line"></i></button>
+																</td>
+																<td data-layer="sales">
+																	<button class="btn-empty sales-add-btn"><i class="ri-add-line"></i></button>
+																</td>
+																<td data-layer="sales">
+																	<button class="btn-empty sales-add-btn"><i class="ri-add-line"></i></button>
+																</td>
+																<td data-layer="sales">
+																	<button class="btn-empty sales-add-btn"><i class="ri-add-line"></i></button>
+																</td>
+																<td data-layer="sales">
+																	<button class="btn-empty sales-add-btn"><i class="ri-add-line"></i></button>
+																</td>
+																<td data-layer="sales">
+																	<button class="btn-empty sales-add-btn"><i class="ri-add-line"></i></button>
+																</td>
+																<td data-layer="sales">
+																	<button class="btn-empty sales-add-btn"><i class="ri-add-line"></i></button>
+																</td>
+																<td data-layer="sales">
+																	9,000,000
+																</td>
+																<td data-layer="sales">
+																	<button class="btn-empty sales-add-btn"><i class="ri-add-line"></i></button>
+																</td>
+																<td data-layer="sales">
+																	<button class="btn-empty sales-add-btn"><i class="ri-add-line"></i></button>
+																</td>
+															</tr>	
+														</tbody>
+													</table>
+												</div>
+											</td>
+										</tr>										
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!-- //매출관리 -->
+
+						<div class="popup-tab-cont" id="popTabCont2">
+							<h3 class="heading-m">직접비 관리</h3>	
+							<div class="table horizontal">
+								<table>
+									<colgroup>
+										<col class="w12">
+										<col>
+									</colgroup>
+									<tbody>	
+										<tr>
+											<th scope="row">예상 직접비</th>
+											<td>123 원</td>
+										</tr>
+										<tr>
+											<th scope="row">실사용 직접비</th>
+											<td>123 원 금액이 일치하지 않습니다.</td>
+										</tr>
+										<tr>
+											<th scope="row">잔액</th>
+											<td>
+												123 원
+											</td>
+										</tr>						
+									</tbody>
+								</table>
+							</div>
+							<div class="table draggable">
+								<table>
+									<caption></caption>
+									<colgroup>
+										
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col"></th>									
+											<th scope="col">
+												<span>지출시기</span>
+											</th>
+											<th scope="col">
+												<span>구분</span>
+											</th>
+											<th scope="col">
+												<span>지출내역</span>
+											</th>
+											<th scope="col">
+												<span>구매</span>
+											</th>
+											<th scope="col">
+												<span>전자결재</span>
+											</th>
+											<th scope="col">
+												<span>상신일</span>
+											</th>
+											<th scope="col">
+												<span>비용집행</span>
+											</th>
+											<th scope="col">
+												<span>비고</span>
+											</th>
+										</tr>
+									</thead>
+									<tbody>	
+										<tr>
+											<td class="row-btn-control">
+												<div class="btn-modify">
+													<button><i class="ri-delete-bin-line"></i></button>
+													<button><i class="ri-pencil-line"></i></button>
+												</div>
+												<span class="btn-draggable"><i class="ri-draggable"></i></span>
+											</td>
+											<td><span class="ic-cal">2024-08-30</span></td>									
+											<td>홈페이지 구축</td>
+											<td class="subject">
+												<a href="/mgr/projectManageMgr/newForm?pmSeq=787&amp;deptCode=EX&amp;menuId=MENU00314&amp;listPageNum=&amp;schType=0&amp;schText=&amp;schStartDate=&amp;schEndDate=&amp;inCorporateCode=">
+													양성자가속기 장비이력관리시스템 고도화 및 유지보수 위탁용역
+												</a>
+											</td>
+											<td>123 원</td>
+											<td><button class="btn sm ic-pen" >전자결재</button></td>
+											<td><span class="ic-cal">2024-08-30</span></td>
+											<td><span class="state ing">진행</span></td>
+											<td><button>메모</button></td>
+										</tr>
+									
+										<tr>
+											<td class="row-btn-control">
+												<div class="btn-modify">
+													<button><i class="ri-delete-bin-line"></i></button>
+													<button><i class="ri-pencil-line"></i></button>
+												</div>
+												<span class="btn-draggable"><i class="ri-draggable"></i></span>
+											</td>
+											<td data-layer="date">
+												<button class="btn-empty"><span class="ic-cal">비어있음</span></button>
+											</td>
+											<td data-layer="project">
+												<button class="btn-empty">비어있음</button>
+											</td>
+											<td class="subject">
+												<button class="btn-empty">비어있음</button>
+											</td>
+											<td><button class="btn-empty">비어있음</button></td>
+											<td><button class="btn-empty">비어있음</button></td>
+											
+											<td data-layer="date">
+												<button class="btn-empty"><span class="ic-cal">비어있음</span></button>
+											</td>
+											<td>
+												<button class="btn-empty">비어있음</button>
+											</td>
+											<td><button class="btn sm btn-save">저장</button></td>
+										</tr>
+										
+									</tbody>
+								</table>
+							</div>
+							<button class="btn-row-add"><i class="ri-add-line"></i>새로 만들기</button>
+						</div>
+						<!-- //직접비 -->
+
+						<div class="popup-tab-cont" id="popTabCont3">
+							<h3 class="heading-m">인건비</h3>
+							<div class="mem-compare">
+								<div class="mem-plan">
+									<div class="table draggable">
+										<table>
+											<caption></caption>
+											<colgroup>
+												
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col"></th>									
+													<th scope="col">
+														<span>직무(SW노임단가)</span>
+													</th>
+													<th scope="col">
+														<span>공수(M/M)</span>
+													</th>
+													
+												</tr>
+											</thead>
+											<tbody>	
+												<tr>
+													<td class="row-btn-control">
+														<div class="btn-modify">
+															<button><i class="ri-delete-bin-line"></i></button>
+															<button><i class="ri-pencil-line"></i></button>
+														</div>
+														<span class="btn-draggable"><i class="ri-draggable"></i></span>
+													</td>
+													<td><span class="ic-cal">2024-08-30</span></td>
+												</tr>
+												<tr>
+													<td class="row-btn-control">
+														<div class="btn-modify">
+															<button><i class="ri-delete-bin-line"></i></button>
+															<button><i class="ri-pencil-line"></i></button>
+														</div>
+														<span class="btn-draggable"><i class="ri-draggable"></i></span>
+													</td>
+													<td data-layer="manager">
+														<button class="btn-empty"><span class="ic-cal">비어있음</span></button>
+													</td>
+													<td><button class="btn sm btn-save">저장</button></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<button class="btn-row-add"><i class="ri-add-line"></i>새로 만들기</button>
+									<div class="mem-sum">
+										<span class="label">계획</span> <span class="sum">총 <b>9</b>개월 <b>1</b>억원</span>
+									</div>
+								</div>
+								<div class="mem-actual">
+									<div class="table draggable">
+										<table>
+											<caption></caption>
+											<colgroup>
+												
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col"></th>									
+													<th scope="col">
+														<span>투입인력(작업자)</span>
+													</th>
+													<th scope="col">
+														<span>투입일수(M/D)</span>
+													</th>
+													<th scope="col">
+														<span>내부적용단가</span>
+													</th>
+													<th scope="col">
+														<span>종료</span>
+													</th>		
+												</tr>
+											</thead>
+											<tbody>	
+												<tr>
+													<td class="row-btn-control">
+														<div class="btn-modify">
+															<button><i class="ri-delete-bin-line"></i></button>
+															<button><i class="ri-pencil-line"></i></button>
+														</div>
+														<span class="btn-draggable"><i class="ri-draggable"></i></span>
+													</td>
+													<td><span class="ic-cal">2024-08-30</span></td>									
+													<td>홈페이지 구축</td>
+													<td><span class="ic-cal">2024-08-30</span></td>
+													<td><button>메모</button></td>
+												</tr>
+											
+												<tr>
+													<td class="row-btn-control">
+														<div class="btn-modify">
+															<button><i class="ri-delete-bin-line"></i></button>
+															<button><i class="ri-pencil-line"></i></button>
+														</div>
+														<span class="btn-draggable"><i class="ri-draggable"></i></span>
+													</td>
+													<td data-layer="manager">
+														<button class="btn-empty"><span class="ic-cal">비어있음</span></button>
+													</td>
+													<td>
+														<button class="btn-empty">비어있음</button>
+													</td>
+													<td>
+														<button class="btn-empty">비어있음</button>
+													</td>		
+													<td><button class="btn sm btn-save">저장</button></td>
+												</tr>
+												
+											</tbody>
+										</table>
+									</div>
+									<button class="btn-row-add"><i class="ri-add-line"></i>새로 만들기</button>
+									<div class="mem-sum">
+										<span class="label">실제투입</span> <span class="sum">총 <b>9</b>개월 <b>1</b>억원</span>
+									</div>
+								</div>
+							</div>	
+						</div>
+						<!-- //인건비 -->
+
+						<div class="popup-tab-cont" id="popTabCont4">
+							<h3 class="heading-m">프로젝트 결산서</h3>	
+						</div>
+						<!-- //프로젝트 결산서 -->
+
+						<div class="popup-tab-cont" id="popTabCont5">
+							<h3 class="heading-m">사업정보</h3>				
+							<div class="table horizontal">
+								<table>
+									<colgroup>
+										<col class="w12">
+										<col>
+									</colgroup>
+									<tbody>	
+										<tr>
+											<th scope="row">매출법인</th>
+											<td data-layer="corp"><span class="item selected">플랜아이</span></td>
+										</tr>
+										<tr>
+											<th scope="row">부서</th>
+											<td data-layer="dept">
+												<button class="btn-empty">비어있음</button>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">팀(그룹)</th>
+											<td></td>
+										</tr>
+										<tr>
+											<th scope="row">담당자</th>
+											<td data-layer="manager">
+												<button class="btn-empty">비어있음</button>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">발주처</th>
+											<td>
+												<button class="btn-empty">비어있음</button>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">프로젝트 분류</th>
+											<td data-layer="project">
+												<button class="btn-empty">비어있음</button>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">진행상태</th>
+											<td data-layer="status">
+												<button class="btn-empty">비어있음</button>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">사업기간</th>
+											<td data-layer="term">
+												<button class="btn-empty">비어있음</button>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">계약일</th>
+											<td>
+												<button class="btn-empty">비어있음</button>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">지출일</th>
+											<td>
+												<button class="btn-empty">비어있음</button>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">투입인력</th>
+											<td>
+												<button class="btn-empty">비어있음</button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!-- //사업정보 -->
+
+						
+					</div>
+					<div class="popup-util">
+						<button type="button" onclick="window.print();" class="popup-print"><i class="ri-printer-line"></i><span class="sr-only">프린트</span></button>
+						<button type="button" class="popup-close"><i class="ri-close-line"></i><span class="sr-only">레이어 닫기</span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //팝업 콘텐츠 영역 -->
+
 	</div>
 
 	<!-- 공통 JS -->

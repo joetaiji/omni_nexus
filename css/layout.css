@@ -27,13 +27,13 @@ popup-wrap
 .popup-wrap .popup {
   display: flex;
   flex-direction: column;
+  width: 100%;
   height: 100%;
-  padding: 0;
+  padding: 4rem;
   position: relative;
 }
 .popup-wrap .popup-head {
   margin-bottom: 4rem;
-  padding: 4rem;
 }
 .popup-wrap .popup-head .pop-tit {
   font-size: 2.5rem;
@@ -42,6 +42,9 @@ popup-wrap
   flex: 1;
   max-height: 100%;
   overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 4rem;
+  border-radius: 2rem;
 }
 .popup-wrap .popup-body::-webkit-scrollbar-track {
   background-color: var(--gray-30);
@@ -230,7 +233,6 @@ html.scroll-no {
   background: #01072D;
 }
 
-.popup,
 .inner {
   width: var(--inner);
   max-width: calc(100% - 2rem);
@@ -761,6 +763,100 @@ content 공통
   padding: 3rem;
   border-radius: 2rem;
 }
+.contents .mdi-area {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 17rem;
+}
+.contents .mdi-area .swiper-slide {
+  width: auto;
+}
+.contents .mdi-area .tab-control {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  margin-left: 1rem;
+}
+.contents .mdi-area .tab-control .swiper-button {
+  position: static;
+  transform: none;
+  width: 2.4rem;
+}
+.contents .mdi-area .tab-control button {
+  border-color: var(--gray-20);
+}
+.contents .mdi-area .tab-control .btn {
+  padding: 0.4rem;
+}
+.contents .mdi-tabs {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 3rem;
+}
+.contents .mdi-tabs::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(246, 247, 251, 0) 0%, rgb(246, 247, 251) 100%);
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+.contents .mdi-tabs > ul {
+  display: flex;
+  max-width: 80rem;
+}
+.contents .mdi-tabs > ul > li.active a, .contents .mdi-tabs > ul > li.active button {
+  background: var(--white);
+  color: #111;
+}
+.contents .mdi-tabs > ul li:only-child .ri-close-line {
+  display: none;
+}
+.contents .mdi-tabs > ul .ri-close-line {
+  border-radius: 50%;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contents .mdi-tabs > ul .ri-close-line:hover {
+  background: var(--gray-40);
+  transition: 0.2s;
+}
+.contents .mdi-tabs > ul a, .contents .mdi-tabs > ul button {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 1rem 2rem;
+  position: relative;
+  line-height: 1.2;
+  border-radius: 1.2rem 1.2rem 0 0;
+  height: 4rem;
+  font-size: 1.5rem;
+  background-color: #7C7F91;
+  color: #fff;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+.contents .mdi-tabs > ul a:hover, .contents .mdi-tabs > ul button:hover {
+  background-color: color-mix(in srgb, #7C7F91, #000 15%);
+}
+.contents .mdi-tabs > ul span {
+  display: none;
+}
+.contents .mdi-tabs li.active a, .contents .mdi-tabs li.active button {
+  font-weight: 700;
+}
+.contents .mdi-tabs li.active a span, .contents .mdi-tabs li.active button span {
+  display: block;
+}
 .contents .page-title-wrap {
   position: relative;
   border-bottom: 1px solid var(--gray-30);
@@ -771,46 +867,6 @@ content 공통
   font-size: 2.4rem;
   color: #111;
   margin-bottom: 2rem;
-}
-.contents .mdi-area {
-  display: flex;
-  justify-content: space-between;
-  padding-right: 17rem;
-}
-.contents .mdi-area .swiper-slide {
-  width: auto;
-}
-.contents .mdi-area .tab-control .swiper-button {
-  position: static;
-  transform: none;
-  width: 2.4rem;
-}
-.contents .tabs {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding-right: 3rem;
-}
-.contents .tabs > ul li:only-child .ri-close-line {
-  display: none;
-}
-.contents .tabs > ul .ri-close-line {
-  border-radius: 50%;
-  width: 1.6rem;
-  height: 1.6rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.contents .tabs > ul .ri-close-line:hover {
-  background: var(--gray-40);
-  transition: 0.2s;
-}
-.contents .tabs > ul span {
-  display: none;
-}
-.contents .tabs .tab-control .btn {
-  padding: 0.4rem;
 }
 .contents .user-group {
   display: flex;

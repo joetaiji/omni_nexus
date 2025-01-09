@@ -1,75 +1,40 @@
 @import "../mixin";
 
-.tabs { 
-	&::after { content: ''; display: block; width: 3rem; height:100%; background: linear-gradient(90deg, rgba(246, 247, 251, 0) 0%, rgba(246, 247, 251, 1) 100%); position: absolute; right: 0; z-index: 1;}
-	>ul { display: flex; max-width: 80rem; 
-		a, button { @include flex(1rem, center, center); font-size: 1.8rem; text-align: center; padding: 1rem 2rem; position: relative; line-height: 1.2; border-radius: 1.2rem 1.2rem 0 0;	}		
-	}	
+.tabs {
+	>ul { display: flex; }
+	a, button { width: 100%; @include flex(.3rem, center, center); font-size: 1.8rem; text-align: center; padding: 1.5rem; position: relative; line-height: 1.2;
+		&:hover { text-decoration: none; transition: .2s;}		
+	}
 	li.active {		
 		a, button { font-weight: 700; 
-			span { display: block;}
+			/* &::after { content: ""; display: block; } */
 		}
 	}
 	/* &.num10 { flex-wrap: wrap;
 		> li {flex: 1 1 20%;}
 	} */
 }
-.tab-control { display: flex; gap: .4rem; align-items: center; margin-left: 1rem;
-	button {border-color: var(--gray-20);}
-}
-.depth4 {		
+.depth4 { 
+	>li { flex: 1; 
+		a, button { border-bottom: .3rem solid transparent; margin-bottom: -1px;
+			&:hover { border-bottom-color: var(--gray-30);}
+		}
+		&.active {
+			a, button { border-bottom-color: var(--primary-70); color: var(--primary-70); }
+		}
+	}
+}	
+.depth5 {		
 	>ul{
 		>li { 
-			a, button { height: 4rem; font-size: 1.5rem; background-color: #7C7F91; color: #fff; white-space: nowrap; transition: 0.2s;
-				&:hover { background-color: color-mix(in srgb, #7C7F91, #000 15%);}
+			a, button { height: 5.8rem; background-color: var(--white);	border: 1px solid var(--gray-40); 
+				&:hover { background-color: var(--gray-10); }
 			}
 			
 			&.active { 
-				a, button { background: var(--white); color: #111; }
+				a, button { border: .3rem solid var(--primary-70); color: var(--primary-70); }
 			}
 			~ li { margin-left: -1px; }
 		}
 	}
 }
-
-
-@include media($mobile) {
-	.tabs  { 
-		> ul { flex-direction:column; }
-		li { display: none; 
-			&.active {display: block;
-				a, button{ 
-					&::before { content: '\ea4e'; font-family: var(--icon); font-size: 2rem; @include pos(rt, 1rem, 50%); font-weight: 400; transition: .2s; }
-					&::after { display: none; }
-				}		
-			}
-			~li { margin: -1px 0 0 0; }
-		}
-		&.active {
-			li  { display: block; }
-			&.active {
-				a, button {
-					&::before { rotate: 180deg; }
-				}
-			}
-		}
-	}
-	.depth5 { border-bottom: 0;
-		li {
-			a, button { border-width: 1px; }
-		}
-		&.active li {
-			a, button { border-color: var(--gray-30); }
-		}
-	}
-}
-
-/* .tab_wrap { 
-	.depth4 { margin-top: 5rem; } 
-	.tab_cont { display: none;
-		&:first-of-type { display: block; } 
-	 }  
- } 
-.anchor_tab { 
-	&.fixed { position: fixed; top:var(--headerHeight); width:100%;z-index: 1; }   
- }     */ 

@@ -3,19 +3,23 @@
 /* ==========================================================================================
 //button
 ============================================================================================*/
-.btns { @include flex(1rem, center, flex-end); flex-wrap: wrap; margin: 5rem 0; 
+.btns { @include flex(1rem, center, flex-end); flex-wrap: wrap;
 	&.both { justify-content: space-between;}
 	&.col { flex-direction: column; margin: 0;}	
 }
 
-.btn { @include flex(.4rem, center, center, inline); border-radius: 0.8rem; padding: .8rem 2rem; height: 4.8rem; /* min-width:12rem; */ transition: .25s; background: var(--white); color: var(--primary-90); border:1px solid var(--gray-90);
-	&:hover { border-color: var(--gray-90); background-color: var(--gray-20); text-decoration: none;}	
+.btn-area { @include flex(1rem, center, center);}
+
+.btn { @include flex(.4rem, center, center, inline); border-radius: 0.8rem; padding: .8rem 2rem; height: 4.8rem; /* min-width:12rem; */ transition: .25s; background: var(--white); color: var(--primary-90); border:1px solid #ccc;
+	&:hover { border-color: var(--gray-90); background-color: var(--gray-20); text-decoration: none;}
 
 	//text
 	&-txt { background: none; border: 0; padding: 0 .2rem; min-width:initial;
 		@include hover;
 		&::after{margin-left: 0;}
 	}	
+
+	&[class*=ic-]::before { margin-right: 0;}
 
 	//text + icon
 	&[class*=ico-] { 
@@ -67,6 +71,7 @@
 		label { cursor:pointer; }
 	}
 
+	&.btn-save { background: #213362; color: #fff; }
 }
 
 @include media($mobile) {	

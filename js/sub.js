@@ -1,26 +1,27 @@
 $(function () {  	
 	snb();
-	tabs(".depth4");
+	tabs(".depth4", '.popup-tab-cont');
+	/* tabs(".depth4");
 	tabs(".depth5");
 	accordion(".accordion");
 	dialogPop() //alert
-	fileLoad(".file-input");
-	layerPopup('.btn-project-create')		//부서명 찾기
+	fileLoad(".file-input"); */
+	layerPopup('.btn-project-create')		//프로젝트 등록
 
 	//snb close
 	listOpen('#snb .snb-close', '#snb', true)
 
-	//통합검색-고급검색
+	/* //통합검색-고급검색
 	tabs(".total-search-cont .tabs");
-	listOpen('.ico-sch1', '.sch-etc', true)
+	listOpen('.ico-sch1', '.sch-etc', true) */
 
 	//mdi
-	$('.depth4>ul>li .ri-close-line').on('click', function(e){
+	$('.mdi-tabs .ri-close-line').on('click', function(e){
 		$(this).parents('li').remove();
 		e.preventDefault();
 	});
-	$('.tab-control .mdi-all-close').on('click', function(e){
-		$('.depth4').find('li:not(.active)').remove();
+	$('.mdi-all-close').on('click', function(e){
+		$('.mdi-tabs').find('li:not(.active)').remove();
 		mdiTab.update();
 	});
 
@@ -33,26 +34,22 @@ $(function () {
 		navigation: {
 			nextEl: ".swiper-button-next",
 			prevEl: ".swiper-button-prev",
-		},		
-		/* breakpoints: {
-			1024: {
-				slidesPerView: 3
-			},
-			1280: {
-				slidesPerView: 5
-			}
-		} */
-	}) 
+		}
+	}) 	
+	
+	//필터 닫기버튼
+	$('.item.selected').append('<i class="ri-close-line"></i>')
+	$('.filter .ri-close-line').on('click', function(e){
+		$(this).parents('.selected').remove();
+		e.preventDefault();
+	});
 
 	//상세검색열기
 	listOpen('.filter-open', '.filter', true)
 
 	//필터
 	listOpen('.item-add', '.filter-item', false)
-	$('.filter .ri-close-line').on('click', function(e){
-		$(this).parents('.item-selected').remove();
-		e.preventDefault();
-	});
+	
 
 	//리스트
 	$('.sort').on('click', function(){
@@ -65,7 +62,7 @@ $(function () {
 		}			
 	});	
 	listOpen('.btn-draggable', '.row-btn-control', false)
-	listOpen('.btn-empty', '.filter-item', false)
+	listOpen('.btn-empty', '[data-layer]', false)
 
 	
 
