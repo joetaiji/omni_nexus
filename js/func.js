@@ -251,9 +251,9 @@ function tabs(el, cont) {
             .children('a, button').attr('aria-selected', true)
             .parent().siblings('li').find('>a, >button').attr('aria-selected', false)
 
-        $(el).on("click", ">li>a, >li>button", function(e){
+        $(el).on("click", "a, button", function(e){
             $(this).attr('aria-selected', true).parent().addClass(AC)
-            .siblings().removeClass(AC).find(">button, >a").attr('aria-selected', false)
+            .siblings().removeClass(AC).find("button, a").attr('aria-selected', false)
             $("#"+$(this).data('id')).addClass(AC).siblings().removeClass(AC)
             e.preventDefault()
         })

@@ -183,7 +183,7 @@
   border-radius: 0.4rem;
 }
 
-.table:not(.horizontal) td:nth-last-child(-n+5) .item-layer {
+.table:not(.horizontal) td:nth-last-child(-n+2):not(:nth-child(-n+2)) .item-layer {
   left: auto;
   right: 0;
 }

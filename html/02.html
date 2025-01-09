@@ -501,7 +501,7 @@
 							<li class="active"><a href="" data-id="popTabCont1">매출관리</a></li>
 							<li><a href="" data-id="popTabCont2">직접비</a></li>
 							<li><a href="" data-id="popTabCont3">인건비</a></li>
-							<li><a href="" data-id="popTabCont4">프로젝트 결산서</a>
+							<li><a href="" data-id="popTabCont4-1">프로젝트 결산서</a>
 								<ul class="depth5">
 									<li class="active"><a href="" data-id="popTabCont4-1">결산서</a></li>
 									<li><a href="" data-id="popTabCont4-2">원가표</a></li>
@@ -866,8 +866,11 @@
 														</div>
 														<span class="btn-draggable"><i class="ri-draggable"></i></span>
 													</td>
-													<td><span class="ic-cal">2024-08-30</span></td>									
-													<td>홈페이지 구축</td>
+													<td>
+														<label class="item selected"><input type="checkbox" checked=""><span class="user-icon">
+														<img src="../img/layout/photo.png">
+													</span>김소영</label></td>			
+													<td>0.25 일 <button class="btn-mem-date" data-id="mem-date-count"><i class="ri-calendar-line"></i></button></td>
 													<td><span class="ic-cal">2024-08-30</span></td>
 													<td><button>메모</button></td>
 												</tr>
@@ -904,10 +907,20 @@
 						</div>
 						<!-- //인건비 -->
 
-						<div class="popup-tab-cont" id="popTabCont4">
-							<h3 class="heading-m">프로젝트 결산서</h3>	
+						<div class="popup-tab-cont" id="popTabCont4-1">
+							<h3 class="heading-m">결산서</h3>	
 						</div>
-						<!-- //프로젝트 결산서 -->
+						<!-- //프로젝트 결산서 : 결산서 -->
+
+						<div class="popup-tab-cont" id="popTabCont4-2">
+							<h3 class="heading-m">원가표</h3>	
+						</div>
+						<!-- //프로젝트 결산서 : 원가표 -->
+
+						<div class="popup-tab-cont" id="popTabCont4-3">
+							<h3 class="heading-m">노트</h3>	
+						</div>
+						<!-- //프로젝트 결산서 : 원가표 -->
 
 						<div class="popup-tab-cont" id="popTabCont5">
 							<h3 class="heading-m">사업정보</h3>				
@@ -993,9 +1006,49 @@
 						<button type="button" class="popup-close"><i class="ri-close-line"></i><span class="sr-only">레이어 닫기</span></button>
 					</div>
 				</div>
+				<!-- //popup -->
+				<div class="popup-side" id="mem-date-count">
+					<button type="button" class="popup-back"><i class="ri-arrow-left-s-line"></i><span class="sr-only">레이어 닫기</span></button>
+					<h3 class="heading-m">9월</h3>	
+					<div class="table">
+						<table>
+							<colgroup>
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">월</th>
+									<th scope="col">화</th>
+									<th scope="col">수</th>
+									<th scope="col">목</th>
+									<th scope="col">금</th>
+									<th scope="col">토</th>
+									<th scope="col">일</th>
+								</tr>
+							</thead>
+							<tbody>	
+								<tr>
+									<td>
+										<button>
+											<button>0</button>
+											<small>day</small>
+										</button>
+									</td>
+									
+								</tr>								
+							</tbody>
+						</table>
+					</div>
+
+					<div class="popup-util">
+						<button type="button" onclick="window.print();" class="popup-print"><i class="ri-printer-line"></i><span class="sr-only">프린트</span></button>				
+					</div>
+				</div>
+				<!-- //popup-side -->
 			</div>
 		</div>
 		<!-- //팝업 콘텐츠 영역 -->
+
+		
 
 	</div>
 

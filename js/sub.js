@@ -1,19 +1,16 @@
 $(function () {  	
-	snb();
-	tabs(".depth4", '.popup-tab-cont');
+	snb();	
 	/* tabs(".depth4");
 	tabs(".depth5");
 	accordion(".accordion");
 	dialogPop() //alert
 	fileLoad(".file-input"); */
-	layerPopup('.btn-project-create')		//프로젝트 등록
+
+	//프로젝트 등록
+	layerPopup('.btn-project-create')		
 
 	//snb close
 	listOpen('#snb .snb-close', '#snb', true)
-
-	/* //통합검색-고급검색
-	tabs(".total-search-cont .tabs");
-	listOpen('.ico-sch1', '.sch-etc', true) */
 
 	//mdi
 	$('.mdi-tabs .ri-close-line').on('click', function(e){
@@ -24,10 +21,6 @@ $(function () {
 		$('.mdi-tabs').find('li:not(.active)').remove();
 		mdiTab.update();
 	});
-
-	$('.sortable tbody').sortable();
-	
-
 	var mdiTab = new Swiper(".mdi-area .swiper", { 
 		slidesPerView: 'auto',
 		loop: this.SwiperLength > 1,
@@ -36,18 +29,19 @@ $(function () {
 			prevEl: ".swiper-button-prev",
 		}
 	}) 	
+
+	//드래그
+	$('.draggable tbody').sortable();	
 	
-	//필터 닫기버튼
+	//아이템 삭제
 	$('.item.selected').append('<i class="ri-close-line"></i>')
 	$('.filter .ri-close-line').on('click', function(e){
 		$(this).parents('.selected').remove();
 		e.preventDefault();
 	});
 
-	//상세검색열기
-	listOpen('.filter-open', '.filter', true)
-
-	//필터
+	//상세검색 필터
+	listOpen('.filter-open', '.filter', true)	
 	listOpen('.item-add', '.filter-item', false)
 	
 
@@ -65,7 +59,17 @@ $(function () {
 	listOpen('.btn-empty', '[data-layer]', false)
 
 	
-
+	//팝업 콘텐츠 탭
+	tabs(".depth4", '.popup-tab-cont');
+	
+	//투입일수
+	layerPopup('.btn-mem-date')
+	$html.on('click', '.opened-layer .popup-close', function(e) {	
+        e.preventDefault();
+        $(this).closest('.opened-layer').removeAttr('tabindex').fadeOut(100).removeClass(OL);
+		$html.removeClass(ScrollNo);
+		$clickSpot.focus().removeClass(AC).attr('aria-expanded', 'false');
+    })
 
 
 	/* //이메일 도메인 선택

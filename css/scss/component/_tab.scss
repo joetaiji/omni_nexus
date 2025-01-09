@@ -1,7 +1,7 @@
 @import "../mixin";
 
-.tabs {
-	>ul { display: flex; }
+.tabs { position: relative;
+	ul { display: flex; }
 	a, button { width: 100%; @include flex(.3rem, center, center); font-size: 1.8rem; text-align: center; padding: 1.5rem; position: relative; line-height: 1.2;
 		&:hover { text-decoration: none; transition: .2s;}		
 	}
@@ -13,28 +13,30 @@
 	/* &.num10 { flex-wrap: wrap;
 		> li {flex: 1 1 20%;}
 	} */
-}
-.depth4 { 
-	>li { flex: 1; 
-		a, button { border-bottom: .3rem solid transparent; margin-bottom: -1px;
-			&:hover { border-bottom-color: var(--gray-30);}
+	.depth4 { 
+		>li { flex: 1; 
+			>a, >button { border-bottom: .3rem solid transparent; margin-bottom: -1px;
+				&:hover { border-bottom-color: var(--gray-30);}
+			}
+			&.active {
+				>a, >button { border-bottom-color: var(--primary-70); color: var(--primary-70); }
+				.depth5 { display: flex;}
+				&:has(.depth5) {padding-bottom: 8.7rem;}
+			}
+			
 		}
-		&.active {
-			a, button { border-bottom-color: var(--primary-70); color: var(--primary-70); }
-		}
-	}
-}	
-.depth5 {		
-	>ul{
+	}	
+	.depth5 { display: none; position: absolute; left: 0; bottom: 0; width:100%;	gap:1rem; justify-content: center; padding: 2rem 0; border-top:1px solid #ddd; 
 		>li { 
-			a, button { height: 5.8rem; background-color: var(--white);	border: 1px solid var(--gray-40); 
-				&:hover { background-color: var(--gray-10); }
+			a, button { background-color: var(--gray-10); color: var(--primary-70); border-radius: 3rem; font-size: 1.8rem; font-weight: 600; padding: 1.2rem 2rem;
+				&:hover { background-color: var(--gray-20); }
 			}
 			
 			&.active { 
-				a, button { border: .3rem solid var(--primary-70); color: var(--primary-70); }
+				a, button { background: var(--primary-70); color: var(--white); }
 			}
 			~ li { margin-left: -1px; }
 		}
 	}
 }
+
