@@ -1,37 +1,7 @@
-$(function () {  	
-	snb();	
-	/* tabs(".depth4");
-	tabs(".depth5");
-	accordion(".accordion");
-	dialogPop() //alert
-	fileLoad(".file-input"); */
+$(function () { 	
 
 	//프로젝트 등록
-	layerPopup('.btn-project-create')		
-
-	//snb close
-	listOpen('#snb .snb-close', '#snb', true)
-
-	//mdi
-	$('.mdi-tabs .ri-close-line').on('click', function(e){
-		$(this).parents('li').remove();
-		e.preventDefault();
-	});
-	$('.mdi-all-close').on('click', function(e){
-		$('.mdi-tabs').find('li:not(.active)').remove();
-		mdiTab.update();
-	});
-	var mdiTab = new Swiper(".mdi-area .swiper", { 
-		slidesPerView: 'auto',
-		loop: this.SwiperLength > 1,
-		navigation: {
-			nextEl: ".swiper-button-next",
-			prevEl: ".swiper-button-prev",
-		}
-	}) 	
-
-	//드래그
-	$('.draggable tbody').sortable();	
+	layerPopup('.btn-project-create')
 	
 	//아이템 삭제
 	$('.item.selected').append('<i class="ri-close-line"></i>')
@@ -43,10 +13,29 @@ $(function () {
 	//상세검색 필터
 	listOpen('.filter-open', '.filter', true)	
 	listOpen('.item-add', '.filter-item', false)
+	$('.filter-save').on('click', function(e){
+		$('.filter').removeClass(AC).addClass('setting');
+	});
 	
+	/* =======================================================================================
+	테이블 리스트
+	======================================================================================= */
+	//드래그
+	$('.draggable tbody').sortable();	
 
-	//리스트
-	$('.sort').on('click', function(){
+	//줄삭제
+	$('.row-btn-control .btn-delete').on('click', function(){
+		$(this).closest('tr').remove();
+	});
+	//새로 만들기 - 줄 추가
+	/* $('.btn-row-add').on('click', function(){
+		const addRow = $(this).prev('.table').find('tr:last').clone();
+		addRow.find('td:not(.row-btn-control)').html('<button class="btn-empty">비어있음</button>');
+		$(this).prev('.table').find('>table>tbody').append(addRow);
+	}) */	
+	//정렬
+	$('.sortable thead th:not(:first-child)').append('<button class="btn-sort"><i class="ri-arrow-up-s-fill"></i><i class="ri-arrow-down-s-fill"></i></button>');
+	$('.btn-sort').on('click', function(){
 		if($(this).hasClass('desc')){
 			$(this).removeClass('desc').addClass('asc');
 		} else if($(this).hasClass('asc')){
@@ -56,31 +45,36 @@ $(function () {
 		}			
 	});	
 	listOpen('.btn-draggable', '.row-btn-control', false)
-	listOpen('.btn-empty', '[data-layer]', false)
+	listOpen('.btn-empty, .item.selected', '[data-layer]', false)
 
 	
-	//팝업 콘텐츠 탭
-	tabs(".depth4", '.popup-tab-cont');
+	/* =======================================================================================
+	팝업
+	======================================================================================= */
+	//팝업내 탭메뉴
+	tabs(".depth4", '.popup-tab-cont');	
 	
-	//투입일수
-	layerPopup('.btn-mem-date')
-	$html.on('click', '.opened-layer .popup-close', function(e) {	
-        e.preventDefault();
-        $(this).closest('.opened-layer').removeAttr('tabindex').fadeOut(100).removeClass(OL);
-		$html.removeClass(ScrollNo);
-		$clickSpot.focus().removeClass(AC).attr('aria-expanded', 'false');
-    })
-
-
-	/* //이메일 도메인 선택
-	$('.domain-select').on('change', function(){
-		var selDomain = $(this).val()
-		$(this).prev('.domain-input').val(selDomain);
+	//팝업사이드 열기 - 투입일수, 내부단가
+	$('.btn-mem-date, .btn-view-mem-inner-price').on('click', function(e){
+		$('.popup-side').addClass(AC).find('.popup-body').hide();
+		$('#' + $(this).data('id')).attr('tabindex', 0).fadeIn(300);
 	})
-	//평점신청시 선택활성화
-	$('input[name="grade_yn"]').on('change', function(){
-		$('[value="Y"]').is(':checked') ? $(this).parent().siblings('select').prop('disabled', false) : $(this).parent().siblings('select').prop('disabled', true);
-	}) */
+	$('.popup-back').on('click', function(e) {	
+        $(this).closest('.popup-side').removeClass(AC);
+    })
+	$(".mem-date-count td").on('click', function(e) {	
+		let dayUnit = parseFloat($(this).find('strong').text());
+		if (dayUnit >= 1) {
+			dayUnit = 0;
+		} else {
+			dayUnit += 0.25;
+		}
+		let timeAddClass = dayUnit * 100
+		$(this).removeClass().addClass('time-'+timeAddClass).find('strong').text(dayUnit);
+	})
+	//내부노임단가 
+	dialogPop();
+
 })
 
 

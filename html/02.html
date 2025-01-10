@@ -109,16 +109,19 @@
 			<div id="contents" class="contents">
 				<div class="mdi-area">
 					<div class="mdi-tabs swiper">
-						<ul class="swiper-wrapper">
-							<li class="swiper-slide active"><a href="">매출관리 > 매출통계<i class="ri-close-line"></i></a></li>
-							<li class="swiper-slide"><a href="">프로젝트<i class="ri-close-line"></i></a></li>
-							<li class="swiper-slide"><a href="">실적관리(손익계산)<i class="ri-close-line"></i></a></li>
-							<li class="swiper-slide"><a href="">거래처<i class="ri-close-line"></i></a></li>
-							<li class="swiper-slide"><a href=""><span>환경설정 > </span>내부노임단가 <i class="ri-close-line"></i></a></li>
-							<li class="swiper-slide"><a href=""><span>환경설정 > </span>SW노임단가<i class="ri-close-line"></i></a></li>
-							<li class="swiper-slide"><a href=""><span>지출관리 > </span>지출 통계<i class="ri-close-line"></i></a></li>							
-							<li class="swiper-slide"><a href=""><span>지출관리 > </span>경비 관리<i class="ri-close-line"></i></a></li>	
-							<li class="swiper-slide"><a href=""><span>환경설정 > </span>조직도<i class="ri-close-line"></i></a></li>
+						<ul class="mdi-item-group swiper-wrapper">
+							<li class="mdi-item swiper-slide active"><a href=""><span>매출관리 > </span>매출통계<i class="ri-close-line"></i></a></li>
+							<li class="mdi-item swiper-slide"><a href="">프로젝트<i class="ri-close-line"></i></a></li>
+							<li class="mdi-item swiper-slide"><a href="">실적관리(손익계산)<i class="ri-close-line"></i></a></li>
+							<li class="mdi-item swiper-slide"><a href="">거래처<i class="ri-close-line"></i></a></li>
+							<li class="mdi-item swiper-slide"><a href=""><span>환경설정 > </span>내부노임단가 <i class="ri-close-line"></i></a></li>
+							<li class="mdi-item swiper-slide"><a href=""><span>환경설정 > </span>SW노임단가<i class="ri-close-line"></i></a></li>
+							<li class="mdi-item swiper-slide"><a href=""><span>지출관리 > </span>지출 통계<i class="ri-close-line"></i></a></li>							
+							<li class="mdi-item swiper-slide"><a href=""><span>지출관리 > </span>경비 관리<i class="ri-close-line"></i></a></li>	
+							<li class="mdi-item swiper-slide"><a href=""><span>환경설정 > </span>조직도<i class="ri-close-line"></i></a></li>
+							<li class="mdi-item swiper-slide"><a href=""><span>지출관리 > </span>지출 통계<i class="ri-close-line"></i></a></li>							
+							<li class="mdi-item swiper-slide"><a href=""><span>지출관리 > </span>경비 관리<i class="ri-close-line"></i></a></li>	
+							<li class="mdi-item swiper-slide"><a href=""><span>환경설정 > </span>조직도<i class="ri-close-line"></i></a></li>
 						</ul>
 					</div>
 					<div class="tab-control">
@@ -153,8 +156,8 @@
 						</button>
 					</div>
 					<!-- 필터 처음 설정 -->
-					<div class="filter">						
-						<div class="filter-cont col4">
+					<div class="filter">
+						<div class="filter-cont">
 							<div class="filter-item" data-layer="project">
 								<div class="item-title">
 									<strong>프로젝트 분류</strong>
@@ -239,20 +242,9 @@
 								</button>
 								
 							</div>					
-						</div>	
-						<div class="filter-foot">
-							<button class="filter-reset"><i class="ri-restart-line"></i> 초기화</button>
-							<div class="filter-save">
-								<input type="checkbox" id="filterSave"><label for="filterSave">해당 조건 다음에도 설정</label>
-								<div class="result"><strong>136</strong>개의 조건 검색 결과</div>
-							</div> 
-						</div>					
-						<button class="filter-open"><i class="ri-skip-down-line"></i></button>
-					</div>
-
-					<!-- 필터 설정 후 -->
-					<div class="filter setting">
-						<div class="set-item-list">
+						</div>
+						<!-- //filter-cont : 필터 설정 전 -->
+						<div class="filter-setting">
 							<label class="item selected"><input type="checkbox">홈페이지 구축</label>
 							<label class="item selected"><input type="checkbox">디자인</label>
 							<label class="item selected"><input type="checkbox">유지보수</label>
@@ -271,62 +263,37 @@
 							<label class="state ing item selected"><input type="checkbox" checked>진행</label>
 							<label class="item selected"><input type="checkbox" checked>1,000,000원 ~ 8,000,000,000원</label>
 						</div>
+						<!-- //set-item-list : 필터 설정 후 -->
 						<div class="filter-foot">
 							<button class="filter-reset"><i class="ri-restart-line"></i> 초기화</button>
 							<div class="filter-save">
-								<input type="checkbox" id="filterSave1"><label for="filterSave1">해당 조건 다음에도 설정</label>
-								<div class="result"><strong>136</strong>개의 조건 검색 결과</div>
-							</div>
-						</div>
+								<input type="checkbox" id="filterSave"><label for="filterSave">해당 조건 다음에도 설정</label>
+								<button class="btn-result"><strong>136</strong>개의 조건 검색 결과</button>
+							</div> 
+						</div>					
 						<button class="filter-open"><i class="ri-skip-down-line"></i></button>
 					</div>
+				
 
 					<button type="button" data-id="project-create" class="btn sm btn-project-create"><i class="ri-add-line"></i>프로젝트 등록</button>
-					<div class="table draggable">
+					<div class="table draggable sortable">
 						<table>
 							<caption>사이트관리 목록 - 번호, 프로젝트명, 업체명, 부서, 담당자, 사업금액, 착수일, 완료일 등 기능 관리 목록</caption>
-							<colgroup>
-								
-							</colgroup>
 							<thead>
 								<tr>
 									<th scope="col"></th>									
-									<th scope="col">
-										<span>매출법인<button class="sort"><i class="ri-arrow-up-s-fill"></i><i class="ri-arrow-down-s-fill"></i></button></span>
-									</th>
-									<th scope="col">
-										<span>구분<button class="sort"><i class="ri-arrow-up-s-fill"></i><i class="ri-arrow-down-s-fill"></i></button></span>
-									</th>
-									<th scope="col">
-										<span>사업명<button class="sort"><i class="ri-arrow-up-s-fill"></i><i class="ri-arrow-down-s-fill"></i></button></span>
-									</th>									
-									<th scope="col">
-										<span>발주처<button class="sort"><i class="ri-arrow-up-s-fill"></i><i class="ri-arrow-down-s-fill"></i></button></span>
-									</th>
-									<th scope="col">
-										<span>부서<button class="sort"><i class="ri-arrow-up-s-fill"></i><i class="ri-arrow-down-s-fill"></i></button></span>
-									</th>
-									<th scope="col">
-										<span>담당자<button class="sort"><i class="ri-arrow-up-s-fill"></i><i class="ri-arrow-down-s-fill"></i></button></span>
-									</th>
-									<th scope="col">
-										<span>계약금액<button class="sort"><i class="ri-arrow-up-s-fill"></i><i class="ri-arrow-down-s-fill"></i></button></span>
-									</th>
-									<th scope="col">
-										<span>매출<button class="sort"><i class="ri-arrow-up-s-fill"></i><i class="ri-arrow-down-s-fill"></i></button></span>
-									</th>
-									<th scope="col">
-										<span>미수<button class="sort"><i class="ri-arrow-up-s-fill"></i><i class="ri-arrow-down-s-fill"></i></button></span>
-									</th>
-									<th scope="col">
-										<span>계약일<button class="sort"><i class="ri-arrow-up-s-fill"></i><i class="ri-arrow-down-s-fill"></i></button></span>
-									</th>
-									<th scope="col">
-										<span>종료일<button class="sort"><i class="ri-arrow-up-s-fill"></i><i class="ri-arrow-down-s-fill"></i></button></span>
-									</th>
-									<th scope="col">
-										<span>상태<button class="sort"><i class="ri-arrow-up-s-fill"></i><i class="ri-arrow-down-s-fill"></i></button></span>
-									</th>
+									<th scope="col">매출법인</th>
+									<th scope="col">구분</th>
+									<th scope="col">사업명</th>									
+									<th scope="col">발주처</th>
+									<th scope="col">부서</th>
+									<th scope="col">담당자</th>
+									<th scope="col">계약금액</th>
+									<th scope="col">매출</th>
+									<th scope="col">미수</th>
+									<th scope="col">계약일</th>
+									<th scope="col">종료일</th>
+									<th scope="col">상태</th>
 								</tr>
 							</thead>
 							<tbody>	
@@ -340,10 +307,7 @@
 											<span class="user-icon">최</span>
 											<span class="user-sum">+6명</span>
 										</div>
-										<div class="btn-modify">
-											<button><i class="ri-delete-bin-line"></i></button>
-											<button><i class="ri-pencil-line"></i></button>
-										</div>
+										
 										<span class="btn-draggable"><i class="ri-draggable"></i></span>
 									</td>
 									<td>플랜아이</td>									
@@ -356,9 +320,9 @@
 									<td>한국원자력연구원</td>
 									<td>EX</td>
 									<td>이상민</td>
-									<td class="txt-right">55,000,000</td>
-									<td class="txt-right">0</td>
-									<td class="txt-right">0</td>
+									<td class="text-right">55,000,000</td>
+									<td class="text-right">0</td>
+									<td class="text-right">0</td>
 									<td><span class="ic-cal">2024-08-30</span></td>
 									<td><span class="ic-cal">2024-12-31</span></td>
 									<td><span class="state ing">진행</span></td>
@@ -373,10 +337,7 @@
 											<span class="user-icon">허</span>
 											<span class="user-icon">조 </span>
 										</div>
-										<div class="btn-modify">
-											<button><i class="ri-delete-bin-line"></i></button>
-											<button><i class="ri-pencil-line"></i></button>
-										</div>
+										
 										<span class="btn-draggable"><i class="ri-draggable"></i></span>
 									</td>
 									<td>플랜아이</td>									
@@ -389,9 +350,9 @@
 									<td>한국과학기술연구원부설국가녹색기술연구소</td>
 									<td>EX</td>
 									<td>홍은정</td>
-									<td class="txt-right">94,000,000</td>
-									<td class="txt-right">0</td>
-									<td class="txt-right">0</td>
+									<td class="text-right">94,000,000</td>
+									<td class="text-right">0</td>
+									<td class="text-right">0</td>
 									<td><span class="ic-cal">2024-09-03</span></td>
 									<td><span class="ic-cal">2025-03-02</span></td>
 									<td><span class="state end">완료</span></td>
@@ -407,36 +368,41 @@
 											</span>
 											<span class="user-sum">+24명</span>
 										</div>
-										<div class="btn-modify">
-											<button><i class="ri-delete-bin-line"></i></button>
-											<button><i class="ri-pencil-line"></i></button>
-										</div>
 										<span class="btn-draggable"><i class="ri-draggable"></i></span>
 									</td>
-									<td>플랜아이</td>									
-									<td>홈페이지 구축</td>
-									<td class="subject">
-										<a href="/mgr/projectManageMgr/newForm?pmSeq=785&amp;deptCode=MX&amp;menuId=MENU00314&amp;listPageNum=&amp;schType=0&amp;schText=&amp;schStartDate=&amp;schEndDate=&amp;inCorporateCode=">
-											2024년 국가물관리위원회 홈페이지 유지관리
-										</a>
+									<td data-layer="corp">
+										<label class="item selected"><input type="checkbox">플랜아이</label>
+									</td>									
+									<td data-layer="project">
+										<label class="item selected"><input type="checkbox">홈페이지 구축</label>
 									</td>
-									<td>환경부</td>
-									<td>MX</td>
-									<td>김정서</td>
-									<td class="txt-right">44,000,000</td>
-									<td class="txt-right">0</td>
-									<td class="txt-right">0</td>
-									<td><span class="ic-cal">2024-09-03</span></td>
-									<td><span class="ic-cal">2025-09-02</span></td>
-									<td></td>
+									<td class="subject">
+										<input type="text" class="form-control" value="2024년 국가물관리위원회 홈페이지 유지관리">
+									</td>
+									<td><label class="item selected"><input type="checkbox">환경부</label></td>
+									<td data-layer="dept"><label class="item selected"><input type="checkbox">MX</label></td>
+									<td data-layer="manager">
+										<label class="item selected"><input type="checkbox">김정서</label>
+									</td>
+									<td class="text-right">
+										<input type="text" class="form-control" value="44,000,000">										
+									</td>
+									<td class="text-right">
+										<input type="text" class="form-control" value="0">
+									</td>
+									<td class="text-right">
+										<input type="text" class="form-control" value="0">
+									</td>
+									<td data-layer="date">
+										<label class="item selected"><input type="checkbox">2024-09-03</label>
+									</td>
+									<td data-layer="date">
+										<label class="item selected"><input type="checkbox">2025-09-02</label>
+									</td>
+									<td><button class="btn sm btn-save">저장</button></td>
 								</tr>
 								<tr>
 									<td class="row-btn-control">
-										
-										<div class="btn-modify">
-											<button><i class="ri-delete-bin-line"></i></button>
-											<button><i class="ri-pencil-line"></i></button>
-										</div>
 										<span class="btn-draggable"><i class="ri-draggable"></i></span>
 									</td>
 									<td data-layer="corp">
@@ -470,7 +436,7 @@
 										<button class="btn-empty"><span class="ic-cal">비어있음</span></button>
 									</td>
 									<td><button class="btn sm btn-save">저장</button></td>
-								</tr>
+								</tr> 
 								
 							</tbody>
 						</table>
@@ -723,10 +689,7 @@
 									<tbody>	
 										<tr>
 											<td class="row-btn-control">
-												<div class="btn-modify">
-													<button><i class="ri-delete-bin-line"></i></button>
-													<button><i class="ri-pencil-line"></i></button>
-												</div>
+												
 												<span class="btn-draggable"><i class="ri-draggable"></i></span>
 											</td>
 											<td><span class="ic-cal">2024-08-30</span></td>									
@@ -745,10 +708,7 @@
 									
 										<tr>
 											<td class="row-btn-control">
-												<div class="btn-modify">
-													<button><i class="ri-delete-bin-line"></i></button>
-													<button><i class="ri-pencil-line"></i></button>
-												</div>
+												
 												<span class="btn-draggable"><i class="ri-draggable"></i></span>
 											</td>
 											<td data-layer="date">
@@ -804,20 +764,14 @@
 											<tbody>	
 												<tr>
 													<td class="row-btn-control">
-														<div class="btn-modify">
-															<button><i class="ri-delete-bin-line"></i></button>
-															<button><i class="ri-pencil-line"></i></button>
-														</div>
+														
 														<span class="btn-draggable"><i class="ri-draggable"></i></span>
 													</td>
 													<td><span class="ic-cal">2024-08-30</span></td>
 												</tr>
 												<tr>
 													<td class="row-btn-control">
-														<div class="btn-modify">
-															<button><i class="ri-delete-bin-line"></i></button>
-															<button><i class="ri-pencil-line"></i></button>
-														</div>
+														
 														<span class="btn-draggable"><i class="ri-draggable"></i></span>
 													</td>
 													<td data-layer="manager">
@@ -847,7 +801,11 @@
 														<span>투입인력(작업자)</span>
 													</th>
 													<th scope="col">
-														<span>투입일수(M/D)</span>
+														투입일수(M/D)
+														<button class="tooltip">
+															<i class="ri-information-fill"></i>
+															<span>일반 Man-Day 기준을 세분화하여 계산합니다.<br> (하루 2시간 = 0.25일)</span>
+														</button>
 													</th>
 													<th scope="col">
 														<span>내부적용단가</span>
@@ -860,27 +818,26 @@
 											<tbody>	
 												<tr>
 													<td class="row-btn-control">
-														<div class="btn-modify">
-															<button><i class="ri-delete-bin-line"></i></button>
-															<button><i class="ri-pencil-line"></i></button>
-														</div>
+														
 														<span class="btn-draggable"><i class="ri-draggable"></i></span>
 													</td>
-													<td>
+													<td data-layer="manager">
 														<label class="item selected"><input type="checkbox" checked=""><span class="user-icon">
 														<img src="../img/layout/photo.png">
-													</span>김소영</label></td>			
+														</span>김소영</label>
+													</td>			
 													<td>0.25 일 <button class="btn-mem-date" data-id="mem-date-count"><i class="ri-calendar-line"></i></button></td>
-													<td><span class="ic-cal">2024-08-30</span></td>
-													<td><button>메모</button></td>
+													<td>
+														<span class="mem-inner-price">2,500,000 원</span> 
+														<button class="btn-mem-inner-price open-dialog" data-target="dialog-mem-inner-price"></button>
+														
+													</td>
+													<td><input type="checkbox"></td>
 												</tr>
 											
 												<tr>
 													<td class="row-btn-control">
-														<div class="btn-modify">
-															<button><i class="ri-delete-bin-line"></i></button>
-															<button><i class="ri-pencil-line"></i></button>
-														</div>
+														
 														<span class="btn-draggable"><i class="ri-draggable"></i></span>
 													</td>
 													<td data-layer="manager">
@@ -1007,46 +964,196 @@
 					</div>
 				</div>
 				<!-- //popup -->
-				<div class="popup-side" id="mem-date-count">
+
+				<div class="popup-side">
 					<button type="button" class="popup-back"><i class="ri-arrow-left-s-line"></i><span class="sr-only">레이어 닫기</span></button>
-					<h3 class="heading-m">9월</h3>	
-					<div class="table">
-						<table>
-							<colgroup>
-							</colgroup>
-							<thead>
-								<tr>
-									<th scope="col">월</th>
-									<th scope="col">화</th>
-									<th scope="col">수</th>
-									<th scope="col">목</th>
-									<th scope="col">금</th>
-									<th scope="col">토</th>
-									<th scope="col">일</th>
-								</tr>
-							</thead>
-							<tbody>	
-								<tr>
-									<td>
-										<button>
-											<button>0</button>
+					<div class="popup-body" id="mem-date-count">
+						<h3 class="heading-m jc-center">9월</h3>	
+						<div class="table mem-date-count">
+							<table class="layout-fixed">
+								<colgroup>
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">월</th>
+										<th scope="col">화</th>
+										<th scope="col">수</th>
+										<th scope="col">목</th>
+										<th scope="col">금</th>
+										<th scope="col">토</th>
+										<th scope="col">일</th>
+									</tr>
+								</thead>
+								<tbody>	
+									<tr>
+										<td></td>
+										<td></td>
+										<td class="time-25">
+											<span>1</span>
+											<strong>0.25</strong>
 											<small>day</small>
-										</button>
-									</td>
-									
-								</tr>								
-							</tbody>
-						</table>
-					</div>
+										</td>
+										<td>
+											<span>2</span>
+											<strong>0</strong>
+											<small>day</small>
+										</td>
+										<td class="time-50">
+											<span>3</span>
+											<strong>0.5</strong>
+											<small>day</small>
+										</td>
+										<td class="time-100">
+											<span>4</span>
+											<strong>1</strong>
+											<small>day</small>
+										</td>
+										<td class="time-75">
+											<span>5</span>
+											<strong>0.75</strong>
+											<small>day</small>
+										</td>
+									</tr>								
+									<tr>
+										<td class="time-25">
+											<span>6</span>
+											<strong>0.25</strong>
+											<small>day</small>
+										</td>
+										<td>
+											<span>7</span>
+											<strong>0</strong>
+											<small>day</small>
+										</td>
+										<td class="time-50">
+											<span>8</span>
+											<strong>0.5</strong>
+											<small>day</small>
+										</td>
+										<td class="time-100">
+											<span>9</span>
+											<strong>1</strong>
+											<small>day</small>
+										</td>
+										<td class="time-75">
+											<span>10</span>
+											<strong>0.75</strong>
+											<small>day</small>
+										</td>
+									</tr>								
+								</tbody>
+							</table>
+						</div>
+					</div>	
+					<div class="popup-body" id="mem-inner-price">
+						<h3 class="heading-m">내부 노임단가 확인</h3>	
+						<h4 class="heading-s">2024 내부 인건비</h4>	
+						<div class="table draggable">
+							<table>
+								<colgroup>
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col" colspan="2" rowspan="2">직무 기준</th>
+										<th scope="col" colspan="6">인건비 단가(M/M) 기준</th>
+									</tr>
+									<tr>
+										<th scope="col"><strong>Ju</strong> <small>~ 3년차</small></th>
+										<th scope="col"><strong>Md 1</strong> <small>~ 7년차</small></th>
+										<th scope="col"><strong>Md 2</strong> <small>~ 10년차</small></th>
+										<th scope="col"><strong>Pr</strong> <small>~ 15년차</small></th>
+										<th scope="col"><strong>Sp</strong> <small>~ 20년차</small></th>
+										<th scope="col"><strong>Se</strong> <small>21년차 ~</small></th>
+									</tr>
+								</thead>
+								<tbody>	
+									<tr>
+										<td class="row-btn-control">
+											<span class="btn-draggable"><i class="ri-draggable"></i></span>
+										</td>
+										<td> CEO COO</td>
+										<td>비어있음</td>
+										<td>비어있음</td>										
+										<td>4,000,000</td>										
+										<td>5,000,000</td>										
+										<td>6,000,000</td>										
+										<td>7,000,000</td>										
+									</tr>								
+									<tr>
+										<td class="row-btn-control">
+											<span class="btn-draggable"><i class="ri-draggable"></i></span>
+										</td>
+										<td> PM, PO, PRO, QC</td>
+										<td>2,500,000</td>
+										<td>3,000,000</td>										
+										<td>4,000,000</td>										
+										<td>5,000,000</td>										
+										<td>6,000,000</td>										
+										<td>7,000,000</td>										
+									</tr>								
+									<tr>
+										<td class="row-btn-control">
+											<span class="btn-draggable"><i class="ri-draggable"></i></span>
+										</td>
+										<td> PL, PD, 연구원, CM, FD, 작가, SE, 매니저</td>
+										<td>2,500,000</td>
+										<td>3,000,000</td>										
+										<td>4,000,000</td>										
+										<td>5,000,000</td>										
+										<td>6,000,000</td>										
+										<td>7,000,000</td>										
+									</tr>	
+									<tr>
+										<td class="row-btn-control">
+											<span class="btn-draggable"><i class="ri-draggable"></i></span>
+										</td>										
+										<td><button class="btn-empty">비어있음</button></td>
+										<td><button class="btn-empty">비어있음</button></td>
+										<td><button class="btn-empty">비어있음</button></td>
+										<td><button class="btn-empty">비어있음</button></td>
+										<td><button class="btn-empty">비어있음</button></td>
+										<td><button class="btn-empty">비어있음</button></td>
+										<td><button class="btn-empty">비어있음</button><button class="btn sm btn-save">저장</button></td>		
+									</tr> 					
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="2">평균 연봉</td>
+										<td>2,500,000</td>
+										<td>3,000,000</td>
+										<td>3,722,222</td>
+										<td>4,444,444</td>
+										<td>5,000,000</td>
+										<td>5,555,556</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+						<button class="btn-row-add"><i class="ri-add-line"></i>새로 만들기</button>
+					</div>	
 
 					<div class="popup-util">
 						<button type="button" onclick="window.print();" class="popup-print"><i class="ri-printer-line"></i><span class="sr-only">프린트</span></button>				
 					</div>
 				</div>
 				<!-- //popup-side -->
+
+
 			</div>
 		</div>
-		<!-- //팝업 콘텐츠 영역 -->
+		<!-- //팝업 콘텐츠 영역 -->		
+		<dialog class="dialog" id="dialog-mem-inner-price">
+			<div class="dialog-cont">
+				<div class="text-center">
+					<p class="desc-txt"><strong>내부노임단가 보기용<br> 확인 모달창 생성</strong></p>
+				</div>
+			</div>
+			<div class="dialog-foot">
+				<button type="button" class="btn btn-cancel">취소</button>
+				<button type="button" class="btn type3 btn-view-mem-inner-price" data-id="mem-inner-price">보기</button>
+			</div>
+			<button class="btn-close"><i></i><span class="sr-only">팝업닫기</span></button>						
+		</dialog>	
 
 		
 

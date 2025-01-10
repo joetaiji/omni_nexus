@@ -1,6 +1,34 @@
 
 $(function () {       
 
+	/* =======================================================================================
+	레이아웃
+	======================================================================================= */ 	
+	//snb
+	snb();	
+	listOpen('#snb .snb-close', '#snb', true)
+
+	//mdi	
+	$('.mdi-tabs .ri-close-line').on('click', function(e){
+		$(this).parents('li').remove();
+		e.preventDefault();
+	});
+	$('.mdi-all-close').on('click', function(e){
+		$('.mdi-tabs').find('li:not(.active)').remove();
+		mdiTab.update();
+	});
+	var mdiTab = new Swiper(".mdi-area .swiper", { 
+		slidesPerView: 'auto',
+		loop: this.SwiperLength > 1,
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		}
+	}) 		
+
+	/* =======================================================================================
+	아이템 선택 레이어 생성
+	======================================================================================= */ 
 	//프로젝트 분류
 	$('[data-layer="project"]').append(
 		`<div class="item-layer">
@@ -192,6 +220,14 @@ $(function () {
 				</div>		
 			</form>						
 		</div>`				
+	);	
+
+	//줄 수정 및 삭제 버튼
+	$('.row-btn-control').append(
+		`<div class="btn-group">
+			<button class="btn-delete"><i class="ri-delete-bin-line"></i></button>
+			<button class="btn-modify"><i class="ri-pencil-line"></i></button>
+		</div>`
 	);	
 })
 

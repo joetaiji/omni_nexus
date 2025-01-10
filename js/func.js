@@ -334,13 +334,13 @@ function dialogPop(){
             if (dialog) {
                 dialog.showModal();
             }
-        } else if (target.classList.contains('btn-close') || target.closest('.btn-close') || target.classList.contains('btn-cancel')){
+        } else if (target.classList.contains('btn') || target.closest('.btn-close') || target.classList.contains('btn-cancel')){
             const dialog = target.closest('.dialog');
             if (dialog) {
                 dialog.close();
             }
         }
-    });     
+    });
 }
 
 /*  ------------------------------------------------------------------------------------
