@@ -3,23 +3,45 @@ $(function () {
 	//프로젝트 등록
 	layerPopup('.btn-project-create')
 	
+	
+	/* ==================================================================================
+	필터 아이템
+	================================================================================== */
+	//아이템 선택
+	$('.item').on('click', function(e){			
+		const $na = $(this);
+		if(!$na.hasClass('checked')){
+			$na.parents('.item-layer').find('.item-add-group').prepend($na.clone().addClass('selected'));
+			$na.addClass('checked')
+		}
+		$html.on('click', function(e){	
+			if(!$(e.target).closest('.item').length){
+				$na.parents('[data-layer]').children('.item-cont').html($('.item-add-group').clone())
+			}
+		})
+	})
 	//아이템 삭제
-	$('.item.selected').append('<i class="ri-close-line"></i>')
-	$('.filter .ri-close-line').on('click', function(e){
+	$('.filter').on('click', '.ri-close-line', function(e){
 		$(this).parents('.selected').remove();
 		e.preventDefault();
 	});
-
 	//상세검색 필터
-	listOpen('.filter-open', '.filter', true)	
+	listOpen('.btn-filter-open', '.filter', true)	
 	listOpen('.item-add', '.filter-item', false)
-	$('.filter-save').on('click', function(e){
+	/* $('.item-add').on('click', function(e){
+		const itemCont = $(this).prev('.item-cont').clone();
+		$(this).next('.item-layer').find('.item-cont').html(itemCont);
+	}); */
+	$('.btn-filter-result').on('click', function(e){
 		$('.filter').removeClass(AC).addClass('setting');
 	});
+	$('.btn-filter-reset').on('click', function(e){
+		$('.filter').removeClass('setting').addClass(AC);
+	});
 	
-	/* =======================================================================================
+	/* ==================================================================================
 	테이블 리스트
-	======================================================================================= */
+	================================================================================== */
 	//드래그
 	$('.draggable tbody').sortable();	
 
@@ -48,9 +70,9 @@ $(function () {
 	listOpen('.btn-empty, .item.selected', '[data-layer]', false)
 
 	
-	/* =======================================================================================
+	/* ==================================================================================
 	팝업
-	======================================================================================= */
+	================================================================================== */
 	//팝업내 탭메뉴
 	tabs(".depth4", '.popup-tab-cont');	
 	

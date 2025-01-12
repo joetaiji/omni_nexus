@@ -1,9 +1,9 @@
 
 $(function () {       
 
-	/* =======================================================================================
-	레이아웃
-	======================================================================================= */ 	
+/* ======================================================================================
+레이아웃
+====================================================================================== */
 	//snb
 	snb();	
 	listOpen('#snb .snb-close', '#snb', true)
@@ -26,9 +26,9 @@ $(function () {
 		}
 	}) 		
 
-	/* =======================================================================================
-	아이템 선택 레이어 생성
-	======================================================================================= */ 
+/* ======================================================================================
+아이템 선택 레이어 생성
+====================================================================================== */
 	//프로젝트 분류
 	$('[data-layer="project"]').append(
 		`<div class="item-layer">
@@ -40,17 +40,17 @@ $(function () {
 				</button>
 			</div>
 			<div class="item-cont">
-				<label class="item selected"><input type="checkbox" checked>홈페이지 구축</label>
+				<div class="item-add-group"></div>	
 				<input type="text" class="input-text form-control" placeholder="직접입력">
 			</div>										
 			<div class="item-group">
-				<span class="item">홈페이지 구축</span>
-				<span class="item">유지보수</span>
-				<span class="item">디자인</span>
-				<span class="item">클라우드 이관</span>
-				<span class="item">홍보/이벤트</span>
-				<span class="item">컨설팅</span>
-				<span class="item">내부거래</span>
+				<span class="item"><input type="checkbox">홈페이지 구축<i class="ri-close-line"></i></span>
+				<span class="item"><input type="checkbox">유지보수<i class="ri-close-line"></i></span>
+				<span class="item"><input type="checkbox">디자인<i class="ri-close-line"></i></span>
+				<span class="item"><input type="checkbox">클라우드 이관<i class="ri-close-line"></i></span>
+				<span class="item"><input type="checkbox">홍보/이벤트<i class="ri-close-line"></i></span>
+				<span class="item"><input type="checkbox">컨설팅<i class="ri-close-line"></i></span>
+				<span class="item"><input type="checkbox">내부거래<i class="ri-close-line"></i></span>
 			</div>
 		</div>`
 	);
@@ -65,18 +65,17 @@ $(function () {
 					<span>원하는 분류 태그가 없으면 직접 입력</span>
 				</button>
 			</div>
-			<div class="item-cont">
-				<label class="item selected"><input type="checkbox" checked>EX 사업부</label>
+			<div class="item-cont">				
 				<input type="text" class="input-text form-control" placeholder="직접입력">
 			</div>										
 			<div class="item-group">
-				<span class="item">EX 사업부</span>
-				<span class="item">MX 사업부</span>
-				<span class="item">AX 연구소</span>
-				<span class="item">PX 인사부</span>
-				<span class="item">PX 재무회계부</span>
-				<span class="item">CX 영업부</span>
-				<span class="item">지최일만</span>
+				<span class="item">EX 사업부<i class="ri-close-line"></i></span>
+				<span class="item">MX 사업부<i class="ri-close-line"></i></span>
+				<span class="item">AX 연구소<i class="ri-close-line"></i></span>
+				<span class="item">PX 인사부<i class="ri-close-line"></i></span>
+				<span class="item">PX 재무회계부<i class="ri-close-line"></i></span>
+				<span class="item">CX 영업부<i class="ri-close-line"></i></span>
+				<span class="item">지최일만<i class="ri-close-line"></i></span>
 			</div>
 		</div>`
 	);
@@ -95,10 +94,10 @@ $(function () {
 				<input type="text" class="input-text form-control" placeholder="직접입력">
 			</div>										
 			<div class="item-group">
-				<span class="item">플랜아이</span>
-				<span class="item">플랜파트너스</span>
-				<span class="item">아누타</span>
-				<span class="item">와이브릿지</span>
+				<span class="item">플랜아이<i class="ri-close-line"></i></span>
+				<span class="item">플랜파트너스<i class="ri-close-line"></i></span>
+				<span class="item">아누타<i class="ri-close-line"></i></span>
+				<span class="item">와이브릿지<i class="ri-close-line"></i></span>
 			</div>
 		</div>`
 	);
@@ -113,25 +112,22 @@ $(function () {
 					<span>원하는 분류 태그가 없으면 직접 입력</span>
 				</button>
 			</div>
-			<div class="item-cont">
-				<label class="item selected"><input type="checkbox" checked><span class="user-icon">						
-						<img src="../img/layout/photo.png">
-					</span>김소영</label>
+			<div class="item-cont">				
 				<input type="text" class="input-text form-control" placeholder="직접입력">
 			</div>										
 			<div class="item-group">
 				<span class="item"><span class="user-icon">						
 					<img src="../img/layout/photo.png">
 				</span>김소영</span>
-				<span class="item"><span class="user-icon">조</span>조정연</span>
-				<span class="item"><span class="user-icon">김</span>김승범</span>
-				<span class="item"><span class="user-icon">류</span>류혜정</span>
+				<span class="item"><span class="user-icon">조</span>조정연<i class="ri-close-line"></i></span>
+				<span class="item"><span class="user-icon">김</span>김승범<i class="ri-close-line"></i></span>
+				<span class="item"><span class="user-icon">류</span>류혜정<i class="ri-close-line"></i></span>
 				<span class="item"><span class="user-icon">						
 					<img src="../img/layout/photo.png">
-				</span>김소영</span>
-				<span class="item"><span class="user-icon">조</span>조정연</span>
-				<span class="item"><span class="user-icon">김</span>김승범</span>
-				<span class="item"><span class="user-icon">류</span>류혜정</span>
+				</span>김소영<i class="ri-close-line"></i></span>
+				<span class="item"><span class="user-icon">조</span>조정연<i class="ri-close-line"></i></span>
+				<span class="item"><span class="user-icon">김</span>김승범<i class="ri-close-line"></i></span>
+				<span class="item"><span class="user-icon">류</span>류혜정<i class="ri-close-line"></i></span>
 			</div>
 		</div>`
 	);
@@ -178,14 +174,13 @@ $(function () {
 				</button>
 			</div>
 			<div class="item-cont">
-				<label class="state ing item selected"><input type="checkbox" checked>진행</label>
 				<input type="text" class="input-text form-control" placeholder="직접입력">
 			</div>										
 			<div class="item-group">
-				<button class="state before">착수전</button>
-				<button class="state ing">진행</button>
-				<button class="state hold">보류</button>
-				<button class="state end">완료</button>
+				<button class="state before">착수전<i class="ri-close-line"></i></button>
+				<button class="state ing">진행<i class="ri-close-line"></i></button>
+				<button class="state hold">보류<i class="ri-close-line"></i></button>
+				<button class="state end">완료<i class="ri-close-line"></i></button>
 			</div>
 		</div>`
 	);

@@ -74,10 +74,6 @@
   position: absolute;
   opacity: 0;
 }
-.item .state:has(input:checked)::before, .item:has(input:checked)::before {
-  content: "\eb7a";
-  font-family: "remixicon";
-}
 
 .item {
   display: inline-flex;
@@ -93,6 +89,9 @@
   font-size: 1.6rem;
   white-space: nowrap;
 }
+.item:active {
+  border: 1px solid #00062c;
+}
 .item.selected {
   padding: 1rem;
   border-style: dashed;
@@ -100,11 +99,17 @@
 .item.selected:has(.user-icon)::before {
   display: none;
 }
+.item.selected .ri-close-line {
+  display: flex;
+}
+.item.selected:active {
+  border: 1px solid #00062c;
+}
 .item .ri-close-line {
+  display: none;
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
-  display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.6rem;
@@ -128,6 +133,7 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 .item-cont .input-text {
   flex: 1;
@@ -150,6 +156,10 @@
 }
 .item-cont.vert {
   flex-direction: column;
+}
+
+td .item-cont {
+  padding: 0;
 }
 
 .item-layer {
@@ -260,23 +270,6 @@
   margin-bottom: 5rem;
   position: relative;
 }
-.filter-open {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  border: 1px solid #ddd;
-  background: #fff;
-  transform: translate(-50%, -50%);
-  transition: 0.2s;
-  position: absolute;
-  left: 50%;
-  top: 100%;
-  font-weight: 700;
-  color: #000;
-}
 .filter-cont {
   display: none;
   border-right: 1px solid #ddd;
@@ -307,6 +300,10 @@
 .filter-item:hover .item-add {
   display: block;
 }
+.filter-item[data-layer=manager] .item-layer {
+  left: auto;
+  right: -1px;
+}
 .filter-setting {
   display: none;
   gap: 2rem 0.8rem;
@@ -325,7 +322,7 @@
   justify-content: space-between;
   display: none;
 }
-.filter-foot .filter-reset {
+.filter-foot .btn-filter-reset {
   display: flex;
   gap: 0.4rem;
   padding: 1rem 2rem;
@@ -364,17 +361,34 @@
   border-radius: 50%;
   font-size: 1.6rem;
 }
-.filter-foot .filter-save .btn-result {
+.filter-foot .filter-save .btn-filter-result {
   background: #00062C;
   color: #fff;
   font-size: 1.5rem;
   padding: 0.8rem 1.2rem;
   border-radius: 0.6rem;
 }
-.filter-foot .filter-save .btn-result strong {
+.filter-foot .filter-save .btn-filter-result strong {
   color: #04B87F;
 }
-.filter.active .filter-open {
+.filter .btn-filter-open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  transition: 0.2s;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  font-weight: 700;
+  color: #000;
+}
+.filter.active .btn-filter-open {
   transform: translate(-50%, -50%) rotate(180deg);
 }
 .filter.active .filter-cont {
@@ -383,7 +397,7 @@
 .filter.active .filter-foot {
   display: flex;
 }
-.filter.setting .filter-open {
+.filter.setting .btn-filter-open {
   transform: translate(-50%, -50%) rotate(180deg);
 }
 .filter.setting .filter-cont {

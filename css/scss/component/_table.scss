@@ -74,7 +74,7 @@
 	}
 	&.sortable { 
 		thead th {
-			.btn-sort { vertical-align: middle; display: inline-flex; flex-direction: column; color: #aaa; font-size: 1.5rem; 
+			.btn-sort { vertical-align: middle; display: inline-flex; flex-direction: column; color: #aaa; font-size: 1.5rem; line-height: 1; margin-left: 0.2rem;
 				.ri-arrow-down-s-fill { margin-top: -0.8rem;}
 			
 				&.desc {
