@@ -8,7 +8,7 @@ $(function () {
 	필터 아이템
 	================================================================================== */
 	//아이템 선택 및 저장	
-	$('.item').on('click', function(e){			
+	$('.item').on('click focus', function(e){			
 		const $na = $(this);
 		if(!$na.hasClass('checked')){
 			$na.parents('.item-layer').find('.item-add-group').prepend($na.clone().addClass('selected'));
@@ -50,8 +50,6 @@ $(function () {
 	/* ==================================================================================
 	테이블 리스트
 	================================================================================== */
-	//드래그
-	$('.draggable tbody').sortable();	
 
 	//줄삭제
 	$('.row-btn-control .btn-delete').on('click', function(){
@@ -75,7 +73,7 @@ $(function () {
 		}			
 	});	
 	listOpen('.btn-draggable', '.row-btn-control', false)
-	listOpen('.btn-empty, .item.selected', '[data-layer]', false)
+	listOpen('.item-cont, .item.selected', '[data-layer]', false)
 
 	
 	/* ==================================================================================

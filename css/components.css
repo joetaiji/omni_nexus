@@ -366,6 +366,7 @@
   }
 }
 /* table */
+.table { /* 스크롤 임시 감춤 - overflow-x:auto; @include scrollbar( #ccc, #fff, .6rem, .3rem, h); */ }
 .table td, .table th {
   border-top: 1px solid #eee;
   padding: 1.5rem 0.3rem;
@@ -381,6 +382,7 @@
 .table th {
   white-space: nowrap;
 }
+.table > table { /* 스크롤 임시 감춤 - min-width:146rem; */ }
 .table > table > thead > tr:first-of-type > th {
   border-top: 0;
 }
@@ -404,7 +406,7 @@
 .table > table td .btn-group {
   display: none;
   position: absolute;
-  right: 0;
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
   white-space: nowrap;

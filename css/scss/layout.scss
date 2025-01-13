@@ -188,37 +188,43 @@ $snbW: 26rem;
 		padding: 1rem; display: flex; justify-content: center; align-items: center; border-radius: 8px 0px 0px 8px; background: rgba(255, 255, 255, 0.20); 
 		&::after { content: ''; display: block; width: 1rem; height: 1.9rem; background: url(#{$url}/layout/snb_close.png) no-repeat center/contain; transition: 0.2s;}
 	}
+	
+	//메뉴 줄어들게
 	&.active {flex-basis: 6.4rem; overflow: visible; transition-delay: .2s;
 		.snb-head { height: 16rem;
 			.logo,
 			.member-area {display: none; }
 		}
-		.list .head_menu_depth > li { 
-			> ul {position: absolute; opacity: 0; top: 0; left: calc(100% + 1rem); padding: 4rem 1.2rem 1.2rem; border-radius: 12px; 
+		.list .head_menu_depth > li { 			
+			> ul { display: none;position: absolute; opacity: 0; top: 0; left: 100%; padding: 4rem 1.2rem 1.2rem; border-radius: 12px; 
 				background: #FFF;
 				box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.10);}
 			> a { padding-left: 2.2rem; 			
 				&::after { display: none;}
-				span { position: absolute; top: .4rem; left: calc(100% + 1rem); z-index: 1; opacity: 0; visibility:hidden; color: var(--gray-60); font-size: 1.3rem;	border-radius: 12px;
+				span { position: absolute; top: .4rem; left: 100%; z-index: 1; opacity: 0; visibility:hidden; color: var(--gray-60); font-size: 1.3rem;	border-radius: 12px;
 					background: #FFF;
 					box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.10); display: block; padding: 0.8rem 1.2rem;}
 				&:has(+ul) span{ background: none; box-shadow:none; left: calc(100% + 2.2rem);}
 			}
 			&.active { 
 				> a { border-radius: 1rem 0 0 1rem; font-weight: 400;
-					span { opacity: 1; visibility: visible;}
+					span { display: none;}
 				}
 				&::before,
 				&::after { width: 1.2rem; height: 1.2rem; transition: none;}
 				&::before { background: radial-gradient(circle at 0 0, #000 65%, #F6F7FB 71%);}
 				&::after { background: radial-gradient(circle at 0 100%, #000 65%, #F6F7FB 71%);}
-				> ul { opacity: 1; 
+				> ul { display: none;
 					li {
 						a { color:var(--gray-80); 
 							&::before { background: var(--gray-20);}
 						}
 						&.active a { background: #EFF9F6;}
 					}
+				}
+				&:hover {
+					> a span,
+					> ul { opacity: 1; visibility:visible; display: block;}
 				}
 			}
 		}
@@ -231,7 +237,7 @@ content 공통
 .user-icon { background: white;  border-radius: 2.2rem; box-shadow: rgba(15, 15, 15, 0.1) 0px 2px 4px; outline: rgba(0, 0, 0, 0.3) solid 0.5px;  width: 2.2rem; height: 2.2rem; font-size: 1.1rem; line-height:normal;  @include flex(null, center, center); position: relative;
 	img { object-fit: cover; border-radius: 100%; width: 100%; height: 100%; }
 }
-.contents { flex: 1; background: #F6F7FB;  padding: 3rem; border-radius: 2rem; 
+.contents { flex: 1; min-width:1%; background: #F6F7FB;  padding: 3rem; border-radius: 2rem; 
 
 	.mdi-area { display: flex; justify-content: space-between; padding-right: 17rem;
 		.swiper-slide {width: auto;}
@@ -277,7 +283,7 @@ content 공통
 	}
 
 	.print-btn { width: 4rem; height: 4rem; font-size: 2rem; @include pos(rt, 4rem, 4rem); border-radius: .8rem; background: var(--white); border: 1px solid #ddd; @include hover;}
-	.page-contents { color: var(--fontColor); background: var(--white); padding: 4rem; border-radius: 0 2rem 0 0; position: relative; min-height: calc(100vh - 20.1rem);}
+	.page-contents { color: var(--fontColor); background: var(--white); padding: 4rem; border-radius: 0 2rem 0 0; position: relative; min-height: calc(100vh - 20.1rem); }
 	.article { scroll-margin-top: 15rem; min-height: 20rem;}
 }
 

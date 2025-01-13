@@ -7,7 +7,8 @@
 }
 
 .empty::placeholder,
-.btn-empty {
+.spreadRequired::after {
+  content: "필수입력";
   font-size: 1.3rem;
   color: #999;
   padding: 0.2rem;
@@ -168,7 +169,7 @@
 .item-layer {
   display: none;
   position: absolute;
-  top: -1px;
+  top: 100%;
   left: -1px;
   background: #fff;
   border-radius: 1.2rem;
@@ -308,6 +309,7 @@
 }
 .filter-item .item-layer {
   min-width: 36.6rem;
+  top: -1px;
 }
 .filter-item:hover {
   border: 1px solid #04B87F;
