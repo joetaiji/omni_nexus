@@ -25,11 +25,11 @@ $(function () {
 		const $itemGroup = $(this).parents('.item-layer').find('.item-add-group')
 		$(this).parents('[data-layer]').children('.item-cont').html($itemGroup.clone())
 	}); */
-	//아이템 삭제
+	/* //아이템 삭제
 	$('.item-cont').on('click', '.item-add-group .ri-close-line', function(e){
 		$(this).parents('.selected').remove();
 		e.preventDefault();
-	});
+	}); */
 	//상세검색 필터
 	listOpen('.btn-filter-open, .item-more', '.filter', true)	
 	listOpen('.item-add', '.filter-item', false)
