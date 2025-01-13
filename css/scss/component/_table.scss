@@ -4,10 +4,12 @@
 .table { /* 스크롤 임시 감춤 - overflow-x:auto; @include scrollbar( #ccc, #fff, .6rem, .3rem, h); */
 	
 	td,th {
-		border-top: 1px solid #eee; padding: 1.5rem .3rem; word-break: break-all; text-align: center; font-size: 1.5rem; line-height: 1.5;
+		border-top: 1px solid #eee; padding: 1.5rem .6rem;  text-align: center; font-size: 1.5rem; line-height: 1.5; 
 		&.text_left { padding-left: 2rem; text-align: left;}
 	}
-	th {white-space: nowrap; }
+	th { white-space: nowrap;}
+	.subject,
+	.orderer{ width: 17rem; margin: 0 auto; @include ellipsis; }
 
 	>table { /* 스크롤 임시 감춤 - min-width:146rem; */
 		>thead>tr:first-of-type {

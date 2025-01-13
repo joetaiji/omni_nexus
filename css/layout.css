@@ -90,7 +90,8 @@ popup-wrap
   transition: 0.5s ease;
 }
 .popup-wrap .popup-side .popup-head {
-  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
   position: relative;
   border-bottom: 1px solid #eee;
 }
@@ -106,7 +107,8 @@ popup-wrap
   font-weight: 400;
   position: absolute;
   left: 4rem;
-  top: 4rem;
+  top: 3.4rem;
+  z-index: 1;
 }
 .popup-wrap .popup-side.active {
   left: 0;

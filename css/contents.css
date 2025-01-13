@@ -202,6 +202,14 @@
   border-radius: 0.4rem;
 }
 
+.filter-item.active {
+  position: relative;
+}
+.filter-item.active.active .item-layer {
+  display: block;
+  z-index: 2;
+}
+
 .table:not(.horizontal) td:nth-last-child(-n+2):not(:nth-child(-n+2)) .item-layer {
   left: auto;
   right: 0;
@@ -217,6 +225,11 @@
 .table .table .row-edit > td > .btn-save {
   right: -2rem;
   padding: 0.5rem;
+}
+
+.table .item-layer .item-group {
+  padding: 0;
+  border-top: 0;
 }
 
 [data-layer] {

@@ -35,191 +35,128 @@ $(function () {
 아이템 선택 레이어 생성
 ====================================================================================== */
 	//프로젝트 분류
-	$('[data-layer="project"]').append(
+	$('[data-layer="type"]').append(
 		`<div class="item-layer">
-			<div class="item-title">
-				<strong>프로젝트 분류</strong>
-				<button class="tooltip">
-					<i class="ri-information-fill"></i>
-					<span>원하는 분류 태그가 없으면 직접 입력</span>
-				</button>
-			</div>
-			<div class="item-cont">
-				<div class="item-add-group"></div>	
-				<input type="text" class="input-text form-control" placeholder="직접입력">
-			</div>										
 			<div class="item-group">
-				<span class="item">홈페이지 구축<i class="ri-close-line"></i></span>
-				<span class="item">유지보수<i class="ri-close-line"></i></span>
-				<span class="item">디자인<i class="ri-close-line"></i></span>
-				<span class="item">클라우드 이관<i class="ri-close-line"></i></span>
-				<span class="item">홍보/이벤트<i class="ri-close-line"></i></span>
-				<span class="item">컨설팅<i class="ri-close-line"></i></span>
-				<span class="item">내부거래<i class="ri-close-line"></i></span>
+				<span class="item">홈페이지 구축</span>
+				<span class="item">유지보수</span>
+				<span class="item">디자인</span>
+				<span class="item">클라우드 이관</span>
+				<span class="item">홍보/이벤트</span>
+				<span class="item">컨설팅</span>
+				<span class="item">내부거래</span>
+			</div>
+		</div>`
+	);
+	
+
+	//사업명
+	$('[data-layer="project"]').append(
+		`<div class="item-layer">												
+			<div class="item-group">
+				<span class="item">양성자가속기 장비이력관리시스템 고도화 및 유지보수 위탁용역</span>
+				<span class="item">(NIGT) 웹 기반 글로벌 R&D 전략지도 정보시스템 구축</span>
 			</div>
 		</div>`
 	);
 
 	//부서
 	$('[data-layer="dept"]').append(
-		`<div class="item-layer">
-			<div class="item-title">
-				<strong>부서</strong>
-				<button class="tooltip">
-					<i class="ri-information-fill"></i>
-					<span>원하는 분류 태그가 없으면 직접 입력</span>
-				</button>
-			</div>
-			<div class="item-cont">		
-				<div class="item-add-group"></div>			
-				<input type="text" class="input-text form-control" placeholder="직접입력">
-			</div>										
+		`<div class="item-layer">			
 			<div class="item-group">
-				<span class="item">EX 사업부<i class="ri-close-line"></i></span>
-				<span class="item">MX 사업부<i class="ri-close-line"></i></span>
-				<span class="item">AX 연구소<i class="ri-close-line"></i></span>
-				<span class="item">PX 인사부<i class="ri-close-line"></i></span>
-				<span class="item">PX 재무회계부<i class="ri-close-line"></i></span>
-				<span class="item">CX 영업부<i class="ri-close-line"></i></span>
-				<span class="item">지최일만<i class="ri-close-line"></i></span>
+				<span class="item">EX 사업부</span>
+				<span class="item">MX 사업부</span>
+				<span class="item">AX 연구소</span>
+				<span class="item">PX 인사부</span>
+				<span class="item">PX 재무회계부</span>
+				<span class="item">CX 영업부</span>
+				<span class="item">지최일만</span>
 			</div>
 		</div>`
 	);
 
 	//팀
 	$('[data-layer="team"]').append(
-		`<div class="item-layer">
-			<div class="item-title">
-				<strong>부서</strong>
-				<button class="tooltip">
-					<i class="ri-information-fill"></i>
-					<span>원하는 분류 태그가 없으면 직접 입력</span>
-				</button>
-			</div>
-			<div class="item-cont">		
-				<div class="item-add-group"></div>			
-				<input type="text" class="input-text form-control" placeholder="직접입력">
-			</div>										
+		`<div class="item-layer">										
 			<div class="item-group">
-				<span class="item">기획1팀<i class="ri-close-line"></i></span>
-				<span class="item">기획2팀<i class="ri-close-line"></i></span>
-				<span class="item">기획3팀<i class="ri-close-line"></i></span>
-				<span class="item">개발1팀<i class="ri-close-line"></i></span>
-				<span class="item">개발2팀<i class="ri-close-line"></i></span>
-				<span class="item">개발3팀<i class="ri-close-line"></i></span>
-				<span class="item">디자인1팀<i class="ri-close-line"></i></span>
-				<span class="item">디자인2팀<i class="ri-close-line"></i></span>
-				<span class="item">퍼블리셔1팀<i class="ri-close-line"></i></span>
-				<span class="item">퍼블리셔2팀<i class="ri-close-line"></i></span>
+				<span class="item">기획1팀</span>
+				<span class="item">기획2팀</span>
+				<span class="item">기획3팀</span>
+				<span class="item">개발1팀</span>
+				<span class="item">개발2팀</span>
+				<span class="item">개발3팀</span>
+				<span class="item">디자인1팀</span>
+				<span class="item">디자인2팀</span>
+				<span class="item">퍼블리셔1팀</span>
+				<span class="item">퍼블리셔2팀</span>
 			</div>
 		</div>`
 	);
 
 	//매출법인
 	$('[data-layer="corp"]').append(
-		`<div class="item-layer">
-			<div class="item-title">
-				<strong>매출법인</strong>
-				<button class="tooltip">
-					<i class="ri-information-fill"></i>
-					<span>원하는 분류 태그가 없으면 직접 입력</span>
-				</button>
-			</div>
-			<div class="item-cont">
-				<div class="item-add-group"></div>	
-				<input type="text" class="input-text form-control" placeholder="직접입력">
-			</div>										
+		`<div class="item-layer">												
 			<div class="item-group">
-				<span class="item">플랜아이<i class="ri-close-line"></i></span>
-				<span class="item">플랜파트너스<i class="ri-close-line"></i></span>
-				<span class="item">아누타<i class="ri-close-line"></i></span>
-				<span class="item">와이브릿지<i class="ri-close-line"></i></span>
+				<span class="item">플랜아이</span>
+				<span class="item">플랜파트너스</span>
+				<span class="item">아누타</span>
+				<span class="item">와이브릿지</span>
 			</div>
 		</div>`
 	);
 
 	//발주처
 	$('[data-layer="orderer"]').append(
-		`<div class="item-layer">
-			<div class="item-title">
-				<strong>발주처</strong>
-				<button class="tooltip">
-					<i class="ri-information-fill"></i>
-					<span>원하는 분류 태그가 없으면 직접 입력</span>
-				</button>
-			</div>
-			<div class="item-cont">
-				<div class="item-add-group"></div>	
-				<input type="text" class="input-text form-control" placeholder="직접입력">
-			</div>										
+		`<div class="item-layer">			
 			<div class="item-group">
-				<span class="item">고용노동부<i class="ri-close-line"></i></span>
-				<span class="item">국가녹색기술연구소<i class="ri-close-line"></i></span>
-				<span class="item">국가유산청<i class="ri-close-line"></i></span>
-				<span class="item">국세청<i class="ri-close-line"></i></span>
-				<span class="item">국토연구원<i class="ri-close-line"></i></span>
-				<span class="item">기초과학지원연구원<i class="ri-close-line"></i></span>
-				<span class="item">문화관광체육부<i class="ri-close-line"></i></span>
-				<span class="item">보건복지부<i class="ri-close-line"></i></span>
-				<span class="item">새만금<i class="ri-close-line"></i></span>
-				<span class="item">한국연구단체<i class="ri-close-line"></i></span>
-				<span class="item">한국원자력연구원<i class="ri-close-line"></i></span>
-				<span class="item">한국전력개발<i class="ri-close-line"></i></span>
-				<span class="item">환경부<i class="ri-close-line"></i></span>
+				<span class="item">고용노동부</span>
+				<span class="item">국가녹색기술연구소</span>
+				<span class="item">국가유산청</span>
+				<span class="item">국세청</span>
+				<span class="item">국토연구원</span>
+				<span class="item">기초과학지원연구원</span>
+				<span class="item">문화관광체육부</span>
+				<span class="item">보건복지부</span>
+				<span class="item">새만금</span>
+				<span class="item">한국연구단체</span>
+				<span class="item">한국원자력연구원</span>
+				<span class="item">한국전력개발</span>
+				<span class="item">환경부</span>
 			</div>
 		</div>`
 	);
 
 	//담당자
 	$('[data-layer="manager"]').append(
-		`<div class="item-layer">
-			<div class="item-title">
-				<strong>담당자</strong>
-				<button class="tooltip">
-					<i class="ri-information-fill"></i>
-					<span>원하는 분류 태그가 없으면 직접 입력</span>
-				</button>
-			</div>
-			<div class="item-cont">		
-				<div class="item-add-group"></div>			
-				<input type="text" class="input-text form-control" placeholder="직접입력">
-			</div>										
+		`<div class="item-layer">												
 			<div class="item-group">
 				<span class="item">
 					<span class="user-icon">						
 						<img src="../img/layout/photo.png">
-					</span>김소영
-					<i class="ri-close-line"></i>
+					</span>김소영					
 				</span>
 				<span class="item">
-					<span class="user-icon">조</span>조정연
-					<i class="ri-close-line"></i>
+					<span class="user-icon">조</span>조정연					
 				</span>
 				<span class="item">
-					<span class="user-icon">김</span>김승범
-					<i class="ri-close-line"></i>
+					<span class="user-icon">김</span>김승범					
 				</span>
 				<span class="item">
-					<span class="user-icon">류</span>류혜정
-					<i class="ri-close-line"></i>
+					<span class="user-icon">류</span>류혜정					
 				</span>
 				<span class="item">
 					<span class="user-icon">						
 						<img src="../img/layout/photo.png">
-					</span>김소영
-					<i class="ri-close-line"></i>
+					</span>김소영					
 				</span>
 				<span class="item">
-					<span class="user-icon">조</span>조정연
-					<i class="ri-close-line"></i>
+					<span class="user-icon">조</span>조정연					
 				</span>
 				<span class="item">
-					<span class="user-icon">김</span>김승범
-					<i class="ri-close-line"></i>
+					<span class="user-icon">김</span>김승범					
 				</span>
 				<span class="item">
-					<span class="user-icon">류</span>류혜정
-					<i class="ri-close-line"></i>
+					<span class="user-icon">류</span>류혜정					
 				</span>
 				
 			</div>
@@ -228,42 +165,15 @@ $(function () {
 
 	//상태
 	$('[data-layer="status"]').append(
-		`<div class="item-layer">
-			<div class="item-title">
-				<strong>진행상태</strong>
-				<button class="tooltip">
-					<i class="ri-information-fill"></i>
-					<span>원하는 분류 태그가 없으면 직접 입력</span>
-				</button>
-			</div>
-			<div class="item-cont">
-				<div class="item-add-group"></div>	
-				<input type="text" class="input-text form-control" placeholder="직접입력">
-			</div>										
+		`<div class="item-layer">												
 			<div class="item-group">
-				<span class="item state before">착수전<i class="ri-close-line"></i></span>
-				<span class="item state ing">진행<i class="ri-close-line"></i></span>
-				<span class="item state hold">보류<i class="ri-close-line"></i></span>
-				<span class="item state end">완료<i class="ri-close-line"></i></span>
+				<span class="item state before">착수전</span>
+				<span class="item state ing">진행</span>
+				<span class="item state hold">보류</span>
+				<span class="item state end">완료</span>
 			</div>
 		</div>`
 	);
-	
-	//금액 범위
-	$('[data-layer="amount-range"]').append(
-		`<div class="item-layer">
-			<div class="item-title">
-				<strong>금액</strong>
-			</div>
-			<div class="item-cont">
-				<div class="item-add-group"></div>	
-				<div class="item selected">
-					<input type="number" class="form-control input" value="1000000" step="10000"> ~ 
-					<input type="number" class="form-control input" value="8000000000" step="10000">
-				</div>
-			</div>										
-		</div>`				
-	);		
 
 	//매출입력
 	$('[data-layer="sales"]').append(
@@ -300,25 +210,14 @@ $(function () {
 
 	//직무
 	$('[data-layer="job"]').append(
-		`<div class="item-layer">
-			<div class="item-title">
-				<strong>직무</strong>
-				<button class="tooltip">
-					<i class="ri-information-fill"></i>
-					<span>원하는 분류 태그가 없으면 직접 입력</span>
-				</button>
-			</div>
-			<div class="item-cont">		
-				<div class="item-add-group"></div>			
-				<input type="text" class="input-text form-control" placeholder="직접입력">
-			</div>										
+		`<div class="item-layer">												
 			<div class="item-group">
-				<span class="item">IT 컨설턴트<i class="ri-close-line"></i></span>
-				<span class="item">IT PM<i class="ri-close-line"></i></span>
-				<span class="item">UIUX기획/개발자<i class="ri-close-line"></i></span>
-				<span class="item">IT 서비스 기획자<i class="ri-close-line"></i></span>
-				<span class="item">UIUX디자이너<i class="ri-close-line"></i></span>
-				<span class="item">응용 SW 개발자<i class="ri-close-line"></i></span>
+				<span class="item">IT 컨설턴트</span>
+				<span class="item">IT PM</span>
+				<span class="item">UIUX기획/개발자</span>
+				<span class="item">IT 서비스 기획자</span>
+				<span class="item">UIUX디자이너</span>
+				<span class="item">응용 SW 개발자</span>
 			</div>
 		</div>`
 	);

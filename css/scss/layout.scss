@@ -16,11 +16,11 @@ popup-wrap
 		}
 	}
 	.popup-side { background: #fff; position: absolute; left: calc(100% + 1rem); top: 0; width: 100%; height: 100%; padding: 4rem; box-shadow: 0 0 1rem rgba(0,0,0,.2); transition: 0.5s ease;
-		.popup-head { margin-bottom: 4rem; position: relative; border-bottom: 1px solid #eee;
+		.popup-head { padding-bottom: 2rem; margin-bottom: 2rem; position: relative; border-bottom: 1px solid #eee;
 			.pop-tit { font-size: 2.5rem; padding-left: 5rem;}
 		}
 		.popup-side-cont {display: none;}
-		.popup-back { font-size: 4rem; font-weight: 400; position: absolute; left: 4rem; top: 4rem;}
+		.popup-back { font-size: 4rem; font-weight: 400; position: absolute; left: 4rem; top: 3.4rem; z-index: 1;}
 		&.active { left: 0;}
 	}
 }
