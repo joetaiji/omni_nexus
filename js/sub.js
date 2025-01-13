@@ -7,36 +7,44 @@ $(function () {
 	/* ==================================================================================
 	필터 아이템
 	================================================================================== */
-	//아이템 선택
+	//아이템 선택 및 저장	
 	$('.item').on('click', function(e){			
 		const $na = $(this);
 		if(!$na.hasClass('checked')){
 			$na.parents('.item-layer').find('.item-add-group').prepend($na.clone().addClass('selected'));
 			$na.addClass('checked')
 		}
+		const $itemGroup = $na.parents('.item-layer').find('.item-add-group')
 		$html.on('click', function(e){	
-			if(!$(e.target).closest('.item').length){
-				$na.parents('[data-layer]').children('.item-cont').html($('.item-add-group').clone())
+			if(!$(e.target).closest('.item-layer').length){
+				$na.parents('[data-layer]').children('.item-cont').html($itemGroup.clone())
 			}
 		})
 	})
+	/* $('.btn-save').on('click', function(e){	
+		const $itemGroup = $(this).parents('.item-layer').find('.item-add-group')
+		$(this).parents('[data-layer]').children('.item-cont').html($itemGroup.clone())
+	}); */
 	//아이템 삭제
-	$('.filter').on('click', '.ri-close-line', function(e){
+	$('.item-cont').on('click', '.item-add-group .ri-close-line', function(e){
 		$(this).parents('.selected').remove();
 		e.preventDefault();
 	});
 	//상세검색 필터
-	listOpen('.btn-filter-open', '.filter', true)	
+	listOpen('.btn-filter-open, .item-more', '.filter', true)	
 	listOpen('.item-add', '.filter-item', false)
-	/* $('.item-add').on('click', function(e){
-		const itemCont = $(this).prev('.item-cont').clone();
-		$(this).next('.item-layer').find('.item-cont').html(itemCont);
-	}); */
+	//필터선택결과버튼
 	$('.btn-filter-result').on('click', function(e){
 		$('.filter').removeClass(AC).addClass('setting');
 	});
+	//아이템 더보기버튼
+	$('btn-item-more').on('click', function(e){
+
+	})
+	//초기화버튼
 	$('.btn-filter-reset').on('click', function(e){
-		$('.filter').removeClass('setting').addClass(AC);
+		$('.filter').removeClass('setting').addClass(AC).find('.item-add-group').empty();
+		$('.item-group .item').removeClass('checked');
 	});
 	
 	/* ==================================================================================
@@ -77,7 +85,7 @@ $(function () {
 	tabs(".depth4", '.popup-tab-cont');	
 	
 	//팝업사이드 열기 - 투입일수, 내부단가
-	$('.btn-mem-date, .btn-view-mem-inner-price').on('click', function(e){
+	$('.btn-mem-date, .btn-mem-inner-price').on('click', function(e){
 		$('.popup-side').addClass(AC).find('.popup-body').hide();
 		$('#' + $(this).data('id')).attr('tabindex', 0).fadeIn(300);
 	})

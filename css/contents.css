@@ -2,10 +2,15 @@
 /* =======================================================================================
 공통
 ======================================================================================= */
+.empty {
+  min-width: 10rem;
+}
+
+.empty::placeholder,
 .btn-empty {
   font-size: 1.3rem;
   color: #999;
-  padding: 1.2rem;
+  padding: 0.2rem;
 }
 
 .state {
@@ -80,7 +85,7 @@
   align-items: center;
   border-radius: 2rem;
   border: 1px solid #ccc;
-  padding: 0.6rem 1.6rem;
+  padding: 0.6rem 1.2rem;
   cursor: pointer;
   line-height: normal;
   color: #555;
@@ -93,7 +98,8 @@
   border: 1px solid #00062c;
 }
 .item.selected {
-  padding: 1rem;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
   border-style: dashed;
 }
 .item.selected:has(.user-icon)::before {
@@ -128,8 +134,7 @@
   margin-left: auto;
 }
 
-.item-cont {
-  padding: 1rem 1rem 2rem;
+.item-cont .item-add-group {
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -155,11 +160,9 @@
   background: #EFF9F6;
 }
 .item-cont.vert {
+  display: flex;
+  gap: 1rem;
   flex-direction: column;
-}
-
-td .item-cont {
-  padding: 0;
 }
 
 .item-layer {
@@ -167,11 +170,11 @@ td .item-cont {
   position: absolute;
   top: -1px;
   left: -1px;
-  min-width: 36.6rem;
   background: #fff;
   border-radius: 1.2rem;
   border: 2px solid #00062C;
   padding: 1.5rem 2rem;
+  min-width: 16rem;
 }
 .item-layer .item-selected .item {
   border: 1.5px solid #00062C;
@@ -203,18 +206,24 @@ td .item-cont {
   right: 0;
 }
 
+.row-edit > td > .btn-save {
+  position: absolute;
+  top: 50%;
+  right: -4rem;
+  transform: translateY(-50%);
+}
+
+.table .table .row-edit > td > .btn-save {
+  right: -2rem;
+  padding: 0.5rem;
+}
+
 [data-layer] {
   position: relative;
-  text-align: left !important;
 }
 [data-layer].active .item-layer {
   display: block;
   z-index: 2;
-}
-
-.calender-date {
-  min-width: inherit;
-  width: 26rem;
 }
 
 .popup-tab-cont {
@@ -291,6 +300,15 @@ td .item-cont {
   color: #099367;
   font-size: 2.8rem;
 }
+.filter-item .item-cont {
+  padding: 1rem;
+}
+.filter-item .item.selected {
+  padding: 1rem;
+}
+.filter-item .item-layer {
+  min-width: 36.6rem;
+}
 .filter-item:hover {
   border: 1px solid #04B87F;
   z-index: 1;
@@ -303,6 +321,9 @@ td .item-cont {
 .filter-item[data-layer=manager] .item-layer {
   left: auto;
   right: -1px;
+}
+.filter-item .input-date {
+  width: 14rem;
 }
 .filter-setting {
   display: none;
@@ -434,6 +455,32 @@ td .item-cont {
   color: #F55;
 }
 
+.project-amount-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.project-amount {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.project-amount .num {
+  color: #111;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+.project-amount small {
+  font-size: 1.5rem;
+}
+.project-amount .vat {
+  font-size: 1.3rem;
+  color: #777;
+  background: #f8f8fa;
+  padding: 0.4rem 0.6rem;
+}
+
 .sales {
   display: flex;
   gap: 0.8rem;
@@ -442,6 +489,25 @@ td .item-cont {
 .sales > li {
   display: flex;
   gap: 2rem;
+}
+.sales .sales-date {
+  display: flex;
+  border: 1px solid #eee;
+  border-radius: 0.4rem;
+  color: #555;
+  font-size: 1.3rem;
+}
+.sales .sales-date * {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sales .sales-date .label {
+  background: #eee;
+}
+.sales .sales-date .num {
+  font-size: 1rem;
 }
 .sales-group {
   display: flex;
@@ -455,6 +521,7 @@ td .item-cont {
 }
 .sales-input {
   width: 16rem;
+  font-size: 1.7rem;
 }
 .sales-input input {
   background: transparent;
@@ -463,6 +530,14 @@ td .item-cont {
   width: 100%;
   font-weight: 500;
   text-align: right;
+}
+.sales .year {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  border-radius: 0.4rem;
+  padding: 0 2rem;
+  border: 1px solid #eee;
 }
 .sales .unit {
   font-size: 0.933em;
@@ -473,13 +548,33 @@ td .item-cont {
   font-size: 2rem;
 }
 
-.sales-layer {
-  width: 16rem;
-  min-width: inherit;
-  padding: 0;
-}
 .sales-layer .form-control {
   width: 100%;
+}
+
+[class*=mem-date] [class*=time-] {
+  border-radius: 0.8rem;
+  cursor: pointer;
+}
+[class*=mem-date] .time-0 {
+  background: rgba(17, 136, 255, 0);
+  color: #888;
+}
+[class*=mem-date] .time-25 {
+  background: rgba(17, 136, 255, 0.08);
+  color: #1188FF;
+}
+[class*=mem-date] .time-50 {
+  background: rgba(17, 136, 255, 0.3);
+  color: #1188FF;
+}
+[class*=mem-date] .time-75 {
+  background: rgba(17, 136, 255, 0.7);
+  color: #fff;
+}
+[class*=mem-date] .time-100 {
+  background: rgb(17, 136, 255);
+  color: #fff;
 }
 
 .mem-compare {
@@ -487,30 +582,23 @@ td .item-cont {
   gap: 4rem;
 }
 .mem-plan {
-  display: flex;
-  flex-direction: column;
-}
-.mem-plan .mem-sum {
   background: #F8F8FA;
+  flex: 0 0 35%;
 }
-.mem-plan .mem-sum .label {
+.mem-plan .label {
   background: #7C7F91;
 }
-.mem-plan .mem-sum b {
+.mem-plan b {
   color: #333;
 }
 .mem-actual {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.mem-actual .mem-sum {
   background: #EFF9F6;
+  flex: 1;
 }
-.mem-actual .mem-sum .label {
+.mem-actual .label {
   background: #099367;
 }
-.mem-actual .mem-sum b {
+.mem-actual b {
   color: #099367;
 }
 .mem-sum {
@@ -529,45 +617,46 @@ td .item-cont {
   padding: 0.4rem 0.6rem;
   color: #fff;
 }
-.mem-date-count td {
+.mem-date-count [class*=time-] {
   padding: 2.8rem;
-  background: #fff;
-  border-radius: 0.8rem;
-  cursor: pointer;
 }
-.mem-date-count td span {
+.mem-date-count tbody td {
+  border-top: 0;
+}
+.mem-date-count tbody td span {
   color: #222 !important;
   position: absolute;
   left: 1.6rem;
   top: 1.6rem;
 }
-.mem-date-count td strong {
+.mem-date-count tbody td strong {
   font-size: 1.7rem;
   display: block;
 }
-.mem-date-count td small {
+.mem-date-count tbody td small {
   font-size: 1rem;
   display: block;
 }
-.mem-date-count td.time-0 {
-  background: rgba(17, 136, 255, 0);
-  color: #888;
+.mem-date-schedule table {
+  table-layout: fixed;
 }
-.mem-date-count td.time-25 {
-  background: rgba(17, 136, 255, 0.08);
-  color: #1188FF;
+.mem-date-schedule table thead th {
+  background: #fff;
+  border-radius: 0;
 }
-.mem-date-count td.time-50 {
-  background: rgba(17, 136, 255, 0.3);
-  color: #1188FF;
+.mem-date-schedule table thead > tr:first-of-type > th {
+  background: #fafafa;
 }
-.mem-date-count td.time-75 {
-  background: rgba(17, 136, 255, 0.7);
-  color: #fff;
+.mem-date-schedule table tbody th {
+  padding: 0.85rem 0;
+  background: #fff;
+  border-top: 0;
 }
-.mem-date-count td.time-100 {
-  background: rgb(17, 136, 255);
-  color: #fff;
+.mem-date-schedule table tbody td {
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  letter-spacing: -1px;
+  border-top: 0;
 }
 .mem-inner-price {
   filter: blur(5px);

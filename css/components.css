@@ -4,22 +4,24 @@
 }
 
 .heading-m {
-  font-size: 2.5rem;
-  color: var(--primary-60);
+  font-size: 2rem;
+  color: #111;
   margin: 3.4rem 0 1.6rem 0;
   display: flex;
   gap: 1rem;
   align-items: center;
 }
 .heading-m small {
+  font-size: 1.4rem;
+  color: #777;
   font-weight: 400;
-  font-size: 1.7rem;
-  background: var(--primary-5);
-  padding: 0.2rem 1rem;
-  border-radius: 0.4rem;
 }
 .heading-m:first-child {
   margin-top: 0;
+}
+.heading-m.vert {
+  flex-direction: column;
+  align-items: flex-start;
 }
 .heading-s {
   font-size: 2.1rem;
@@ -364,28 +366,30 @@
   }
 }
 /* table */
-.table {
-  margin-top: 2rem;
-}
 .table td, .table th {
   border-top: 1px solid #eee;
-  padding: 1.5rem 0.6rem;
+  padding: 1.5rem 0.3rem;
   word-break: break-all;
   text-align: center;
   font-size: 1.5rem;
   line-height: 1.5;
 }
-.table td.txt_left, .table th.txt_left {
+.table td.text_left, .table th.text_left {
   padding-left: 2rem;
   text-align: left;
 }
-.table > table tr:first-of-type th, .table > table tr:first-of-type td {
+.table th {
+  white-space: nowrap;
+}
+.table > table > thead > tr:first-of-type > th {
+  border-top: 0;
+}
+.table > table > tbody > tr:first-of-type > th, .table > table > tbody > tr:first-of-type > td {
   border-top: 0;
 }
 .table > table > thead th {
   background: #F6F7FB;
   padding: 1.5rem 1rem;
-  white-space: nowrap;
   font-weight: 400;
 }
 .table > table > thead th:first-child {
@@ -443,14 +447,6 @@
 }
 .table > table tfoot {
   border-top: 1px solid var(--gray-40);
-}
-.table > table > tbody th,
-.table > table > tfoot th {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-.table > table th {
-  word-break: break-all;
 }
 .table > table + * {
   margin-top: 0.8rem;
@@ -534,7 +530,6 @@
   font-size: 1.6rem;
   color: #777;
   border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
 }
 
 /* row-line */
@@ -765,6 +760,7 @@ form
   padding: 0.6rem;
   min-width: 5rem;
   field-sizing: content;
+  color: #111;
 }
 .form-control.md {
   height: 4.8rem;
@@ -784,6 +780,9 @@ form
   display: flex;
   gap: 0.5rem;
   align-items: center;
+}
+.form-control[rows="5"] {
+  height: 10rem;
 }
 
 .form .label {
@@ -915,43 +914,28 @@ form
 .noinput { padding-top: 1.5rem;padding-bottom: 1.5rem; } 
 */
 /* 체크박스, 라디오버튼 */
-.custom-input {
+.custom-input:has(input[type=radio], input[type=checkbox]) {
   position: relative;
+  padding-left: 2.5rem;
+  cursor: pointer;
 }
-.custom-input input[type=radio], .custom-input input[type=checkbox] {
+.custom-input:has(input[type=radio], input[type=checkbox]) input[type=radio], .custom-input:has(input[type=radio], input[type=checkbox]) input[type=checkbox] {
   position: absolute;
   opacity: 0;
 }
-.custom-input input[type=radio] + label, .custom-input input[type=checkbox] + label {
-  position: relative;
-  padding-left: 2.7rem;
-  cursor: pointer;
-}
-.custom-input input[type=radio] + label::before, .custom-input input[type=radio] + label::after, .custom-input input[type=checkbox] + label::before, .custom-input input[type=checkbox] + label::after {
+.custom-input:has(input[type=radio], input[type=checkbox])::before, .custom-input:has(input[type=radio], input[type=checkbox])::after {
   content: "";
   display: block;
   position: absolute;
   left: 0;
   top: 0;
-  width: 2.2rem;
-  height: 2.2rem;
-  border: 1px solid var(--gray-40);
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #999;
+  border-radius: 0.2rem;
 }
-.custom-input input[type=radio] + label::before {
-  border-radius: 50%;
-  background: var(--white);
-}
-.custom-input input[type=radio] + label::after {
-  opacity: 0;
-  width: 1.2rem;
-  height: 1.2rem;
-  background-color: var(--primary);
-  border-radius: 50%;
-  left: 0.5rem;
-  top: 0.5rem;
-  z-index: 2;
-}
-.custom-input input[type=checkbox] + label::after {
+
+.custom-input:has(input[type=checkbox])::after {
   content: "\eb7a";
   text-align: center;
   background-color: var(--primary);
@@ -961,19 +945,58 @@ form
   font-family: var(--icon);
   z-index: 2;
   opacity: 0;
-  line-height: 2.2rem;
+  line-height: 2rem;
 }
-.custom-input input:focus + label::before {
+
+input[type=radio] + label::before {
+  border-radius: 50%;
+  background: var(--white);
+}
+input[type=radio] + label::after {
+  opacity: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: var(--primary);
+  border-radius: 50%;
+  left: 0.5rem;
+  top: 0.5rem;
+  z-index: 2;
+}
+
+.custom-input:has(input:focus)::before {
   border: 2px solid var(--primary);
 }
-.custom-input input:checked + label::after {
+
+.custom-input:has(input:checked)::after {
   opacity: 1;
   border-color: var(--primary);
 }
-.custom-input input:disabled + label::before {
+
+.custom-input:has(input:disabled)::before {
   background: var(--gray-20);
 }
 
+/* .custom-input {
+	position: relative;
+
+	input[type=radio], input[type=checkbox] {
+		position: absolute; opacity: 0;
+
+		+label {
+			position: relative; padding-left: calc($size + .5rem); cursor: pointer;
+
+			&::before, &::after { content: ""; display: block; position: absolute; left: 0; top: 0; width: $size; height: $size; border: 1px solid var(--gray-40); }
+		}
+	}
+	input[type=radio]+label {
+		&::before { border-radius: 50%; background: var(--white); }
+		&::after { opacity: 0; width: 1.2rem; height: 1.2rem; background-color: var(--primary); border-radius: 50%; left: .5rem; top: .5rem; z-index: 2; }
+	}
+	input[type=checkbox]+label::after { content: "\eb7a"; text-align: center; background-color: var(--primary); border: 1px solid var(--primary); color: var(--white); font-size: 1.5rem; font-family: var(--icon); z-index: 2; opacity: 0; line-height: $size; }
+	input:focus+label::before { border: 2px solid var(--primary); }
+	input:checked+label::after { opacity: 1; border-color: var(--primary); }
+	input:disabled+label::before { background: var(--gray-20);}
+} */
 .file {
   display: flex;
   gap: 3rem;
@@ -1083,6 +1106,9 @@ form
   font-weight: 700;
   /* &::after { content: ""; display: block; } */
 }
+.tabs .depth4 {
+  padding: 0 2rem;
+}
 .tabs .depth4 > li {
   flex: 1;
 }
@@ -1094,8 +1120,8 @@ form
   border-bottom-color: var(--gray-30);
 }
 .tabs .depth4 > li.active > a, .tabs .depth4 > li.active > button {
-  border-bottom-color: var(--primary-70);
-  color: var(--primary-70);
+  border-bottom-color: var(--primary-50);
+  color: var(--primary-60);
 }
 .tabs .depth4 > li.active .depth5 {
   display: flex;
@@ -1116,7 +1142,7 @@ form
 }
 .tabs .depth5 > li a, .tabs .depth5 > li button {
   background-color: var(--gray-10);
-  color: var(--primary-70);
+  color: var(--primary-60);
   border-radius: 3rem;
   font-size: 1.8rem;
   font-weight: 600;
@@ -1126,7 +1152,7 @@ form
   background-color: var(--gray-20);
 }
 .tabs .depth5 > li.active a, .tabs .depth5 > li.active button {
-  background: var(--primary-70);
+  background: var(--primary-60);
   color: var(--white);
 }
 .tabs .depth5 > li ~ li {

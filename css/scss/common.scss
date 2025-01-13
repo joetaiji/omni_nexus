@@ -71,10 +71,10 @@ $ais: flex-start, center, flex-end;
 }
 
 @for $i from 0 through 10{
-	.ml#{$i} { margin-left: $i*.8rem !important; }
-	.mt#{$i} { margin-top: $i*.8rem !important; }
-	.mr#{$i} { margin-right: $i*.8rem !important; }
-	.mb#{$i} { margin-bottom: $i*.8rem !important; }
+	.ml#{$i} { margin-left: $i*1rem !important; }
+	.mt#{$i} { margin-top: $i*1rem !important; }
+	.mr#{$i} { margin-right: $i*1rem !important; }
+	.mb#{$i} { margin-bottom: $i*1rem !important; }
 }
 .mla { margin-left: auto;}
 .mra { margin-right: auto;}

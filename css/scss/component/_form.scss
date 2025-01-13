@@ -4,12 +4,13 @@
 form
 =========================================================================================== */
 
-.form-control { border: 1px solid #eee; background: var(--white); border-radius: 0.4rem; padding:.6rem; min-width:5rem; field-sizing: content;
+.form-control { border: 1px solid #eee; background: var(--white); border-radius: 0.4rem; padding:.6rem; min-width:5rem; field-sizing: content; color: #111;
 	&.md { height: 4.8rem; }
 	&::placeholder { color: #ccc;}
 	&:focus { background: #EFF9F6; outline: 1px solid #04b87f;}
 	&:disabled { color: #ccc; background: #eee;}
 	&-unit { display: flex; gap:.5rem; align-items: center; }
+	&[rows="5"] {height: 10rem;}
 }
 
 .form {
@@ -66,8 +67,26 @@ form
 .noinput { padding-top: 1.5rem;padding-bottom: 1.5rem; } 
 */
 /* 체크박스, 라디오버튼 */
-$size : 2.2rem;
-.custom-input {
+$size : 2rem;
+.custom-input:has(input[type=radio], input[type=checkbox]) {
+	position: relative; padding-left: calc($size + .5rem); cursor: pointer;
+
+	input[type=radio], input[type=checkbox] { position: absolute; opacity: 0;}
+
+	&::before, &::after { content: ""; display: block; position: absolute; left: 0; top: 0; width: $size; height: $size; border: 1px solid #999; border-radius: 0.2rem; }
+}
+.custom-input:has(input[type=checkbox])::after { content: "\eb7a"; text-align: center; background-color: var(--primary); border: 1px solid var(--primary); color: var(--white); font-size: 1.5rem; font-family: var(--icon); z-index: 2; opacity: 0; line-height: $size; }
+
+input[type=radio]+label {
+	&::before { border-radius: 50%; background: var(--white); }
+	&::after { opacity: 0; width: 1.2rem; height: 1.2rem; background-color: var(--primary); border-radius: 50%; left: .5rem; top: .5rem; z-index: 2; }
+}
+
+.custom-input:has(input:focus)::before { border: 2px solid var(--primary); }
+.custom-input:has(input:checked)::after { opacity: 1; border-color: var(--primary); }
+.custom-input:has(input:disabled)::before { background: var(--gray-20);}
+
+/* .custom-input {
 	position: relative;
 
 	input[type=radio], input[type=checkbox] {
@@ -87,7 +106,7 @@ $size : 2.2rem;
 	input:focus+label::before { border: 2px solid var(--primary); }
 	input:checked+label::after { opacity: 1; border-color: var(--primary); }
 	input:disabled+label::before { background: var(--gray-20);}
-}
+} */
 
  
 

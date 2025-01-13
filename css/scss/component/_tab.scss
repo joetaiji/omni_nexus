@@ -13,13 +13,13 @@
 	/* &.num10 { flex-wrap: wrap;
 		> li {flex: 1 1 20%;}
 	} */
-	.depth4 { 
+	.depth4 { padding: 0 2rem;
 		>li { flex: 1; 
 			>a, >button { border-bottom: .3rem solid transparent; margin-bottom: -1px;
 				&:hover { border-bottom-color: var(--gray-30);}
 			}
 			&.active {
-				>a, >button { border-bottom-color: var(--primary-70); color: var(--primary-70); }
+				>a, >button { border-bottom-color: var(--primary-50); color: var(--primary-60); }
 				.depth5 { display: flex;}
 				&:has(.depth5) {padding-bottom: 8.7rem;}
 			}
@@ -28,12 +28,12 @@
 	}	
 	.depth5 { display: none; position: absolute; left: 0; bottom: 0; width:100%;	gap:1rem; justify-content: center; padding: 2rem 0; border-top:1px solid #ddd; 
 		>li { 
-			a, button { background-color: var(--gray-10); color: var(--primary-70); border-radius: 3rem; font-size: 1.8rem; font-weight: 600; padding: 1.2rem 2rem;
+			a, button { background-color: var(--gray-10); color: var(--primary-60); border-radius: 3rem; font-size: 1.8rem; font-weight: 600; padding: 1.2rem 2rem;
 				&:hover { background-color: var(--gray-20); }
 			}
 			
 			&.active { 
-				a, button { background: var(--primary-70); color: var(--white); }
+				a, button { background: var(--primary-60); color: var(--white); }
 			}
 			~ li { margin-left: -1px; }
 		}

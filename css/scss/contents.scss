@@ -6,7 +6,10 @@
 $contents : $url;
 
 //인풋
-.btn-empty { font-size: 1.3rem; color: #999; padding: 1.2rem;}
+.empty { min-width: 10rem; }
+.empty::placeholder,
+.btn-empty { font-size: 1.3rem; color: #999; padding: .2rem;}
+
 
 //진행상태
 .state { display: flex; gap:.4rem; align-items: center;justify-content: center; padding: .7rem 1.8rem; border-radius: 2rem;  white-space: nowrap;
@@ -34,11 +37,11 @@ $contents : $url;
     // }
 }
 
-.item { display: inline-flex; align-items: center; border-radius: 2rem; border: 1px solid #ccc; padding: .6rem 1.6rem; cursor: pointer; line-height: normal; color: #555; background: #fff; gap: .6rem; font-size: 1.6rem; white-space: nowrap;
+.item { display: inline-flex; align-items: center; border-radius: 2rem; border: 1px solid #ccc; padding: .6rem 1.2rem; cursor: pointer; line-height: normal; color: #555; background: #fff; gap: .6rem; font-size: 1.6rem; white-space: nowrap;
 
 	&:active { border:1px solid #00062c;}
 	@extend %check;
-	&.selected { padding: 1rem; border-style: dashed;
+	&.selected { padding-left: 0.6rem; padding-right: 0.6rem; border-style: dashed;
 		&:has(.user-icon)::before{ display: none;}
 		.ri-close-line { display: flex; }
 		&:active { border:1px solid #00062c;}
@@ -53,31 +56,32 @@ $contents : $url;
 .item-title { position: relative; padding: 1rem; display: flex;
 	.tooltip {margin-left: auto;}
 }
-.item-cont { padding: 1rem 1rem 2rem; display: flex; gap:1rem; align-items: center; flex-wrap: wrap;
+.item-cont { 
+	.item-add-group{display: flex; gap:1rem; align-items: center; flex-wrap: wrap;}
 	.input-text { flex:1; height: 3.5rem; border:0; 
 		&::placeholder { font-size: 1.4rem;}
 	}
 	.input-date { border: 1px solid #eee; border-radius: 0.8rem;height: 4rem; width: 12.5rem; transition: 0.2s;
 		&:focus { border-color: #04B87F; background: #EFF9F6;}
 	}
-	&.vert { flex-direction: column; }
+	&.vert { @include flex(1rem); flex-direction: column; }
 }
-td .item-cont { padding: 0;}
-.item-layer { display: none; position: absolute; top:-1px; left: -1px; min-width: 36.6rem; background: #fff;border-radius: 1.2rem; border: 2px solid #00062C; padding: 1.5rem 2rem;	
+
+.item-layer { display: none; position: absolute; top:-1px; left: -1px; background: #fff;border-radius: 1.2rem; border: 2px solid #00062C; padding: 1.5rem 2rem; min-width:16rem;	
 	.item-selected .item { border: 1.5px solid #00062C;}
 	.item-group { font-size: 1.5rem; max-height: 14.5rem; overflow-y:auto; padding:2rem 1rem; display: flex; gap: .6rem; flex-wrap: wrap; border-top: 1px solid #ddd; @include scrollbar(#ccc, #fff, .4rem, .4rem); }
 }
 .table:not(.horizontal) td:nth-last-child(-n+2):not(:nth-child(-n+2)) {
 	.item-layer{left:auto; right:0;}
 }
-[data-layer] { position: relative; text-align: left !important;
+.row-edit>td>.btn-save {position:absolute; top: 50%; right: -4rem; transform: translateY(-50%);}
+.table .table .row-edit>td>.btn-save { right: -2rem; padding:.5rem; }
+
+[data-layer] { position: relative; 
 	&.active { 
 		.item-layer { display: block; z-index: 2;}
-	}
+	}	
 }
-
-.calender-date { min-width:inherit; width: 26rem;}
-
 .popup-tab-cont { display: none;
 	&.active {display: block;}
 }
@@ -102,12 +106,16 @@ td .item-cont { padding: 0;}
 	&-cont { display: none; border-right: 1px solid #ddd; grid-template-columns: repeat(4, 1fr); }
 	&-item { border: 1px solid #ddd; padding: 1.4rem 2rem; cursor:pointer; transition: 0.2s; position: relative; margin: -0.5px;
 		.item-add { display: none; position: absolute;right: 2rem; top: 2rem; color:#099367; font-size: 2.8rem;}
+		.item-cont { padding: 1rem; }
+		.item.selected { padding: 1rem;}
+		.item-layer { min-width: 36.6rem; }
 		&:hover { border: 1px solid #04B87F; z-index: 1;
 			background:  #EFF9F6;
 			box-shadow: 3px 3px 10px 0px rgba(4, 184, 127, 0.10);
 			.item-add {display: block;}
 		}
 		&[data-layer=manager] .item-layer{left:auto; right:-1px;}
+		.input-date { width:14rem;}
 	}	
 	&-setting { display: none; gap: 2rem .8rem; flex-wrap: wrap; width: 100%;
 		border: 1px solid #ddd;
@@ -155,50 +163,77 @@ td .item-cont { padding: 0;}
 .warning { color: #F55;}
 
 //매출관리
+.project-amount-group { @include flex(1rem, center);}
+.project-amount { @include flex(1rem, center);
+	.num { color: #111; font-size: 1.7rem; font-weight: 500;}
+	small { font-size: 1.5rem; }
+	.vat { font-size: 1.3rem; color: #777; background: #f8f8fa; padding: 0.4rem 0.6rem;}
+}
 .sales { display: flex; gap: .8rem; flex-direction: column;
-	>li {display: flex; gap: 2rem;}
-
+	>li {display: flex; gap: 2rem;}	
+	.sales-date { display: flex; border: 1px solid #eee; border-radius: 0.4rem; color: #555; font-size: 1.3rem;
+		* { padding: .5rem 1rem; @include flex(null, center, center);}
+		.label { background: #eee; }
+		.num { font-size: 1rem; }
+	}
 	&-group { display: flex; gap:1rem; align-items: center;}
 	&-label { width: 4rem; font-size: 1.4rem; color: #777;}
-	&-input { width: 16rem;
+	&-input { width: 16rem; font-size: 1.7rem;
 		input { background: transparent; border: 0; padding:.8rem;	width: 100%; font-weight: 500; text-align: right; }
 	}
+	.year {@include flex($ai:center); height: 100%; border-radius: 0.4rem; padding: 0 2rem; border: 1px solid #eee;}
 	.unit { font-size: .933em; padding:.8rem;}
 	&-add-btn { color: #999; font-size: 2rem;}
 }
-.sales-layer { width: 16rem; min-width:inherit; padding: 0;
+.sales-layer { 
 	.form-control {width: 100%;}
 }
 //인건비
+[class*="mem-date"] {
+	[class*="time-"] { border-radius: 0.8rem; cursor:pointer; }
+	.time-0 { background: rgba(17,136,255, 0); color: #888; }
+	.time-25 { background: rgba(17,136,255, .08); color: #1188FF;}
+	.time-50 { background: rgba(17,136,255, .3); color: #1188FF;}
+	.time-75  { background: rgba(17,136,255, .7); color: #fff;}
+	.time-100 { background: rgba(17,136,255, 1); color: #fff;}
+}
+
 .mem{
 	&-compare { @include flex(4rem); }
-	&-plan { display: flex; flex-direction: column;
-		.mem-sum { background: #F8F8FA;
-			.label { background: #7C7F91;}
-			b { color: #333;}
-		}
+	&-plan { background: #F8F8FA; flex: 0 0 35%;
+		.label { background: #7C7F91;}
+		b { color: #333;}
 	}
-	&-actual { flex: 1; display: flex; flex-direction: column; 
-		.mem-sum { background: #EFF9F6;
-			.label { background: #099367;}
-			b { color: #099367;}
-		}
+	&-actual { background: #EFF9F6; flex: 1;
+		.label { background: #099367;}
+		b { color: #099367;}
 	}
 	&-sum { margin-top: auto; padding: 2rem 4rem; text-align: center; @include flex(3rem, center, center);
 		.label { font-size: 1.4rem; font-weight: 500; border-radius: 0.4rem; padding: 0.4rem .6rem; color: #fff; }		
 	}
 	&-date-count {
-		td{ padding: 2.8rem; background: #fff; border-radius: 0.8rem; cursor:pointer; 
-			span { color: #222!important; position: absolute; left: 1.6rem; top: 1.6rem;}
-			strong {font-size: 1.7rem; display: block;}
-			small { font-size: 1rem; display: block;}
-			&.time-0 { background: rgba(17,136,255, 0); color: #888; }
-			&.time-25 { background: rgba(17,136,255, .08); color: #1188FF;}
-			&.time-50 { background: rgba(17,136,255, .3); color: #1188FF;}
-			&.time-75  { background: rgba(17,136,255, .7); color: #fff;}
-			&.time-100 { background: rgba(17,136,255, 1); color: #fff;}
+		[class*="time-"] { padding: 2.8rem; }
+		tbody {
+			td{ border-top: 0;
+				span { color: #222!important; position: absolute; left: 1.6rem; top: 1.6rem;}
+				strong {font-size: 1.7rem; display: block;}
+				small { font-size: 1rem; display: block;}
+			}		
 		}
 	}
+	&-date-schedule {
+		table {table-layout: fixed;
+			thead {
+				th { background: #fff; border-radius: 0;}
+				> tr:first-of-type > th { background: #fafafa;}
+			}
+			tbody {
+				th {padding: 0.85rem 0; background: #fff; border-top: 0;}
+				td { padding: 0.5rem; font-size: 1.3rem; letter-spacing: -1px; border-top: 0;}
+			}
+		}
+	}
+	
 	&-inner-price {filter: blur(5px);}	
 }
 .btn-mem-inner-price::before { content: "\ec16"; font-family: 'remixicon';}

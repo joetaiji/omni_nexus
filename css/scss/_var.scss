@@ -11,7 +11,8 @@
     --black : #000;    
     --white : #fff; 
 	
-	$colors: ("--gray": #8e8e8e, "--primary": #067B56, "--secondary": #003675, "--point": #E71825);
+	//067B56
+	$colors: ("--gray": #8e8e8e, "--primary": #099367, "--secondary": #003675, "--point": #E71825);
 	@each $name, $color in $colors {	
 		#{$name}: $color;	
 		#{$name}-5: color-mix(in srgb, var(#{$name}), #f9fbfc 95%); 
