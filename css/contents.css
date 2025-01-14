@@ -175,7 +175,7 @@
   border-radius: 1.2rem;
   border: 2px solid #00062C;
   padding: 1.5rem 2rem;
-  min-width: 27rem;
+  width: 27rem;
 }
 .item-layer .item-selected .item {
   border: 1.5px solid #00062C;
@@ -208,6 +208,11 @@
 .filter-item.active.active .item-layer {
   display: block;
   z-index: 2;
+}
+
+.horizontal .item-layer {
+  top: 0;
+  left: 10rem;
 }
 
 .table .ic-cal::before {
@@ -334,7 +339,7 @@
   padding: 1rem;
 }
 .filter-item .item-layer {
-  min-width: 36.6rem;
+  width: calc(100% + 1px);
   top: -1px;
 }
 .filter-item:hover {

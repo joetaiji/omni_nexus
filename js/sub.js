@@ -15,14 +15,15 @@ $(function () {
 	//아이템 선택 및 저장	
 	$('.filter .item').on('click', function(e){			
 		const $na = $(this);
+		//$('.filter-item>.item-cont>.item-add-group').remove()
 		if(!$na.hasClass('checked')){
 			$na.parents('.item-layer').find('.item-add-group').prepend($na.clone().addClass('selected'));
 			$na.addClass('checked')
 		}
-		const $itemGroup = $na.parents('.item-layer').find('.item-add-group')
+		const $itemGroup = $na.parents('.item-layer').find('.item-add-group').html();
 		$html.on('click', function(e){	
 			if(!$(e.target).closest('.item-layer').length){
-				$na.parents('.filter-item').children('.item-cont').prepend($itemGroup)
+				$na.parents('.filter-item').children('.item-cont').prepend($itemGroup.clone())
 			}
 		})
 	})

@@ -67,7 +67,7 @@ $contents : $url;
 	&.vert { @include flex(1rem); flex-direction: column; }
 }
 
-.item-layer { display: none; position: absolute; top:100%; left: -1px; background: #fff;border-radius: 1.2rem; border: 2px solid #00062C; padding: 1.5rem 2rem; min-width: 27rem; 	
+.item-layer { display: none; position: absolute; top:100%; left: -1px; background: #fff;border-radius: 1.2rem; border: 2px solid #00062C; padding: 1.5rem 2rem; width: 27rem; 	
 	.item-selected .item { border: 1.5px solid #00062C;}
 	.item-group { font-size: 1.5rem; max-height: 40rem; overflow-y:auto; padding:2rem 1rem; display: flex; gap: .6rem; flex-wrap: wrap; border-top: 1px solid #ddd; @include scrollbar(#ccc, #fff, .4rem, .4rem); }
 }
@@ -76,6 +76,7 @@ $contents : $url;
 		.item-layer { display: block; z-index: 2;}
 	}	
 }
+.horizontal .item-layer { top: 0; left:10rem;}
 
 //테이블 리스트
 .table {
@@ -125,7 +126,7 @@ $contents : $url;
 		.item-add { display: none; position: absolute;right: 2rem; top: 2rem; color:#099367; font-size: 2.8rem;}
 		.item-cont { padding: 1rem; }
 		.item.selected { padding: 1rem;}
-		.item-layer { min-width: 36.6rem; top: -1px; }
+		.item-layer { width: calc(100% + 1px); top: -1px; }
 		&:hover { border: 1px solid #04B87F; z-index: 1;
 			background:  #EFF9F6;
 			box-shadow: 3px 3px 10px 0px rgba(4, 184, 127, 0.10);
