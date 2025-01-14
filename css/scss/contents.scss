@@ -67,15 +67,26 @@ $contents : $url;
 	&.vert { @include flex(1rem); flex-direction: column; }
 }
 
-.item-layer { display: none; position: absolute; top:100%; left: -1px; background: #fff;border-radius: 1.2rem; border: 2px solid #00062C; padding: 1.5rem 2rem; min-width:16rem;	
+.item-layer { display: none; position: absolute; top:100%; left: -1px; background: #fff;border-radius: 1.2rem; border: 2px solid #00062C; padding: 1.5rem 2rem; min-width: 27rem; 	
 	.item-selected .item { border: 1.5px solid #00062C;}
-	.item-group { font-size: 1.5rem; max-height: 14.5rem; overflow-y:auto; padding:2rem 1rem; display: flex; gap: .6rem; flex-wrap: wrap; border-top: 1px solid #ddd; @include scrollbar(#ccc, #fff, .4rem, .4rem); }
+	.item-group { font-size: 1.5rem; max-height: 40rem; overflow-y:auto; padding:2rem 1rem; display: flex; gap: .6rem; flex-wrap: wrap; border-top: 1px solid #ddd; @include scrollbar(#ccc, #fff, .4rem, .4rem); }
 }
 .filter-item.active {position: relative;
 	&.active { 
 		.item-layer { display: block; z-index: 2;}
 	}	
 }
+
+//테이블 리스트
+.table {
+	.ic-cal::before { color: #aaa;}
+	&.sortable { 
+		.state {line-height: 1.2; padding: 0.7rem 1.2rem; width:fit-content; margin: 0 auto;}				
+	}
+	.item-layer { padding: 1rem;}
+	
+}
+
 .table:not(.horizontal) td:nth-last-child(-n+2):not(:nth-child(-n+2)) {
 	.item-layer{left:auto; right:0;}
 }

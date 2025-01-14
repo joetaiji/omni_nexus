@@ -9,9 +9,9 @@
 	}
 	th { white-space: nowrap;}
 	.subject,
-	.orderer{ width: 17rem; margin: 0 auto; @include ellipsis; }
+	.orderer{ white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
 
-	>table { /* 스크롤 임시 감춤 - min-width:146rem; */
+	>table { table-layout: fixed; /* 스크롤 임시 감춤 - min-width:146rem; */
 		>thead>tr:first-of-type {
 			>th { border-top: 0; }
 		}			

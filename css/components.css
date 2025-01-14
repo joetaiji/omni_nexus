@@ -383,14 +383,13 @@
 }
 .table .subject,
 .table .orderer {
-  width: 17rem;
-  margin: 0 auto;
-  display: block;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.table > table { /* 스크롤 임시 감춤 - min-width:146rem; */ }
+.table > table {
+  table-layout: fixed; /* 스크롤 임시 감춤 - min-width:146rem; */
+}
 .table > table > thead > tr:first-of-type > th {
   border-top: 0;
 }

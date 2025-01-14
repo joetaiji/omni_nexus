@@ -689,9 +689,10 @@ content 공통
   height: 2.2rem;
   font-size: 1.1rem;
   line-height: normal;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  vertical-align: middle;
   position: relative;
 }
 .user-icon img {
