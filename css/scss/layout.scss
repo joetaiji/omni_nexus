@@ -252,11 +252,11 @@ content 공통
 	}
 	.mdi-tabs { display: flex; align-items: center; gap: 1rem; padding-right: 3rem;
 		&::after { content: ''; display: block; width: 3rem; height:100%; background: linear-gradient(90deg, rgba(246, 247, 251, 0) 0%, rgba(246, 247, 251, 1) 100%); position: absolute; right: 0; z-index: 1;}
-		.mdi-item-group { display: flex; max-width: 80rem; 
+		.mdi-item-group { display: flex; /* max-width: 80rem;  */
 			.mdi-item {
-				span { display: none;}
+				//span { display: none;}
 				&.active { 
-					span { display: block;}
+					//span { display: block;}
 					a, button { background: var(--white); color: #111; }
 				}
 				&:only-child .ri-close-line { display: none;}

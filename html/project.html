@@ -61,10 +61,10 @@
 						<li>
 							<a href=""><i class="ri-home-3-fill"></i><span>대시보드</span></a>							
 						</li>
-						<li>
+						<li class="active">
 							<a href=""><i class="ri-stack-fill"></i><span>프로젝트</span></a>							
 						</li>
-						<li class="active">
+						<li>
 							<a href=""><i class="ri-bar-chart-fill"></i><span>매출관리</span></a>
 							<ul>
 								<li class="active"><a href="">매출 통계</a></li>
@@ -109,18 +109,10 @@
 				<div class="mdi-area">
 					<div class="mdi-tabs swiper">
 						<ul class="mdi-item-group swiper-wrapper">
-							<li class="mdi-item swiper-slide active"><a href=""><span>매출관리 > </span>매출통계<i class="ri-close-line"></i></a></li>
-							<li class="mdi-item swiper-slide"><a href="">프로젝트<i class="ri-close-line"></i></a></li>
-							<li class="mdi-item swiper-slide"><a href="">실적관리(손익계산)<i class="ri-close-line"></i></a></li>
-							<li class="mdi-item swiper-slide"><a href="">거래처<i class="ri-close-line"></i></a></li>
-							<li class="mdi-item swiper-slide"><a href=""><span>환경설정 > </span>내부노임단가 <i class="ri-close-line"></i></a></li>
-							<li class="mdi-item swiper-slide"><a href=""><span>환경설정 > </span>SW노임단가<i class="ri-close-line"></i></a></li>
-							<li class="mdi-item swiper-slide"><a href=""><span>지출관리 > </span>지출 통계<i class="ri-close-line"></i></a></li>							
-							<li class="mdi-item swiper-slide"><a href=""><span>지출관리 > </span>경비 관리<i class="ri-close-line"></i></a></li>	
-							<li class="mdi-item swiper-slide"><a href=""><span>환경설정 > </span>조직도<i class="ri-close-line"></i></a></li>
-							<li class="mdi-item swiper-slide"><a href=""><span>지출관리 > </span>지출 통계<i class="ri-close-line"></i></a></li>							
-							<li class="mdi-item swiper-slide"><a href=""><span>지출관리 > </span>경비 관리<i class="ri-close-line"></i></a></li>	
-							<li class="mdi-item swiper-slide"><a href=""><span>환경설정 > </span>조직도<i class="ri-close-line"></i></a></li>
+							<li class="mdi-item swiper-slide active"><a href="">프로젝트<i class="ri-close-line"></i></a></li>
+							<li class="mdi-item swiper-slide"><a href=""><span>매출관리 > </span>매출통계<i class="ri-close-line"></i></a></li>
+							
+							
 						</ul>
 					</div>
 					<div class="tab-control">
@@ -331,8 +323,28 @@
 									<strong>계약 기간</strong>
 								</div>
 								<div class="item-cont">	
-									<div class="item selected">	
-										<input type="date" class="form-control input-date" value=""> ~ <input type="date" class="form-control input-date" value="">
+									<div class="item form-item">	
+										<input type="date" class="form-control input-date1" value=""> ~ <input type="date" class="form-control input-date2" value="">
+										<i class="ri-close-line"></i>
+									</div>
+								</div>
+								<div class="item-layer">
+									<div class="item-title">
+										<strong>매출법인</strong>
+										<button class="tooltip">
+											<i class="ri-information-fill"></i>
+											<span>원하는 분류 태그가 없으면 직접 입력</span>
+										</button>
+									</div>
+									<div class="item-cont">
+										<div class="item-add-group"></div>	
+										<input type="text" class="input-text form-control" placeholder="직접입력">
+									</div>										
+									<div class="item-group">
+										<span class="item" data-item="corp1">플랜아이</span>
+										<span class="item" data-item="corp2">플랜파트너스</span>
+										<span class="item" data-item="corp3">아누타</span>
+										<span class="item" data-item="corp4">와이브릿지</span>
 									</div>
 								</div>
 								
@@ -376,38 +388,17 @@
 									<strong>사업 금액</strong>
 								</div>
 								<div class="item-cont">
-									<div class="item selected">	
-										<input type="text" class="form-control" value="1,000,000"> ~ 
-										<input type="text" class="form-control" value="1,000,000,000">
+									<div class="item form-item">	
+										<input type="text" class="form-control input-text1" value=""> ~ 
+										<input type="text" class="form-control input-text2" value="">
+										<i class="ri-close-line"></i>
 									</div>
 								</div>
 							</div>					
 						</div>
 						<!-- //filter-cont : 필터 설정 전 -->
 						<div class="item-cont filter-setting">
-							<!-- div class="item-row">
-								<span class="item selected">홈페이지 구축<i class="ri-close-line"></i></span>
-								<span class="item selected">디자인<i class="ri-close-line"></i></span>
-								<span class="item selected">유지보수<i class="ri-close-line"></i></span>
-								<span class="item selected">EX사업부<i class="ri-close-line"></i></span>
-								<span class="item selected">MX사업부<i class="ri-close-line"></i></span>
-								<span class="item selected">
-									<span class="user-icon">						
-										<img src="../img/layout/photo.png">
-									</span>김소영
-									<i class="ri-close-line"></i>
-								</span>
-								<span class="item selected"><span class="user-icon">김</span>김승범<i class="ri-close-line"></i></span>
-								<span class="item selected"><span class="user-icon">조</span>조정연<i class="ri-close-line"></i></span>
-								<span class="item selected"><span class="user-icon">						
-									<img src="../img/layout/photo.png">
-								</span>김소영<i class="ri-close-line"></i></span>
-								<span class="item selected"><span class="user-icon">김</span>김승범<i class="ri-close-line"></i></span>
-								<span class="item item-more"><i class="ri-add-fill"></i>13<i class="ri-arrow-down-s-line"></i></span>
-							</div>
-							<span class="item selected"><span class="user-icon">조</span>조정연<i class="ri-close-line"></i></span>
-							<span class="state ing item selected">진행<i class="ri-close-line"></i></span>
-							<span class="item selected">1,000,000원 ~ 8,000,000,000원<i class="ri-close-line"></i></span> -->
+							
 						</div>
 						<!-- //set-item-list : 필터 설정 후 -->
 						<div class="filter-foot">

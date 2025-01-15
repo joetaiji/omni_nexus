@@ -145,8 +145,8 @@ function snb(){
         }
     });
 
-    // 하위 3차뎁스를 갖고 있는 메뉴를 클릭했을때
-    $snb.on('click', '.head_menu_depth>li>a, .is-depth3>a', function(e) {
+    
+    $snb.on('click', '.head_menu_depth a', function(e) {
         const   $na = $(this),
                 $parent = $na.parent(),
                 isActive = $parent.hasClass(AC);
@@ -156,6 +156,12 @@ function snb(){
             $parent.addClass(AC).siblings().removeClass(AC)
             $('.is-depth3').find('>a').attr('aria-expanded', 'false')
             $na.attr('aria-expanded', 'true')
+            const naClone = $na.clone().addClass('mdi-item swiper-slide').append('<i class="ri-close-line"></i>');
+            //.wrap('<li class="mdi-item swiper-slide"></li>');
+            
+            //mdi에 추가
+            $('.mdi-item-group').append(naClone);
+            mdiTab.update();
         }
     }); 
 }

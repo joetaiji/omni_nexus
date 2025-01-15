@@ -121,6 +121,9 @@
   	&:focus { border-color: #04B87F; background: #EFF9F6;}
   } */
 }
+.item-cont .ri-close-line {
+  display: none;
+}
 .item-cont .selected {
   border-style: dashed;
   padding: 1rem;
@@ -131,6 +134,9 @@
 }
 .item-cont .selected:active {
   border: 1px solid #00062c;
+}
+.item-cont .selected .ri-close-line {
+  display: flex;
 }
 .item-cont .item-add-group {
   display: flex;
@@ -795,4 +801,9 @@
 ======================================================================================= */
 /* =======================================================================================
 08. 병원소개 
-======================================================================================= *//*# sourceMappingURL=contents.css.map */
+======================================================================================= */
+@media (max-width: 1719.98px) {
+  .filter-setting .item-more {
+    display: none;
+  }
+}/*# sourceMappingURL=contents.css.map */

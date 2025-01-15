@@ -758,14 +758,7 @@ content 공통
   z-index: 1;
 }
 .contents .mdi-tabs .mdi-item-group {
-  display: flex;
-  max-width: 80rem;
-}
-.contents .mdi-tabs .mdi-item-group .mdi-item span {
-  display: none;
-}
-.contents .mdi-tabs .mdi-item-group .mdi-item.active span {
-  display: block;
+  display: flex; /* max-width: 80rem;  */
 }
 .contents .mdi-tabs .mdi-item-group .mdi-item.active a, .contents .mdi-tabs .mdi-item-group .mdi-item.active button {
   background: var(--white);

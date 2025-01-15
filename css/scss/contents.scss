@@ -50,9 +50,11 @@ $contents : $url;
 	.form-control { border: 0; }	
 }
 .item-cont {
+	.ri-close-line { display: none;}
 	.selected { border-style: dashed; padding: 1rem;
 		&:has(.form-control){ padding-top:.35rem; padding-bottom: .35rem;}
 		&:active { border:1px solid #00062c;}
+		.ri-close-line { display: flex;}
 	}
 	.item-add-group{display: flex; gap:1rem; align-items: center; flex-wrap: wrap;}
 	.input-text { flex:1; height: 3.5rem; border:0; 
@@ -309,3 +311,6 @@ $contents : $url;
 08. 병원소개 
 ======================================================================================= */
 
+@include media($web) {
+	.filter-setting .item-more { display: none;}
+}

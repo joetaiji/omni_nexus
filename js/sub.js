@@ -14,29 +14,61 @@ $(function () {
 			$na.addClass('selected').parents('.filter-item').find('.item-add-group').prepend($na.clone().append('<i class="ri-close-line"></i>'));
 		}		
 	})
+	
+	$('.input-date1, .input-date2').on('change', function() {
+		var $itemGroup = $(this).closest('.item'); 
+        var date1 = $('.input-date1').val();
+        var date2 = $('.input-date2').val();
+        
+        date1 && date2 ? $itemGroup.addClass('selected') : $itemGroup.removeClass('selected'); 
+	})
+	$('.input-text1, .input-text2').on('change', function() {
+		var $itemGroup = $(this).closest('.item'); 
+        var text1 = $('.input-text1').val();
+        var text2 = $('.input-text2').val();
+        
+        text1 && text2 ? $itemGroup.addClass('selected') : $itemGroup.removeClass('selected'); 
+	})
+	
 	//아이템 삭제
 	$('.filter').on('click', '.ri-close-line', function(e){
 		const item = $(this).closest('.selected').data('item');
 		const dataItem = '[data-item='+ item + ']'
-		$('.item-add-group').find(dataItem).remove();		
+		$('.item-cont').find(dataItem).remove();		
 		$(dataItem).removeClass('selected');		
 		e.stopPropagation();
-
 	});
+	$('.form-item .ri-close-line').on('click', function(){
+		$(this).parent().removeClass('selected').find('.form-control').val('');
+	})
 	
 	//필터선택결과버튼
+	
 	$('.btn-filter-result').on('click', function(e){
-		$('.filter-setting').prepend($('.filter-item>.item-cont .item').clone());
+		$('.filter-setting').prepend($('.filter-item>.item-cont .selected').clone());
 		$('.filter').removeClass(AC).addClass('setting');
+		let totalWidth = 0;
+		
+		$('.filter-setting .item').each(function(){	
+			totalWidth += parseInt($(this).outerWidth());
+			if(totalWidth > $('.filter-setting').width() - 300){
+				$(this).after('<span class="item item-more"><i class="ri-add-fill"></i>13<i class="ri-arrow-down-s-line"></i></span>');
+				totalWidth = $(this).outerWidth();
+				return false;
+			}	
+		})
+		$('.filter').find('.item-add-group .selected').remove();
 	});
 	//아이템 더보기버튼
-	$('btn-item-more').on('click', function(e){
+	$('.btn-item-more').on('click', function(e){
 
 	})
 	//초기화버튼
 	$('.btn-filter-reset').on('click', function(e){
-		$('.filter').removeClass('setting').addClass(AC).find('.item-add-group .selected:not(.item-all)').remove();
-		$('.item-group .item').removeClass('selected');
+		$('.filter').removeClass('setting').addClass(AC).find('.item-add-group .selected').remove();
+		$('.filter').find('.item-cont .form-control').val('');
+		$('.filter-item>.item-cont .item').removeClass('selected');
+		$('.filter-setting').empty();
 	});
 	
 	/* ==================================================================================
