@@ -16,15 +16,19 @@ popup-wrap
 }
 .popup-wrap .popup-in {
   background: #fff;
-  border-radius: 2rem;
+  border-radius: 2rem 0 0 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
-  width: 136rem;
-  height: 100%;
-  position: relative;
+  max-width: 136rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  transform: translateX(100%);
   overflow: hidden;
+  transition: 0.2s 0.2s;
 }
 .popup-wrap .popup {
   display: flex;
@@ -77,6 +81,9 @@ popup-wrap
 }
 .popup-wrap .popup-util .popup-close {
   font-size: 4rem;
+}
+.popup-wrap.opened-layer .popup-in {
+  transform: translateX(0);
 }
 .popup-wrap .popup-side {
   background: #fff;
@@ -164,6 +171,7 @@ html.active::after {
 }
 html.scroll-no {
   overflow: hidden;
+  padding-right: 1.8rem;
 }
 
 #wrap {
@@ -464,7 +472,6 @@ snb
   letter-spacing: -1px;
   position: relative;
   color: rgba(255, 255, 255, 0.7);
-  transition: 0.2s;
 }
 .left-menu .list .head_menu_depth > li > a i {
   color: rgba(255, 255, 255, 0.3);
@@ -482,7 +489,6 @@ snb
   opacity: 1;
   visibility: visible;
   right: 0;
-  transition: 0.2s 0.1s;
 }
 .left-menu .list .head_menu_depth > li.active > a {
   background: #F6F7FB;
@@ -606,10 +612,10 @@ snb
   opacity: 0;
   top: 0;
   left: 100%;
-  padding: 4rem 1.2rem 1.2rem;
+  padding: 5rem 1.2rem 1.2rem;
   border-radius: 12px;
   background: #FFF;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.1);
 }
 .left-menu.active .list .head_menu_depth > li > a {
   padding-left: 2.2rem;
@@ -619,23 +625,35 @@ snb
 }
 .left-menu.active .list .head_menu_depth > li > a span {
   position: absolute;
-  top: 0.4rem;
+  top: 1.5rem;
   left: 100%;
   z-index: 1;
   opacity: 0;
   visibility: hidden;
   color: var(--gray-60);
-  font-size: 1.3rem;
-  border-radius: 12px;
+  font-size: 1.4rem;
+  border-radius: 1.2rem;
   background: #FFF;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.1);
   display: block;
   padding: 0.8rem 1.2rem;
 }
 .left-menu.active .list .head_menu_depth > li > a:has(+ ul) span {
   background: none;
   box-shadow: none;
+  top: 1rem;
   left: calc(100% + 2.2rem);
+}
+.left-menu.active .list .head_menu_depth > li::before, .left-menu.active .list .head_menu_depth > li::after {
+  width: 1.2rem;
+  height: 1.2rem;
+  right: 0;
+}
+.left-menu.active .list .head_menu_depth > li::before {
+  background: radial-gradient(circle at 0 0, #000 65%, #F6F7FB 71%);
+}
+.left-menu.active .list .head_menu_depth > li::after {
+  background: radial-gradient(circle at 0 100%, #000 65%, #F6F7FB 71%);
 }
 .left-menu.active .list .head_menu_depth > li.active > a {
   border-radius: 1rem 0 0 1rem;
@@ -643,17 +661,6 @@ snb
 }
 .left-menu.active .list .head_menu_depth > li.active > a span {
   display: none;
-}
-.left-menu.active .list .head_menu_depth > li.active::before, .left-menu.active .list .head_menu_depth > li.active::after {
-  width: 1.2rem;
-  height: 1.2rem;
-  transition: none;
-}
-.left-menu.active .list .head_menu_depth > li.active::before {
-  background: radial-gradient(circle at 0 0, #000 65%, #F6F7FB 71%);
-}
-.left-menu.active .list .head_menu_depth > li.active::after {
-  background: radial-gradient(circle at 0 100%, #000 65%, #F6F7FB 71%);
 }
 .left-menu.active .list .head_menu_depth > li.active > ul {
   display: none;
@@ -851,7 +858,7 @@ content 공통
 .contents .page-contents {
   color: var(--fontColor);
   background: var(--white);
-  padding: 4rem;
+  padding: 3rem;
   border-radius: 0 2rem 0 0;
   position: relative;
   min-height: calc(100vh - 20.1rem);

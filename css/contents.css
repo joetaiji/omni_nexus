@@ -2,11 +2,11 @@
 /* =======================================================================================
 공통
 ======================================================================================= */
-.empty {
-  min-width: 10rem;
+[contenteditable=true]:focus {
+  outline: 0;
+  background: var(--primary-5);
 }
 
-.empty::placeholder,
 .spreadRequired::after {
   content: "필수입력";
   font-size: 1.3rem;
@@ -98,22 +98,8 @@
 .item:active {
   border: 1px solid #00062c;
 }
-.item.selected {
-  padding-left: 0.6rem;
-  padding-right: 0.6rem;
-  border-style: dashed;
-}
-.item.selected:has(.user-icon)::before {
-  display: none;
-}
-.item.selected .ri-close-line {
-  display: flex;
-}
-.item.selected:active {
-  border: 1px solid #00062c;
-}
 .item .ri-close-line {
-  display: none;
+  display: flex;
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
@@ -125,16 +111,27 @@
   background: #eee;
   transition: 0.2s;
 }
+.item .form-control {
+  border: 0;
+}
 
-.item-title {
-  position: relative;
+.item-cont {
+  /* 	
+  .input-date { border: 1px solid #eee; border-radius: 0.8rem;height: 4rem; width: 12.5rem; transition: 0.2s;
+  	&:focus { border-color: #04B87F; background: #EFF9F6;}
+  } */
+}
+.item-cont .selected {
+  border-style: dashed;
   padding: 1rem;
-  display: flex;
 }
-.item-title .tooltip {
-  margin-left: auto;
+.item-cont .selected:has(.form-control) {
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
 }
-
+.item-cont .selected:active {
+  border: 1px solid #00062c;
+}
 .item-cont .item-add-group {
   display: flex;
   gap: 1rem;
@@ -149,21 +146,19 @@
 .item-cont .input-text::placeholder {
   font-size: 1.4rem;
 }
-.item-cont .input-date {
-  border: 1px solid #eee;
-  border-radius: 0.8rem;
-  height: 4rem;
-  width: 12.5rem;
-  transition: 0.2s;
-}
-.item-cont .input-date:focus {
-  border-color: #04B87F;
-  background: #EFF9F6;
-}
 .item-cont.vert {
   display: flex;
   gap: 1rem;
   flex-direction: column;
+}
+
+.item-title {
+  position: relative;
+  padding: 1rem;
+  display: flex;
+}
+.item-title .tooltip {
+  margin-left: auto;
 }
 
 .item-layer {
@@ -184,11 +179,9 @@
   font-size: 1.5rem;
   max-height: 40rem;
   overflow-y: auto;
-  padding: 2rem 1rem;
   display: flex;
   gap: 0.6rem;
   flex-wrap: wrap;
-  border-top: 1px solid #ddd;
 }
 .item-layer .item-group::-webkit-scrollbar-track {
   background-color: #fff;
@@ -201,6 +194,9 @@
   background-color: #ccc;
   border-radius: 0.4rem;
 }
+.item-layer.status-layer {
+  width: 11rem;
+}
 
 .filter-item.active {
   position: relative;
@@ -210,22 +206,84 @@
   z-index: 2;
 }
 
-.horizontal .item-layer {
+.table.horizontal > table {
+  min-width: 119.8rem;
+}
+.table.horizontal .item-layer {
   top: 0;
   left: 10rem;
 }
+.table.horizontal .sales-layer {
+  top: 100%;
+  left: 0;
+  width: 17rem;
+}
 
-.table .ic-cal::before {
+.table-list .ic-cal::before {
   color: #aaa;
 }
-.table.sortable .state {
+.table-list.sortable .state {
   line-height: 1.2;
   padding: 0.7rem 1.2rem;
   width: fit-content;
   margin: 0 auto;
 }
-.table .item-layer {
+.table-list .row-btn-control {
+  text-align: right;
+  padding-right: 0;
+}
+.table-list .row-btn-control .user-group {
+  top: 50%;
+  right: inherit;
+  left: 1rem;
+  transform: translateY(-50%);
+  width: 5rem;
+  flex-wrap: wrap;
+}
+.table-list .row-btn-control .user-group .user-icon {
+  margin-left: -0.6rem;
+}
+.table-list .row-btn-control .user-group .user-sum {
+  margin-left: 0;
+  margin-top: 0.2rem;
+  display: block;
+}
+.table-list .row-btn-control .user-group,
+.table-list .row-btn-control .btn-draggable {
+  opacity: 0;
+}
+.table-list .row-btn-control .btn-group {
+  display: none;
+  position: absolute;
+  right: -0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  background: #fff;
+}
+.table-list .row-btn-control .btn-group button {
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+}
+.table-list .row-btn-control .btn-group button:hover {
+  background: #eee;
+}
+.table-list .row-btn-control.active .btn-group {
+  display: block;
+}
+.table-list .item-layer {
   padding: 1rem;
+}
+.table-list [data-layer=project],
+.table-list [data-layer=orderer] {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .table:not(.horizontal) td:nth-last-child(-n+2):not(:nth-child(-n+2)) .item-layer {
@@ -332,15 +390,28 @@
   color: #099367;
   font-size: 2.8rem;
 }
-.filter-item .item-cont {
-  padding: 1rem;
+.filter-item > .item-cont .item-add-group::before {
+  content: "전체";
+  font-size: 1.3rem;
+  color: #999;
 }
-.filter-item .item.selected {
+.filter-item > .item-cont .item-add-group:has(.item)::before {
+  display: none;
+}
+.filter-item .item-cont {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
   padding: 1rem;
 }
 .filter-item .item-layer {
   width: calc(100% + 1px);
   top: -1px;
+}
+.filter-item .item-layer .item-group {
+  border-top: 1px solid #ddd;
+  padding: 2rem 1rem;
 }
 .filter-item:hover {
   border: 1px solid #04B87F;
@@ -355,9 +426,6 @@
   left: auto;
   right: -1px;
 }
-.filter-item .input-date {
-  width: 14rem;
-}
 .filter-setting {
   display: none;
   gap: 2rem 0.8rem;
@@ -365,6 +433,11 @@
   width: 100%;
   border: 1px solid #ddd;
   padding: 2rem 3rem;
+}
+.filter-setting .item-row {
+  display: flex;
+  gap: 0.8rem;
+  width: 100%;
 }
 .filter-foot {
   padding: 1.6rem 2rem;
@@ -434,7 +507,7 @@
   border-radius: 50%;
   border: 1px solid #ddd;
   background: #fff;
-  transform: translate(-50%, -50%);
+  translate: -50% -50%;
   transition: 0.2s;
   position: absolute;
   left: 50%;
@@ -443,7 +516,7 @@
   color: #000;
 }
 .filter.active .btn-filter-open {
-  transform: translate(-50%, -50%) rotate(180deg);
+  rotate: 180deg;
 }
 .filter.active .filter-cont {
   display: grid;
@@ -452,20 +525,25 @@
   display: flex;
 }
 .filter.setting .btn-filter-open {
-  transform: translate(-50%, -50%) rotate(180deg);
+  rotate: 0;
 }
 .filter.setting .filter-cont {
   display: none;
 }
 .filter.setting .filter-setting {
   display: flex;
+  height: 7.8rem;
+  overflow: hidden;
 }
 .filter.setting .filter-foot {
   display: flex;
 }
 .filter.setting.active .filter-setting {
-  height: 8rem;
-  overflow: hidden;
+  height: auto;
+  overflow: visible;
+}
+.filter.setting.active .btn-filter-open {
+  rotate: 180deg;
 }
 
 .bg1 {

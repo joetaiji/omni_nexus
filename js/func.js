@@ -146,7 +146,7 @@ function snb(){
     });
 
     // 하위 3차뎁스를 갖고 있는 메뉴를 클릭했을때
-    $snb.on('click', '.is-depth3>a', function(e) {
+    $snb.on('click', '.head_menu_depth>li>a, .is-depth3>a', function(e) {
         const   $na = $(this),
                 $parent = $na.parent(),
                 isActive = $parent.hasClass(AC);
@@ -223,14 +223,17 @@ function layerPopup(el){
         const isActive = $clickSpot.hasClass(AC);
 
         $clickSpot.toggleClass(AC).attr('aria-expanded', isActive ? 'false' : 'true')
-		$('#' + $(this).data('id')).attr('tabindex', 0).fadeIn(300).focus().addClass(OL);
-		$html.addClass(ScrollNo);
+		$('#' + $(this).data('id')).attr('tabindex', 0).fadeIn(300).focus().addClass(OL, function(){
+			$html.addClass(ScrollNo);
+		});
+		
     })	
 
 	$html.on('click', '.opened-layer .popup-close', function(e) {	
         e.preventDefault();
-        $(this).closest('.opened-layer').removeAttr('tabindex').fadeOut(100).removeClass(OL);
-		$html.removeClass(ScrollNo);
+        $(this).closest('.opened-layer').removeAttr('tabindex').removeClass(OL).delay(300).fadeOut(300, function(){
+				$html.removeClass(ScrollNo)
+			});
 		$clickSpot.focus().removeClass(AC).attr('aria-expanded', 'false');
     })
 }

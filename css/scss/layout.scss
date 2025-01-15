@@ -3,8 +3,8 @@
 /* =======================================================================================
 popup-wrap
 ======================================================================================= */
-.popup-wrap { display: none; position: fixed; left: 0; top: 0; right:0; bottom:0; z-index: 10;  padding: 1rem; overflow-y: auto; background: rgba(0,0,0,.3);	
-	.popup-in { background: #fff; border-radius: 2rem; @include flex(null, center, $fd:column); margin:0 auto; width: 136rem; height: 100%; position: relative; overflow: hidden; }
+.popup-wrap { display: none; position: fixed; left: 0; top: 0; right:0; bottom:0; z-index: 10;  padding: 1rem; overflow-y: auto; background: rgba(0,0,0,.3);
+	.popup-in { background: #fff; border-radius: 2rem 0 0 2rem; @include flex(null, center, $fd:column); max-width: 136rem; width:100%; position: fixed; top:0; bottom: 0; right:0; transform:translateX(100%); overflow: hidden; transition:.2s .2s;}
 	.popup { @include flex($fd:column); width: 100%; height: 100%; padding: 4rem; position: relative;
 		&-head { margin-bottom: 4rem; 
 			.pop-tit { font-size: 2.5rem; }
@@ -14,6 +14,9 @@ popup-wrap
 			.popup-print {width: 4rem; height: 4rem;border-radius: 50%;@include flex(null, center, center); background: #f8f8fa; font-size: 2.2rem;}
 			.popup-close { font-size: 4rem; }
 		}
+	}
+	&.opened-layer {
+		.popup-in { transform:translateX(0);}
 	}
 	.popup-side { background: #fff; position: absolute; left: calc(100% + 1rem); top: 0; width: 100%; height: 100%; padding: 4rem; box-shadow: 0 0 1rem rgba(0,0,0,.2); transition: 0.5s ease;
 		.popup-head { padding-bottom: 2rem; margin-bottom: 2rem; position: relative; border-bottom: 1px solid #eee;
@@ -45,7 +48,7 @@ html {
 		&::after { content: ''; display: block; width: 200%; height: 100vh; background: rgba(0, 0, 0, .5); position: fixed;left: 50%;top: 0; transform: translateX(-50%); z-index: 0; }
 	}
 	&.scroll-no { 
-		overflow: hidden;
+		overflow: hidden; padding-right: 1.8rem;
 	} 
 }
 
@@ -144,12 +147,12 @@ $snbW: 26rem;
 				&::before { bottom: 100%; background: radial-gradient(circle at 0 0, #01072D 69%, #F6F7FB 71%); }
 				&::after { top: 6.4rem; background: radial-gradient(circle at 0 100%, #01072D 69%, #F6F7FB 71%);}
 				~ li > a::before { content: ''; display: block; position: absolute; top: 0; width: calc(100% - 3.2rem); }
-				>a { display: flex; align-items:center; gap: 1rem; padding: 1.8rem 2.6rem; font-size: 1.7rem; line-height: normal; letter-spacing: -1px; position: relative; color: rgb(#fff,.7); transition: 0.2s;
+				>a { display: flex; align-items:center; gap: 1rem; padding: 1.8rem 2.6rem; font-size: 1.7rem; line-height: normal; letter-spacing: -1px; position: relative; color: rgb(#fff,.7); 
 					i { color:rgba(#fff, .3); font-size: 2rem; width: 2.8rem; height: 2.8rem;  @include flex(null, center, center);}
 					&:hover { color: var(--white);}
 				}				
 				&.active { 
-					&::before, &::after { opacity: 1; visibility: visible; right: 0; transition:.2s .1s;}
+					&::before, &::after { opacity: 1; visibility: visible; right: 0; }
 					>a { background: #F6F7FB; font-weight: 700; color: var(--black); border-radius: 3rem 0 0 3rem;
 						i { color: var(--primary);}
 						&::before { display: none;}
@@ -196,24 +199,24 @@ $snbW: 26rem;
 			.member-area {display: none; }
 		}
 		.list .head_menu_depth > li { 			
-			> ul { display: none;position: absolute; opacity: 0; top: 0; left: 100%; padding: 4rem 1.2rem 1.2rem; border-radius: 12px; 
+			> ul { display: none;position: absolute; opacity: 0; top: 0; left: 100%; padding: 5rem 1.2rem 1.2rem; border-radius: 12px; 
 				background: #FFF;
-				box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.10);}
+				box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.10);}
 			> a { padding-left: 2.2rem; 			
-				&::after { display: none;}
-				span { position: absolute; top: .4rem; left: 100%; z-index: 1; opacity: 0; visibility:hidden; color: var(--gray-60); font-size: 1.3rem;	border-radius: 12px;
-					background: #FFF;
-					box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.10); display: block; padding: 0.8rem 1.2rem;}
-				&:has(+ul) span{ background: none; box-shadow:none; left: calc(100% + 2.2rem);}
+				&::after { display: none;}				
+				span { position: absolute; top:1.5rem; left: 100%; z-index: 1; opacity: 0; visibility:hidden; color: var(--gray-60); font-size: 1.4rem;	border-radius: 1.2rem; background: #FFF;
+					box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.10); display: block; padding: 0.8rem 1.2rem;}
+				&:has(+ul) span{ background: none; box-shadow:none; top: 1rem; left: calc(100% + 2.2rem);}
 			}
+			&::before,
+			&::after { width: 1.2rem; height: 1.2rem; right: 0;}
+			&::before { background: radial-gradient(circle at 0 0, #000 65%, #F6F7FB 71%);}
+			&::after { background: radial-gradient(circle at 0 100%, #000 65%, #F6F7FB 71%);}
+
 			&.active { 
 				> a { border-radius: 1rem 0 0 1rem; font-weight: 400;
 					span { display: none;}
-				}
-				&::before,
-				&::after { width: 1.2rem; height: 1.2rem; transition: none;}
-				&::before { background: radial-gradient(circle at 0 0, #000 65%, #F6F7FB 71%);}
-				&::after { background: radial-gradient(circle at 0 100%, #000 65%, #F6F7FB 71%);}
+				}				
 				> ul { display: none;
 					li {
 						a { color:var(--gray-80); 
@@ -283,7 +286,7 @@ content 공통
 	}
 
 	.print-btn { width: 4rem; height: 4rem; font-size: 2rem; @include pos(rt, 4rem, 4rem); border-radius: .8rem; background: var(--white); border: 1px solid #ddd; @include hover;}
-	.page-contents { color: var(--fontColor); background: var(--white); padding: 4rem; border-radius: 0 2rem 0 0; position: relative; min-height: calc(100vh - 20.1rem); }
+	.page-contents { color: var(--fontColor); background: var(--white); padding: 3rem; border-radius: 0 2rem 0 0; position: relative; min-height: calc(100vh - 20.1rem); }
 	.article { scroll-margin-top: 15rem; min-height: 20rem;}
 }
 

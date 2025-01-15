@@ -29,14 +29,16 @@ $(function () {
 			nextEl: ".swiper-button-next",
 			prevEl: ".swiper-button-prev",
 		}
-	}) 		
+	}) 
+	
+	$('.table-list td:not(.row-btn-control)').attr('contenteditable', 'true');
 
 /* ======================================================================================
 아이템 선택 레이어 생성
 ====================================================================================== */
-	//프로젝트 분류
-	$('[data-layer="type"]').append(
-		`<div class="item-layer">
+
+	$('body').append(
+		`<div class="item-layer type-layer">
 			<div class="item-group">
 				<span class="item">홈페이지 구축</span>
 				<span class="item">유지보수</span>
@@ -46,23 +48,14 @@ $(function () {
 				<span class="item">컨설팅</span>
 				<span class="item">내부거래</span>
 			</div>
-		</div>`
-	);
-	
-
-	//사업명
-	$('[data-layer="project"]').append(
-		`<div class="item-layer">												
+		</div>
+		<div class="item-layer project-layer">
 			<div class="item-group">
 				<span class="item">양성자가속기 장비이력관리시스템 고도화 및 유지보수 위탁용역</span>
 				<span class="item">(NIGT) 웹 기반 글로벌 R&D 전략지도 정보시스템 구축</span>
 			</div>
-		</div>`
-	);
-
-	//부서
-	$('[data-layer="dept"]').append(
-		`<div class="item-layer">			
+		</div>
+		<div class="item-layer dept-layer">			
 			<div class="item-group">
 				<span class="item">EX 사업부</span>
 				<span class="item">MX 사업부</span>
@@ -72,12 +65,8 @@ $(function () {
 				<span class="item">CX 영업부</span>
 				<span class="item">지최일만</span>
 			</div>
-		</div>`
-	);
-
-	//팀
-	$('[data-layer="team"]').append(
-		`<div class="item-layer">										
+		</div>
+		<div class="item-layer team-layer">
 			<div class="item-group">
 				<span class="item">기획1팀</span>
 				<span class="item">기획2팀</span>
@@ -90,24 +79,16 @@ $(function () {
 				<span class="item">퍼블리셔1팀</span>
 				<span class="item">퍼블리셔2팀</span>
 			</div>
-		</div>`
-	);
-
-	//매출법인
-	$('[data-layer="corp"]').append(
-		`<div class="item-layer">												
+		</div>
+		<div class="item-layer corp-layer">
 			<div class="item-group">
 				<span class="item">플랜아이</span>
 				<span class="item">플랜파트너스</span>
 				<span class="item">아누타</span>
 				<span class="item">와이브릿지</span>
 			</div>
-		</div>`
-	);
-
-	//발주처
-	$('[data-layer="orderer"]').append(
-		`<div class="item-layer">			
+		</div>
+		<div class="item-layer orderer-layer">			
 			<div class="item-group">
 				<span class="item">고용노동부</span>
 				<span class="item">국가녹색기술연구소</span>
@@ -123,12 +104,8 @@ $(function () {
 				<span class="item">한국전력개발</span>
 				<span class="item">환경부</span>
 			</div>
-		</div>`
-	);
-
-	//담당자
-	$('[data-layer="manager"]').append(
-		`<div class="item-layer">												
+		</div>
+		<div class="item-layer manager-layer">
 			<div class="item-group">
 				<span class="item">
 					<span class="user-icon">						
@@ -160,24 +137,16 @@ $(function () {
 				</span>
 				
 			</div>
-		</div>`
-	);	
-
-	//상태
-	$('[data-layer="status"]').append(
-		`<div class="item-layer">												
+		</div>
+		<div class="item-layer status-layer">
 			<div class="item-group">
 				<span class="item state before">착수전</span>
 				<span class="item state ing">진행</span>
 				<span class="item state hold">보류</span>
 				<span class="item state end">완료</span>
 			</div>
-		</div>`
-	);
-
-	//매출입력
-	$('[data-layer="sales"]').append(
-		`<div class="item-layer sales-layer">
+		</div>
+		<div class="item-layer sales-layer">
 			<form>			
 				<div class="item-cont vert">	
 					<span class="form-control-unit"><input type="text" class="form-control"> 원</span>
@@ -189,11 +158,8 @@ $(function () {
 					</div>
 				</div>		
 			</form>						
-		</div>`				
-	);	
-	//메모입력
-	$('[data-layer="memo"]').append(
-		`<div class="item-layer memo-layer">
+		</div>
+		<div class="item-layer memo-layer">
 			<form action="#">			
 				<div class="item-cont vert">
 					<div class="item-add-group">
@@ -205,12 +171,8 @@ $(function () {
 					</div>
 				</div>		
 			</form>						
-		</div>`				
-	);	
-
-	//직무
-	$('[data-layer="job"]').append(
-		`<div class="item-layer">												
+		</div>
+		<div class="item-layer job-layer">	
 			<div class="item-group">
 				<span class="item">IT 컨설턴트</span>
 				<span class="item">IT PM</span>

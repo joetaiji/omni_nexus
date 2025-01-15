@@ -1,17 +1,16 @@
 @import "../mixin";
 
 /* table */
-.table { /* 스크롤 임시 감춤 - overflow-x:auto; @include scrollbar( #ccc, #fff, .6rem, .3rem, h); */
+.table { overflow-x:auto; @include scrollbar( #ccc, #fff, .6rem, .3rem, h);
 	
 	td,th {
 		border-top: 1px solid #eee; padding: 1.5rem .6rem;  text-align: center; font-size: 1.5rem; line-height: 1.5; 
 		&.text_left { padding-left: 2rem; text-align: left;}
 	}
 	th { white-space: nowrap;}
-	.subject,
-	.orderer{ white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+	.subject{ white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
 
-	>table { table-layout: fixed; /* 스크롤 임시 감춤 - min-width:146rem; */
+	>table { table-layout: fixed; min-width:146rem;
 		>thead>tr:first-of-type {
 			>th { border-top: 0; }
 		}			
@@ -25,23 +24,7 @@
 			}
 		}
 		
-		td { position: relative;			
-
-			.btn-group {display: none; position: absolute; left:0; top:50%; transform:translateY(-50%); white-space:nowrap; background: #fff;
-				button { border-radius: 50%; width: 3.2rem; height: 3.2rem; display: flex; align-items: center; justify-content: center; color: #777;;
-					&:hover { background: #eee; }
-				}				
-			}
-			&.row-btn-control { 
-				.user-group {top: 50%; right:inherit; left:-5rem; transform:translateY(-50%); width:5rem; flex-wrap: wrap;
-					.user-icon { margin-left: -0.6rem;}
-					.user-sum { margin-left: 0; margin-top: 0.2rem;display: block;}
-				}
-				.user-group,
-				.btn-draggable{opacity: 0;}
-				&.active .btn-group{display: block;}
-			}
-		}
+		td { position: relative; }
 		tfoot { border-top: 1px solid var(--gray-40); }	
 		+ * { margin-top: 0.8rem;}
 		.ri-calendar-line {margin-right: 0.4rem;}
